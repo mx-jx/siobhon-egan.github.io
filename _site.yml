@@ -1,18 +1,23 @@
 name: "personal-website"
 output_dir: "."
 navbar:
-  title: "Personal Website"
+  title: "Siobhon Egan"
   left:
     - text: "Home"
+      icon: fa-home
       href: index.html
     - text: "CV"
+      icon: fa-id-card
       href: cv.html
-    - text: "Links"
-      href: links.html
+    - text: "Contact"
+      icon: fa-at
+      href: contact.html
 output:
  html_document:
     theme: spacelab
     highlight: monochrome
+    include:
+      after_body: footer.html
     css: styles.css
     
 
