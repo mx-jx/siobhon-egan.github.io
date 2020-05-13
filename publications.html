@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Publications</title>
+
+<script src="site_libs/jquery-3.5.0/jquery-3.5.0.min.js"></script>
+<meta name="name" content="viewport" />
+<meta name="content" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link href="site_libs/bootstrap-4.4.1/bootstrap-custom.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-4.4.1/bootstrap.bundle.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: .5rem;
+  }
+  pre:not([class]) {
+    background-color: white;
+  }
+  pre code {
+    background-color: transparent;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+/*
+BS3 -> BS4 saw a removal of margin-top which is a pretty jarring change for Rmd
+https://github.com/twbs/bootstrap/blob/f17f882d/dist/css/bootstrap.css#L1219-L1250
+https://github.com/twbs/bootstrap/blob/4de4874e/scss/_reboot.scss#L82-L89 */
+h1, h2, h3 { margin-top: 20px; }
+h4, h5, h6 { margin-top: 10px; }
+
+/* Pandoc uses align attribute to align content but BS4 squashes that */
+.table th[align=left] {
+  text-align: left;
+}
+.table th[align=right] {
+  text-align: right;
+}
+.table th[align=center] {
+  text-align: center;
+}
+
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="/var/folders/c1/1wk2dj0s543fp9k7jh695ndw0000gn/T//RtmpejyXAT/file3bfa375b1a7a.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!--
+  Note that .tabset-dropdown was initially implemented using Glyphicons, which were dropped
+  in BS4. The idea behind the "equivalent" BS4 CSS derives from how carets are implemented
+  https://github.com/twbs/bootstrap/blob/099860/scss/mixins/_caret.scss#L1
+-->
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active-dropdown-tab:before {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active-dropdown-tab:before {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid transparent;
+  border-right: 0;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.tabset-dropdown > .nav-tabs > li.active-dropdown-tab {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<div class="navbar navbar-expand-lg navbar-light bg-light fixed-top" role="navigation">
+  <div class="container">
+  <a class="navbar-brand" href="index.html">Siobhon Egan</a>
+  <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+  <a class="nav-link" href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="cv.html">
+    <span class="fa fa-id-card"></span>
+     
+    CV
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="publications.html">
+    <span class="fa fa-book"></span>
+     
+    Publications
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="contact.html">
+    <span class="fa fa-at"></span>
+     
+    Contact
+  </a>
+</li>
+    </ul>
+    <ul class="navbar-nav">
+      
+    </ul>
+  </div>
+  </div>
+</div>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Publications</h1>
+
+</div>
+
+
+<center>
+<img src="images/ttbd_abstract.png" />
+</center>
+<div id="articles" class="section level1">
+<h1>Articles</h1>
+<article>
+<h3>
+<a href="https://doi.org/10.1007/s00436-020-06653-z">Molecular identification of the <em>Trypanosoma</em> (<em>Herpetosoma</em>) <em>lewisi</em> clade in black rats (<em>Rattus rattus</em>) from Australia</a>
+</h3>
+<div class="summary">
+<p>
+<strong>Egan, S.</strong>, Taylor, C., Austen, J., Banks, P., Alhstrom, L., Ryan, M., Irwin, P., and Oskam C.
+</p>
+<span><i class="fa fa-calendar"></i> <em>2020</em> | <em>Parasitology Research</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1101/819060" role="button">Preprint - <em>bioRxiv</em></a><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1007/s00436-020-06653-z" role="button">Published article - <em>subscription</em></a></p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
+<a href="https://doi.org/10.1016/j.ttbdis.2020.101407">Bacterial community profiling highlights complex diversity and novel organisms in wildlife ticks</a>
+</h3>
+<div class="summary">
+<p>
+<strong>Egan, S.</strong>, Loh, S-M., Banks, P., Gillet, A., Alhstrom, L., Ryan, M., Irwin, P., and Oskam C.
+</p>
+<span><i class="fa fa-calendar"></i> <em>2020</em> | <em>Ticks and Tick-Borne Diseases</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1101/807131" role="button">Preprint - <em>bioRxiv</em></a><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1016/j.ttbdis.2020.101407" role="button">Published article - <em>subscription</em></a><a class="btn btn-outline-primary btn-sm" href="https://doi-org.libproxy.murdoch.edu.au/10.6084/m9.figshare.c.4608803.v1" role="button">FigShare data repo</a></p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
+<a href="https://doi.org/10.11646/zootaxa.4656.2.13">Automatic Barcode Gap Discovery reveals large COI intraspecific divergence in Australian Ixodidae</a>
+</h3>
+<div class="summary">
+<p>
+Evans, M., <strong>Egan, S.</strong>, Irwin, P., and Oskam, C.
+</p>
+<span><i class="fa fa-calendar"></i> <em>2019</em> | <em>Zootaxa</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.11646/zootaxa.4656.2.13" role="button">Published article - <em>subscription</em></a></p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
+<a href="https://doi.org/10.1071/MA18063">Bacterial tick-associated infections in Australia: Current studies and future directions</a>
+</h3>
+<div class="summary">
+<p>
+Irwin, P., <strong>Egan, S.</strong>, Greay, T., and Oskam C.
+</p>
+<span><i class="fa fa-calendar"></i> <em>2018</em> | <em>Microbiology Australia</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1071/MA18063" role="button">Published article - <em>subscription</em></a></p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
+<a href="https://doi.org/10.1016/j.ijppaw.2018.05.005">Molecular surveillance of piroplasms in ticks from small and medium-sized urban and peri-urban mammals in Australia</a>
+</h3>
+<div class="summary">
+<p>
+Siew-May, L., <strong>Egan, S.</strong>, Gillet, A., Banks, P. B., Ryan U. M., Irwin, P. J., and Oskam, C. L.
+</p>
+<span><i class="fa fa-calendar"></i> <em>2018</em> | <em>International Journal of Parasitology: Parasites and Wildlife</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1016/j.ijppaw.2018.05.005" role="button">Open access</a></p>
+</div>
+</article>
+</div>
+<div id="conference-presentations" class="section level1">
+<h1>Conference presentations</h1>
+<article>
+<h3>
+<a href="https://www.researchgate.net/publication/335291253_The_ecology_of_Amblyomma_triguttatum_triguttatum_in_Western_Australia?_sg=06FApWS1HmdNKJ8t3Hrl3YYLNBx9I5wfnW5ONogeGH4MsGUT1j3xMJueCiYd0AiNuALdYnEbDk8qYqjsGVPJwOYRgg6jHAWpq2oWhvC_.cOgynunLwAnRfgpujkyEYNcLNNGhS8VyexKZ81EWEYs7pT9QAMuwMOpj9L61wr_5ZvvxsLlCZfEVGxMnEqBOsQ">The ecology of Amblyomma triguttatum triguttatum in Western Australia</a>
+</h3>
+<div class="summary">
+<span><i class="fa fa-calendar"></i> <em>2019-07</em></span>
+<p>
+Australian Society for Parasitology Annual Conference | Adelaide, South Australia
+</p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
+<a href="https://www.researchgate.net/publication/335290939_Molecular_barcoding_of_Australian_hard_ticks_Ixodidae">Molecular barcoding of Australian hard ticks (Ixodidae)</a>
+</h3>
+<div class="summary">
+<span><i class="fa fa-calendar"></i> <em>2019-07</em></span>
+<p>
+Australian Society for Parasitology Annual Conference | Adelaide, South Australia
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/335290939_Molecular_barcoding_of_Australian_hard_ticks_Ixodidae" role="button">Slides</a></p>
+</div>
+</article>
+<br>
+<article>
+<h3>
+<a href="https://www.researchgate.net/publication/327880682_Ticks_parasitizing_Australian_wildlife_and_surveillance_of_potential_tick-borne_pathogens">Ticks parasitizing Australian wildlife and surveillance of potential tick-borne pathogens</a>
+</h3>
+<div class="summary">
+<span><i class="fa fa-calendar"></i> <em>2018-09</em></span>
+<p>
+Australian Society for Parasitology Annual Conference | Melbourne, Victoria.
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/327880682_Ticks_parasitizing_Australian_wildlife_and_surveillance_of_potential_tick-borne_pathogens" role="button">Slides</a></p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
+<a href="https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks">What’s in a tick? Meta-analysis of microbial diversity in Australian ticks</a>
+</h3>
+<div class="summary">
+<span><i class="fa fa-calendar"></i> <em>2018-08</em></span>
+<p>
+Global Microbiome II 2018 (West Coast Microbiome Network) | Perth, Western Australia
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks" role="button">Poster</a></p>
+</div>
+<p><br></p>
+<article>
+<h3>
+<a href="https://www.researchgate.net/publication/319276622_Are_bandicoot_ticks_a_reservoir_for_novel_bacteria">Are bandicoot ticks a reservoir for novel bacteria?</a>
+</h3>
+<div class="summary">
+<span><i class="fa fa-calendar"></i> <em>2017-08</em></span>
+<p>
+Combined Biological Sciences Meeting | Perth, Western Australia
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/319276622_Are_bandicoot_ticks_a_reservoir_for_novel_bacteria" role="button">Poster</a></p>
+</div>
+</article>
+<p><br></p>
+</div>
+
+&nbsp;
+<hr />
+<p style="text-align: center;">Work by <a href="https://github.com/siobhon-egan">Siobhon Egan</a></p>
+<p style="text-align: center;"><span style="color: #808080;"><em>siobhon.egan@murdoch.edu.au</em></span></p>
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://siobhon-egan.github.io/" class="fas fa-home"></a>
+    <a href="https://www.researchgate.net/profile/Siobhon_Egan" class="fab fa-researchgate"></a>
+    <a href="https://github.com/siobhon-egan" class="fa fa-github"></a>
+</p>
+
+&nbsp;
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).siblings().removeClass("active-dropdown-tab");
+    $(this).addClass("active-dropdown-tab");
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
