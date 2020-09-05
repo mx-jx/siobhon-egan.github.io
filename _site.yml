@@ -16,8 +16,8 @@ navbar:
       icon: fa-at
       href: contact.html
 output:
- html_document:
-    bootstrap_version: 4
-    theme: minty
-    include:
-      after_body: footer.html
+html_document:
+   bootstrap_version: 3+4
+   theme: minty
+   include:
+     after_body: footer.html
