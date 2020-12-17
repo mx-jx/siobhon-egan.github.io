@@ -13,31 +13,34 @@
 
 <title>Publications</title>
 
-<script src="site_libs/header-attrs-2.4.0/header-attrs.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
-<meta name="name" content="viewport" />
-<meta name="content" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="site_libs/bootstrap-3.4.1/bootstrap-custom.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.4.1/bootstrap.js"></script>
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: .5rem;
-  }
   pre:not([class]) {
     background-color: white;
-  }
-  pre code {
-    background-color: transparent;
   }
 </style>
 <script type="text/javascript">
@@ -74,7 +77,6 @@ h5 {
 h6 {
   font-size: 12px;
 }
-
 .table th:not([align]) {
   text-align: left;
 }
@@ -112,7 +114,6 @@ summary {
 
 
 <style type="text/css">
-/* TODO: remove this padding CSS when we drop BS3 */
 /* padding for bootstrap navbar */
 body {
   padding-top: 51px;
@@ -143,7 +144,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .dropdown-submenu {
   position: relative;
 }
@@ -194,29 +194,27 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.tab('show');
+  menuAnchor.parent().addClass('active');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
 
-<!--
-  Note that .tabset-dropdown was initially implemented using Glyphicons, which were dropped
-  in BS4. The idea behind the "equivalent" BS4 CSS derives from how carets are implemented
-  https://github.com/twbs/bootstrap/blob/099860/scss/mixins/_caret.scss#L1
--->
+<!-- tabsets -->
+
 <style type="text/css">
 .tabset-dropdown > .nav-tabs {
   display: inline-table;
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active-dropdown-tab:before {
+.tabset-dropdown > .nav-tabs > li.active:before {
   content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
@@ -224,7 +222,7 @@ $(document).ready(function () {
   border-right: 1px solid #ddd;
 }
 
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active-dropdown-tab:before {
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
   content: "&#xe258;";
   border: none;
 }
@@ -237,7 +235,7 @@ $(document).ready(function () {
   border-right: 1px solid #ddd;
 }
 
-.tabset-dropdown > .nav-tabs > li.active-dropdown-tab {
+.tabset-dropdown > .nav-tabs > li.active {
   display: block;
 }
 
@@ -330,7 +328,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div class="fluid-row" id="header">
 
 
 
@@ -340,11 +338,25 @@ $(document).ready(function () {
 
 
 <center>
-<img src="images/ttbd_abstract.png" />
+<img src="images/pathogens_cover.png" style="width:30.0%" />
 </center>
 <div id="articles" class="section level1">
 <h1>Articles</h1>
 <p>To request a copy of any of my publications (or associated data) please <a href="contact.html">email me</a>.</p>
+<article>
+<h3>
+<a href="">Baseline health parameters for a newly established population of long-nosed potoroo (<em>Potorous tridactylus</em>) at Booderee National Park, Australia.</a>
+</h3>
+<div class="summary">
+<p>
+Hall, J., Rose, K., Austen, J., <strong>Egan, S.</strong>, Bilney, R., Kambouris, P., MacGregor, C., Dexter, N.
+</p>
+<span><i class="fa fa-calendar"></i> <em>Under review</em> | <em>Journal of Wildlife Diseases</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="" role="button"></a></p>
+</div>
+</article>
+<p><br></p>
 <article>
 <h3>
 <a href="">Blood parasites in endangered wildlife: trypanosomes discovered during a survey of haemoprotozoa from the Tasmanian devil.</a>
@@ -353,9 +365,9 @@ $(document).ready(function () {
 <p>
 <strong>Egan, S.</strong>, Ruiz-Aravena, M., Austen, J., Barton, X., Comte, S., Hamilton, D., Hamede, R., Ryan, U., Irwin, P., Jones, M., and Oskam, C.
 </p>
-<span><i class="fa fa-calendar"></i> <em>Accepted</em> | <em>Pathogens</em></span>
+<span><i class="fa fa-calendar"></i> <em>2020</em> | <em>Pathogens</em></span>
 </p>
-<p><a class="btn btn-outline-primary btn-sm" href="" role="button">Open access</a></p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.3390/pathogens9110873" role="button">Open access</a></p>
 </div>
 </article>
 <p><br></p>
@@ -414,6 +426,7 @@ Austen, J., Van Kampen, E., <strong>Egan, S.</strong>, O’Dea, M., Jackson, D.,
 <p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1101/807131" role="button">Preprint - <em>bioRxiv</em></a><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1016/j.ttbdis.2020.101407" role="button">Published article - <em>subscription</em></a><a class="btn btn-outline-primary btn-sm" href="https://doi-org.libproxy.murdoch.edu.au/10.6084/m9.figshare.c.4608803.v1" role="button">FigShare data repo</a></p>
 </div>
 </article>
+<p><img src="images/ttbd_abstract.png" /></p>
 <p><br></p>
 <article>
 <h3>
@@ -456,12 +469,13 @@ Siew-May, L., <strong>Egan, S.</strong>, Gillet, A., Banks, P., Ryan U., Irwin, 
 <p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1016/j.ijppaw.2018.05.005" role="button">Open access</a></p>
 </div>
 </article>
+<hr />
 </div>
 <div id="conference-proceedings" class="section level1">
 <h1>Conference proceedings</h1>
 <article>
 <h3>
-<a href="https://www.researchgate.net/publication/335291253_The_ecology_of_Amblyomma_triguttatum_triguttatum_in_Western_Australia?_sg=06FApWS1HmdNKJ8t3Hrl3YYLNBx9I5wfnW5ONogeGH4MsGUT1j3xMJueCiYd0AiNuALdYnEbDk8qYqjsGVPJwOYRgg6jHAWpq2oWhvC_.cOgynunLwAnRfgpujkyEYNcLNNGhS8VyexKZ81EWEYs7pT9QAMuwMOpj9L61wr_5ZvvxsLlCZfEVGxMnEqBOsQ">The ecology of Amblyomma triguttatum triguttatum in Western Australia</a>
+<a href="https://www.researchgate.net/publication/335291253_The_ecology_of_Amblyomma_triguttatum_triguttatum_in_Western_Australia?_sg=06FApWS1HmdNKJ8t3Hrl3YYLNBx9I5wfnW5ONogeGH4MsGUT1j3xMJueCiYd0AiNuALdYnEbDk8qYqjsGVPJwOYRgg6jHAWpq2oWhvC_.cOgynunLwAnRfgpujkyEYNcLNNGhS8VyexKZ81EWEYs7pT9QAMuwMOpj9L61wr_5ZvvxsLlCZfEVGxMnEqBOsQ">The ecology of <em>Amblyomma triguttatum triguttatum</em> in Western Australia</a>
 </h3>
 <div class="summary">
 <span><i class="fa fa-calendar"></i> <em>2019-07</em></span>
@@ -522,6 +536,7 @@ Combined Biological Sciences Meeting | Perth, Western Australia
 </div>
 </article>
 <p><br></p>
+<hr />
 </div>
 <div id="thesis" class="section level1">
 <h1>Thesis</h1>
@@ -554,7 +569,7 @@ Murdoch University | Perth, Western Australia
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -572,9 +587,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-    $(this).siblings().removeClass("active-dropdown-tab");
-    $(this).addClass("active-dropdown-tab");
+    $(this).parent().toggleClass('nav-tabs-open')
   });
 });
 </script>
