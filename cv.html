@@ -13,18 +13,25 @@
 
 <title>CV</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.7.2/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -38,11 +45,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -55,32 +57,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -90,10 +67,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -110,40 +83,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -171,7 +117,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -183,7 +129,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -194,10 +140,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -209,7 +168,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -287,35 +245,35 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">
-    <span class="fa fa-home"></span>
+    <span class="fas fa-home"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="cv.html">
-    <span class="fa fa-id-card"></span>
+    <span class="fas fa-id-card"></span>
      
     CV
   </a>
 </li>
 <li>
   <a href="publications.html">
-    <span class="fa fa-book"></span>
+    <span class="fas fa-book"></span>
      
     Publications
   </a>
 </li>
 <li>
   <a href="tickID.html">
-    <span class="fa fa-search"></span>
+    <span class="fas fa-search"></span>
      
     Tick ID
   </a>
 </li>
 <li>
   <a href="contact.html">
-    <span class="fa fa-at"></span>
+    <span class="fas fa-at"></span>
      
     Contact
   </a>
@@ -328,7 +286,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -337,21 +295,15 @@ $(document).ready(function () {
 </div>
 
 
-<p><span class="badge badge-primary">October 2020</span></p>
-<p><strong>Research interests:</strong> Taxonomy and biology of ticks (Ixodida), Ecology, One Health, Parasitology, Wildlife Biology, Molecular Biology, Infectious Disease, Bioinformatics, Epidemiology.</p>
+<p><span class="badge badge-primary">April 2021</span></p>
+<p><strong>Research interests:</strong> Microbes, Parasites, Genomics, Bioinformatics, Phylogenetics. Ticks (Ixodida), Infectious disease, Zoonoses, One Health, High-throughput sequencing, Molecular Biology, Epidemiology, Vector-borne disease, Haemoprotozoa</p>
 <div id="education" class="section level1">
 <h1><i class="fas fa-graduation-cap"></i> Education</h1>
-<p><strong>Doctor of Philosophy</strong> <em>Murdoch University</em> <strong>|</strong> 2018-2021</p>
+<p><strong>Doctor of Philosophy</strong> <em>Murdoch University</em> <strong>|</strong> 2018–2021 (tentative submission in June)</p>
 <ul>
 <li>Ecology of ticks and tick-borne diseases in Australia: A One Health approach.</li>
 <li>Supervisors: Dr. Charlotte Oskam, Prof. Peter Irwin, Prof. Una Ryan, and Prof. Peter Banks.</li>
 <li>Use of molecular tools to investigate the epidemiology of tick (and other vector) associated microbes (bacteria and protozoa) present in Australian wildlife.</li>
-</ul>
-<p><strong>Paid Internship</strong> <em>Pawsey Supercomputing Centre/CSIRO</em> <strong>|</strong> Summer 2017-2018</p>
-<ul>
-<li>Meta-analysis of Australian tick microbiomes</li>
-<li>Supercomputing internship program sponsored by Pawsey and CSIRO</li>
-<li>A video of my experiences as an intern available <a href="https://www.youtube.com/watch?v=4kf2OR9lEww&amp;t=1s">here</a></li>
 </ul>
 <p><strong>Bachelor of Science Honours</strong> <em>Murdoch University</em> <strong>|</strong> 2017</p>
 <ul>
@@ -360,42 +312,83 @@ $(document).ready(function () {
 <li>Supervisors: Dr. Charlotte Oskam and Prof. Peter Irwin</li>
 <li>Application of next generation sequencing to characterise the bacterial composition of tick (Acari: Ixodida) and tissues samples</li>
 </ul>
-<p><strong>Bachelor of Science</strong> <em>Murdoch University</em> <strong>|</strong> 2014 - 2016</p>
+<p><strong>Bachelor of Science</strong> <em>Murdoch University</em> <strong>|</strong> 2014–2016</p>
 <ul>
 <li>Double major in Animal Health and Conservation &amp; Wildlife Biology</li>
 <li>Distinction average</li>
 <li>Independent study contract in final semester – Small mammal camera trapping in Dryandra woodlands. Supervised by A/Prof Peter Spencer (Murdoch University) and Mark Cowan (Department of Parks and Wildlife WA).</li>
 </ul>
 </div>
+<div id="employment" class="section level1">
+<h1><i class="fas fa-briefcase"></i> Employment</h1>
+<ul>
+<li>Present–2021 | Postdoctoral research fellow
+<ul>
+<li>Murdoch University, Perth, Australia</li>
+<li><a href="https://www.murdoch.edu.au/research/hfi/our-centres/centre-for-computational-and-systems-medicine">Centre for Computational and Systems Medicine</a> and the <a href="https://www.murdoch.edu.au/research/anpc">Australian National Phenome Centre</a>.</li>
+<li>PI: Prof. Elaine Holmes</li>
+</ul></li>
+<li>2020 | Research assistant (casual)
+<ul>
+<li>Murdoch University and Western Australian Police</li>
+<li>PI: Dr. Shanan Tobe</li>
+</ul></li>
+<li>2020–2017 | Demonstrator (casual)
+<ul>
+<li>Murdoch University, Perth, Australia</li>
+<li>Units: Veterinary Parasitology (VET278), Veterinary Microbiology (VET211), Forensic DNA Analysis (BIO352)</li>
+</ul></li>
+<li>2018 | Research assistant (casual)
+<ul>
+<li>Murdoch University and Department of Primary Industries, Perth, Australia</li>
+<li>PI: Dr. Peter Adams &amp; Dr. Charlotte Oskam</li>
+<li>Dietary analysis of feral pigs using Next Generation Sequencing</li>
+</ul></li>
+<li>2017–2018 | Summer Internship Program
+<ul>
+<li>Pawsey Supercomputing Centre/CSIRO<br />
+</li>
+<li>Meta-analysis of Australian tick microbiomes</li>
+<li>Supercomputing internship program sponsored by Pawsey and CSIRO in conjunction with Murdoch University (PI Dr. Charlotte Oskam)</li>
+<li>A video of my experiences as an intern available <a href="https://www.youtube.com/watch?v=4kf2OR9lEww&amp;t=1s">here</a></li>
+</ul></li>
+</ul>
+</div>
 <div id="grants-awards" class="section level1">
 <h1><i class="fas fa-award"></i> Grants &amp; Awards</h1>
-<p>Holsworth Wildlife Research Endowment awarded October 2020</p>
-<p>Ticks and tick-borne pathogens (TTP10) conference student grant awarded February 2020 (postponed due to COVID-19)</p>
-<p>Concepts in Parasitology course sponsorship (Bayer Australia) awarded November 2019</p>
-<p>Holsworth Wildlife Research Endowment awarded July 2019</p>
-<p>Australian Society for Parasitology Conference Travel Grant awarded July 2019</p>
-<p>Australian Society for Parasitology Conference Travel Grant awarded September 2018</p>
-<p>Holsworth Wildlife Research Endowment awarded June 2018</p>
-<p>Research Training Program (RTP) Scholarship 2018-2021</p>
-<p>Best poster design 2017 at the Combined Biological Sciences Meeting.</p>
-<p>Myrtle AB Lamb Honours Scholarship awarded March 2017</p>
+<ul>
+<li>Sinnecker-Kunz Award for early career researchers (ECRs) presented at the 14th International Symposium on Ticks and Tick-borne Diseases (ISTTBD-XVI), 1st place out of 12 ECRs selected to present, awarded March 2021</li>
+<li>Holsworth Wildlife Research Endowment, awarded October 2020.</li>
+<li>Ticks and tick-borne pathogens (TTP10) conference student grant, awarded February 2020 [<em>postponed due to COVID-19</em>].</li>
+<li>Concepts in Parasitology course sponsorship (Bayer Australia), awarded November 2019.</li>
+<li>Holsworth Wildlife Research Endowment, awarded July 2019.</li>
+<li>Australian Society for Parasitology Conference Travel Grant, awarded July 2019.</li>
+<li>Australian Society for Parasitology Conference Travel Grant, awarded September 2018.</li>
+<li>Holsworth Wildlife Research Endowment, awarded June 2018.</li>
+<li>Research Training Program (RTP) Scholarship for tuition fees and stipend, awarded 2018.</li>
+<li>Best poster design, Combined Biological Sciences Meeting, awarded August 2017.</li>
+<li>Myrtle AB Lamb Honours Scholarship, awarded March 2017.</li>
+</ul>
 </div>
 <div id="publications" class="section level1">
 <h1><i class="far fa-file-alt"></i> Publications</h1>
 <div id="articles" class="section level2">
 <h2>Articles</h2>
-<p>Hall, J., Rose, K., Austen, J., <strong>Egan, S.</strong>, Bilney, R., Kambouris, P., MacGregor, C., Dexter, N. <em>Under review</em>. Baseline health parameters for a newly established population of long-nosed potoroo (<em>Potorous tridactylus</em>) at Booderee National Park, Australia. <em>Journal of Wildlife Diseases</em>.</p>
-<p><strong>Egan, S.</strong>, Ruiz-Aravena, M., Austen, J., Barton, X., Comte, S., Hamilton, D., Hamede, R., Ryan, U., Irwin, P., Jones, M., and Oskam, C. 2020. Blood parasites in endangered wildlife: trypanosomes discovered during a survey of haemoprotozoa from the Tasmanian devil. <em>Pathogens</em>. DOI: <a href="https://doi.org/10.3390/pathogens9110873">10.3390/pathogens9110873</a></p>
-<p>Boulet, C., <strong>Egan, S.</strong>, Jones, L., Jonsdottir, T., Power, M., Ralph, S., Tran, L., and White, M. 2020. Parasitravaganza 2020: Insights into a Virtual Parasitology Conference. <em>Trends in Parasitology</em>. DOI: <a href="https://doi.org/10.1016/j.pt.2020.09.009">10.1016/j.pt.2020.09.009</a></p>
-<p>Austen, J., Van Kampen E., <strong>Egan, S.,</strong>, O’Dea, M., Jackson, B., Ryan, U., Irwin, P., and Prada, D. 2020. First report of <em>Trypanosoma dionisii</em> (Trypanosomatidae) identified in Australia. <em>Parasitology</em>. DOI <a href="https://doi.org/10.1017/S0031182020001845">10.1017/S0031182020001845</a></p>
-<p><strong>Egan, S.</strong>, Taylor, C., Austen, J., Banks, P., Alhstrom, L., Ryan, U., Irwin, P., and Oskam C. 2020. Molecular identification of the <em>Trypanosoma</em> (<em>Herpetosoma</em>) <em>lewisi</em> clade in black rats (<em>Rattus rattus</em>) from Australia. <em>Parasitology Research</em>. DOI <a href="https://doi.org/10.1007/s00436-020-06653-z">10.1007/s00436-020-06653-z</a></p>
-<p><strong>Egan, S.</strong>, Loh, S-M., Banks, P., Gillet, A., Alhstrom, L., Ryan, U., Irwin, P., and Oskam C. 2020. Bacterial community profiling highlights complex diversity and novel organisms in wildlife ticks. <em>Ticks and Tick-Borne Diseases</em> 11(3). DOI <a href="https://doi.org/10.1016/j.ttbdis.2020.101407">10.1016/j.ttbdis.2020.101407</a></p>
-<p>Evans, M., <strong>Egan, S.</strong>, Irwin, P., and Oskam, C. 2019. Automatic Barcode Gap Discovery reveals large COI intraspecific divergence in Australian Ixodidae. <em>Zootaxa</em> 4652(2). DOI <a href="https://doi.org/10.11646/zootaxa.4656.2.13">10.11646/zootaxa.4656.2.13</a></p>
-<p>Irwin, P., <strong>Egan, S.</strong>, Greay, T., and Oskam C. 2018. Bacterial tick-associated infections in Australia: Current studies and future directions. <em>Microbiology Australia</em> 39(4): 200-202. DOI <a href="https://doi.org/10.1071/MA18063">10.1071/MA18063</a></p>
-<p>Loh, S-M., <strong>Egan, S.</strong>, Gillet, A., Banks, P., Ryan U., Irwin, P., and Oskam, C. 2018. Molecular surveillance of piroplasms in ticks from small and medium-sized urban and peri-urban mammals in Australia. <em>International Journal of Parasitology: Parasites and Wildlife</em> 7(2). DOI <a href="https://doi.org/10.1016/j.ijppaw.2018.05.005">10.1016/j.ijppaw.2018.05.005</a></p>
+<p>Braima, K., Zahedi, A., <strong>Egan, S.,</strong>, Austen, J., Xiao, L., Witham, B., Pingault, N., Perera, S., Oskam, C., Reid, S., and Ryan, U. <em>In Press - Accepted April 2021</em>. Molecular analysis of cryptosporidiosis cases in Western Australia in 2019 and 2020 supports the occurrence of two swimming pool associated outbreaks and reveals the emergence of a rare <em>C. hominis</em> IbA12G3 subtype. <em>Infection, Genetics and Evolution</em>.</p>
+<p>Hall, J., Rose, K., Austen, J., <strong>Egan, S.</strong>, Bilney, R., Kambouris, P., MacGregor, C., and Dexter, N. <em>In Press - Accepted Dec 2020</em>. Baseline health parameters for a newly established population of long-nosed potoroo (<em>Potorous tridactylus</em>) at Booderee National Park, Australia. <em>Journal of Wildlife Diseases</em>.</p>
+<p>Braima, K., Zahedi, A., Oskam, C., Austen, J., <strong>Egan, S.</strong>, Reid, S., and Ryan, U. 2021. Zoonotic infection by <em>Cryptosporidium fayeri</em> IVgA10G1T1R1 in a Western Australian human. <em>Zoonoses and Public Health</em>. DOI: <a href="https://doi.org/10.1111/zph.12806">10.1111/zph.12806</a></p>
+<p><strong>Egan, S.</strong>, Ruiz-Aravena, M., Austen, J., Barton, X., Comte, S., Hamilton, D., Hamede, R., Ryan, U., Irwin, P., Jones, M., and Oskam, C. 2020. Blood parasites in endangered wildlife: trypanosomes discovered during a survey of haemoprotozoa from the Tasmanian devil. <em>Pathogens</em>, 9(11), 873. DOI: <a href="https://doi.org/10.3390/pathogens9110873">10.3390/pathogens9110873</a></p>
+<p>Boulet, C., <strong>Egan, S.</strong>, Jones, L., Jonsdottir, T., Power, M., Ralph, S., Tran, L., and White, M. 2020. Parasitravaganza 2020: Insights into a Virtual Parasitology Conference. <em>Trends in Parasitology</em>, 36(11), 867-875. DOI: <a href="https://doi.org/10.1016/j.pt.2020.09.009">10.1016/j.pt.2020.09.009</a></p>
+<p>Austen, J., Van Kampen E., <strong>Egan, S.</strong>, O’Dea, M., Jackson, B., Ryan, U., Irwin, P., and Prada, D. 2020. First report of <em>Trypanosoma dionisii</em> (Trypanosomatidae) identified in Australia. <em>Parasitology</em>, 147(14), 1801-1809. DOI <a href="https://doi.org/10.1017/S0031182020001845">10.1017/S0031182020001845</a></p>
+<p><strong>Egan, S.</strong>, Taylor, C., Austen, J., Banks, P., Alhstrom, L., Ryan, U., Irwin, P., and Oskam C. 2020. Molecular identification of the <em>Trypanosoma</em> (<em>Herpetosoma</em>) <em>lewisi</em> clade in black rats (<em>Rattus rattus</em>) from Australia. <em>Parasitology Research</em>, 119(5), 1691–1696. DOI <a href="https://doi.org/10.1007/s00436-020-06653-z">10.1007/s00436-020-06653-z</a></p>
+<p><strong>Egan, S.</strong>, Loh, S-M., Banks, P., Gillet, A., Alhstrom, L., Ryan, U., Irwin, P., and Oskam C. 2020. Bacterial community profiling highlights complex diversity and novel organisms in wildlife ticks. <em>Ticks and Tick-Borne Diseases</em>, 11(3), 101407. DOI <a href="https://doi.org/10.1016/j.ttbdis.2020.101407">10.1016/j.ttbdis.2020.101407</a></p>
+<p>Evans, M., <strong>Egan, S.</strong>, Irwin, P., and Oskam, C. 2019. Automatic Barcode Gap Discovery reveals large COI intraspecific divergence in Australian Ixodidae. <em>Zootaxa</em> 4652(2), 393–396. DOI <a href="https://doi.org/10.11646/zootaxa.4656.2.13">10.11646/zootaxa.4656.2.13</a></p>
+<p>Irwin, P., <strong>Egan, S.</strong>, Greay, T., and Oskam C. 2018. Bacterial tick-associated infections in Australia: Current studies and future directions. <em>Microbiology Australia</em>, 39(4), 200-202. DOI <a href="https://doi.org/10.1071/MA18063">10.1071/MA18063</a></p>
+<p>Loh, S-M., <strong>Egan, S.</strong>, Gillet, A., Banks, P., Ryan U., Irwin, P., and Oskam, C. 2018. Molecular surveillance of piroplasms in ticks from small and medium-sized urban and peri-urban mammals in Australia. <em>International Journal of Parasitology: Parasites and Wildlife</em> 7(2), 197-203. DOI <a href="https://doi.org/10.1016/j.ijppaw.2018.05.005">10.1016/j.ijppaw.2018.05.005</a></p>
 </div>
 <div id="conference-presentations" class="section level2">
 <h2>Conference presentations</h2>
+<p><strong>Egan, S.</strong>. 2021. What’s in the wildlife? Surveillance of ticks and their associated microbes in Australian wildlife. <em>14th International Symposium on Ticks and Tick-borne Diseases (ISTTBD-XIV)</em>, online, hosted by German Society for Parasitology (DGP). <em>Award winner</em>.</p>
 <p><strong>Egan, S.</strong>, Fontaine, J., Ryan, U., Irwin. P, and Oskam C. (Postponed in 2020, rescheduled to August 2021). Molecular and ecological insights into the ornate kangaroo tick, <em>Amblyomma triguttatum</em>. <em>10th Tick and Tick-borne Pathogen Conference (TTP10)</em>, Romania.</p>
 <p><strong>Egan, S.</strong>, Fontaine, J., Veber, W., Ruthof, K., Ryan, U., Irwin, P., and Oskam, C. 2019. The ecology of Amblyomma triguttatum triguttatum in Western Australia. <em>Australian Society for Parasitology Annual Conference</em>, Adelaide, South Australia.</p>
 <p><strong>Egan, S.</strong>, Evans, M., Irwin, P., and Oskam, C. 2019. Molecular barcoding of Australian hard ticks (Ixodidae). <em>Australian Society for Parasitology Annual Conference</em>, Adelaide, South Australia. DOI <a href="https://doi.org/10.13140/RG.2.2.26208.02565">10.13140/RG.2.2.26208.02565</a></p>
@@ -408,44 +401,39 @@ $(document).ready(function () {
 <p><strong>Egan, S.</strong>, Siew-May, L., Gofton, A., Greay, T., Banks, P., Irwin, P., and Oskam, C. 2017. Are bandicoot ticks a reservoir for novel bacteria? <em>Combined Biological Sciences Meeting</em>, Perth, Western Australia. DOI <a href="https://doi.org/10.13140/RG.2.2.34524.49285">10.13140/RG.2.2.34524.49285</a></p>
 </div>
 </div>
-<div id="employment" class="section level1">
-<h1><i class="fas fa-briefcase"></i> Employment</h1>
-<ul>
-<li>Present - 2017 | Demonstrator (casual)
-<ul>
-<li>Murdoch University, Perth, Australia</li>
-<li>Units: Veterinary Parasitology (VET278), Veterinary Microbiology (VET211), Forensic DNA Analysis (BIO352)</li>
-</ul></li>
-<li>2018 | Research assistant (casual)
-<ul>
-<li>Murdoch University and Department of Primary Industries, Perth, Australia</li>
-<li>Project supervisors: Dr Peter Adams and Dr. Charlotte Oskam</li>
-<li>Dietary analysis of feral pigs using Next Generation Sequencing</li>
-</ul></li>
-</ul>
-</div>
-<div id="service-presentations-misc." class="section level1">
-<h1><i class="fas fa-hands-helping"></i> Service, presentations &amp; misc.</h1>
-<p>Conference Organising Committee <strong>|</strong> July 2020<br />
-Australian Society for Parasitology<br />
-Online Parasitravaganza workshop and conference</p>
+<div id="teaching" class="section level1">
+<h1><i class="fas fa-chalkboard-teacher"></i> Teaching</h1>
+<p>In addition to casual laboratory demonstrating for undergraduate units, I have also coordinated and written material for the following:</p>
+<p>Microbiome and bioinformations <strong>|</strong> 2021<br />
+BIO514 Systems Medicine in Maternal and Early Life (masters course)<br />
+Murdoch University<br />
+Material available at <a href="https://siobhonlegan.com/BIO514-microbiome">tutorial website</a> and <a href="https://github.com/siobhon-egan/BIO514-microbiome">GitHub</a></p>
 <p>Tick Biology and Identification lecture and laboratory <strong>|</strong> 2019 &amp; 2020<br />
 MICR5835 Vectors of Infectious Diseases and Vector Control (masters course)<br />
 The University of Western Australia</p>
-<p>Student Chapter Committee <strong>|</strong> 2018-2019<br />
+</div>
+<div id="service-presentations-misc." class="section level1">
+<h1><i class="fas fa-hands-helping"></i> Service, presentations &amp; misc.</h1>
+<p>What’s in the wildlife? Ticks &amp; microbes <strong>|</strong> March 2021<br />
+Australian Society for Parasitology<br />
+Online seminar series (Parasites &amp; Wildlife)</p>
+<p>Conference Organising Committee <strong>|</strong> July 2020<br />
+Australian Society for Parasitology<br />
+Online Parasitravaganza workshop and conference</p>
+<p>Student Chapter Committee <strong>|</strong> 2018–2019<br />
 Wildlife Disease Association Australiasia</p>
 <p>Murdoch University Open Day <strong>|</strong> July 2019<br />
 Parasitology display</p>
-<p>STEM &amp; Supercomputers - career’s night <strong>|</strong> July 2018<br />
+<p>STEM &amp; Supercomputers – career’s night <strong>|</strong> July 2018<br />
 Pawsey Supercomputing Centre, Perth, Western Australia<br />
 <a href="https://pawsey.org.au/stem-supercomputers-pawseys-first-careers-night/">Event write up</a></p>
 <p>Perth Royal Show <strong>|</strong> September 2017<br />
 Parasitology Life Undercover Display</p>
-<p>Field &amp; Lab Assistant <strong>|</strong> December 2014-July 2016<br />
+<p>Field &amp; Lab Assistant <strong>|</strong> December 2014–July 2016<br />
 Murdoch University, Parasitology Department</p>
-<p>Secretary <strong>|</strong> July 2014-July 2016<br />
+<p>Secretary <strong>|</strong> July 2014–July 2016<br />
 Western Australia Wildlife Rehabilitation Council Inc.</p>
-<p>Animal attendant <strong>|</strong> March 2014-July 2015<br />
+<p>Animal attendant <strong>|</strong> March 2014–July 2015<br />
 Little Paws Rescue</p>
 </div>
 <div id="training-skills" class="section level1">
@@ -453,7 +441,7 @@ Little Paws Rescue</p>
 <p><strong>Short courses</strong></p>
 <p><code>A selection of relevant short courses and workshops</code></p>
 <ul>
-<li>Concepts in Parasitology <strong>|</strong> November-December 2019
+<li>Concepts in Parasitology <strong>|</strong> November–December 2019
 <ul>
 <li>Held at the Australian National University, Canberra &amp; Kioloa, Australia.</li>
 <li>Coordinated by the Australian Society for Parasitology.</li>
@@ -489,7 +477,7 @@ Little Paws Rescue</p>
 </ul>
 <p><strong>Technical skills</strong></p>
 <ul>
-<li>RStudio - intermediate-advanced knowledge</li>
+<li>RStudio – intermediate-advanced knowledge</li>
 <li>Biology and Ecology modeling programs – PRIMER, SOCPROG</li>
 <li>Molecular laboratory techniques – inc. Next Generation Sequencing, Sanger Sequencing, qPCR</li>
 <li>Microscopy techniques</li>
@@ -527,7 +515,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

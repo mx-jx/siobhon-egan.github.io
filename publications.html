@@ -13,18 +13,25 @@
 
 <title>Publications</title>
 
-<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.7.2/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -38,11 +45,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -55,32 +57,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -90,10 +67,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -110,40 +83,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -171,7 +117,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -183,7 +129,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -194,10 +140,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -209,7 +168,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -287,35 +245,35 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">
-    <span class="fa fa-home"></span>
+    <span class="fas fa-home"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="cv.html">
-    <span class="fa fa-id-card"></span>
+    <span class="fas fa-id-card"></span>
      
     CV
   </a>
 </li>
 <li>
   <a href="publications.html">
-    <span class="fa fa-book"></span>
+    <span class="fas fa-book"></span>
      
     Publications
   </a>
 </li>
 <li>
   <a href="tickID.html">
-    <span class="fa fa-search"></span>
+    <span class="fas fa-search"></span>
      
     Tick ID
   </a>
 </li>
 <li>
   <a href="contact.html">
-    <span class="fa fa-at"></span>
+    <span class="fas fa-at"></span>
      
     Contact
   </a>
@@ -328,7 +286,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -337,12 +295,26 @@ $(document).ready(function () {
 </div>
 
 
+<p>To request a copy of any publications, presentations or associated data please <a href="contact.html">email me</a>.</p>
 <center>
 <img src="images/pathogens_cover.png" style="width:30.0%" />
 </center>
 <div id="articles" class="section level1">
 <h1>Articles</h1>
-<p>To request a copy of any of my publications (or associated data) please <a href="contact.html">email me</a>.</p>
+<article>
+<h3>
+<a href="">Molecular analysis of cryptosporidiosis cases in Western Australia in 2019 and 2020 supports the occurrence of two swimming pool associated outbreaks and reveals the emergence of a rare <em>C. hominis</em> IbA12G3 subtype.</a>
+</h3>
+<div class="summary">
+<p>
+Braima, K., Zahedi, A., <strong>Egan, S.,</strong>, Austen, J., Xiao, L., Witham, B., Pingault, N., Perera, S., Oskam, C., Reid, S., and Ryan, U.
+</p>
+<span><i class="fa fa-calendar"></i> <em>Accepted 09/04/2021 - in press</em> | <em>Infection, Genetics and Evolution</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="" role="button"></a></p>
+</div>
+</article>
+<p><br></p>
 <article>
 <h3>
 <a href="">Baseline health parameters for a newly established population of long-nosed potoroo (<em>Potorous tridactylus</em>) at Booderee National Park, Australia.</a>
@@ -351,7 +323,7 @@ $(document).ready(function () {
 <p>
 Hall, J., Rose, K., Austen, J., <strong>Egan, S.</strong>, Bilney, R., Kambouris, P., MacGregor, C., Dexter, N.
 </p>
-<span><i class="fa fa-calendar"></i> <em>Under review</em> | <em>Journal of Wildlife Diseases</em></span>
+<span><i class="fa fa-calendar"></i> <em>Accepted 24/12/2020- in press</em> | <em>Journal of Wildlife Diseases</em></span>
 </p>
 <p><a class="btn btn-outline-primary btn-sm" href="" role="button"></a></p>
 </div>
@@ -359,7 +331,21 @@ Hall, J., Rose, K., Austen, J., <strong>Egan, S.</strong>, Bilney, R., Kambouris
 <p><br></p>
 <article>
 <h3>
-<a href="">Blood parasites in endangered wildlife: trypanosomes discovered during a survey of haemoprotozoa from the Tasmanian devil.</a>
+<a href="https://doi.org/10.1111/zph.12806">Zoonotic infection by <em>Cryptosporidium fayeri</em> IVgA10G1T1R1 in a Western Australian human.</a>
+</h3>
+<div class="summary">
+<p>
+Braima, K., Zahedi, A., Oskam, C., Austen, J., <strong>Egan, S.</strong>, Reid, S., and Ryan, U.
+</p>
+<span><i class="fa fa-calendar"></i> <em>2021</em> | <em>Zoonoses and Public Health</em></span>
+</p>
+<p><a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1111/zph.12806" role="button">Published article - <em>subscription</em></a></p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
+<a href="https://doi.org/10.3390/pathogens9110873">Blood parasites in endangered wildlife: trypanosomes discovered during a survey of haemoprotozoa from the Tasmanian devil.</a>
 </h3>
 <div class="summary">
 <p>
@@ -475,6 +461,18 @@ Siew-May, L., <strong>Egan, S.</strong>, Gillet, A., Banks, P., Ryan U., Irwin, 
 <h1>Conference proceedings</h1>
 <article>
 <h3>
+<a href="">What’s in the wildlife? Surveillance of ticks and their associated microbes in Australian wildlife.</a>
+</h3>
+<div class="summary">
+<span><i class="fa fa-calendar"></i> <em>2021-03</em></span>
+<p>
+14th International Symposium on Ticks and Tick-borne Diseases (ISTTBD-XIV) | Online, hosted by German Society for Parasitology
+</p>
+</div>
+</article>
+<p><br></p>
+<article>
+<h3>
 <a href="https://www.researchgate.net/publication/335291253_The_ecology_of_Amblyomma_triguttatum_triguttatum_in_Western_Australia?_sg=06FApWS1HmdNKJ8t3Hrl3YYLNBx9I5wfnW5ONogeGH4MsGUT1j3xMJueCiYd0AiNuALdYnEbDk8qYqjsGVPJwOYRgg6jHAWpq2oWhvC_.cOgynunLwAnRfgpujkyEYNcLNNGhS8VyexKZ81EWEYs7pT9QAMuwMOpj9L61wr_5ZvvxsLlCZfEVGxMnEqBOsQ">The ecology of <em>Amblyomma triguttatum triguttatum</em> in Western Australia</a>
 </h3>
 <div class="summary">
@@ -587,7 +585,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
