@@ -8,7 +8,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "CV"            
-      href: CV.html           
+      href: cv.html           
     - text: "Publications"
       href: publications.html
     - text: "Tick ID"
