@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Siobhon Egan">
+<meta name="dcterms.date" content="2021-02-13">
+<meta name="description" content="The basics of RMarkdown">
+<title>Siobhon Egan - RMarkdown basics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><link href="../../site_libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet">
+<script src="../../site_libs/font-awesome-5.13.0/js/script.js"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Siobhon Egan - RMarkdown basics">
+<meta name="twitter:description" content="The basics of RMarkdown">
+<meta name="twitter:image" content="https://www.siobhon-egan.github.io/images/profile.png">
+<meta name="twitter:creator" content="@siobhon_egan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="313">
+<meta name="twitter:image-width" content="320">
+</head>
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Siobhon Egan</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html">CV</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../contact.html">Contact</a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../index.html">Blog</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+<div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#math-and-symbols" id="toc-math-and-symbols" class="nav-link active" data-scroll-target="#math-and-symbols">Math and symbols</a></li>
+  <li><a href="#code-chunks-output" id="toc-code-chunks-output" class="nav-link" data-scroll-target="#code-chunks-output">Code chunks &amp; output</a></li>
+  <li>
+<a href="#text-colour" id="toc-text-colour" class="nav-link" data-scroll-target="#text-colour">Text colour</a>
+  <ul class="collapse">
+<li><a href="#for-rmd---pdf-docs" id="toc-for-rmd---pdf-docs" class="nav-link" data-scroll-target="#for-rmd---pdf-docs">For <code>Rmd</code> -&gt; <code>PDF</code> docs</a></li>
+  <li><a href="#for-rmd---html-docs" id="toc-for-rmd---html-docs" class="nav-link" data-scroll-target="#for-rmd---html-docs">For <code>Rmd</code> -&gt; <code>html</code> docs</a></li>
+  </ul>
+</li>
+  <li><a href="#hyperlinks" id="toc-hyperlinks" class="nav-link" data-scroll-target="#hyperlinks">Hyperlinks</a></li>
+  <li>
+<a href="#images-figures-and-videos" id="toc-images-figures-and-videos" class="nav-link" data-scroll-target="#images-figures-and-videos">Images, Figures and videos</a>
+  <ul class="collapse">
+<li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#fun-stuff" id="toc-fun-stuff" class="nav-link" data-scroll-target="#fun-stuff">Fun stuff</a>
+  <ul class="collapse">
+<li><a href="#emojis" id="toc-emojis" class="nav-link" data-scroll-target="#emojis">emojis</a></li>
+  <li><a href="#icons" id="toc-icons" class="nav-link" data-scroll-target="#icons">Icons</a></li>
+  <li><a href="#buttons" id="toc-buttons" class="nav-link" data-scroll-target="#buttons">Buttons</a></li>
+  <li><a href="#diagram" id="toc-diagram" class="nav-link" data-scroll-target="#diagram">Diagram</a></li>
+  </ul>
+</li>
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">Table</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a></li>
+  <li>
+<a href="#headings-and-navigation" id="toc-headings-and-navigation" class="nav-link" data-scroll-target="#headings-and-navigation">Headings and navigation</a>
+  <ul class="collapse">
+<li><a href="#quarterly-results" id="toc-quarterly-results" class="nav-link" data-scroll-target="#quarterly-results">Quarterly Results</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#headings" id="toc-headings" class="nav-link" data-scroll-target="#headings">Headings</a>
+  <ul class="collapse">
+<li><a href="#call-out-note" id="toc-call-out-note" class="nav-link" data-scroll-target="#call-out-note">Call out note</a></li>
+  </ul>
+</li>
+  </ul></nav>
+</nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">RMarkdown basics</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">rstudio</div>
+    <div class="quarto-category">rmarkdown</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>The basics of RMarkdown</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Siobhon Egan </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 13, 2021</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header><p>🔗 <strong>Links</strong></p>
+<ul>
+<li><a href="https://rmarkdown.rstudio.com/authoring_basics.html">RStudio Markdown Basics</a></li>
+<li>
+<a href="https://ourcodingclub.github.io/tutorials/rmarkdown/">tutorial here</a>, <a href="https://ourcodingclub.github.io/tutorials.html">homepage here</a>
+</li>
+<li><a href="https://rmarkdown.rstudio.com/docs/">RMarkdown overview/references</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/markdown-syntax.html">Bookdown - rmarkdown syntax</a></li>
+</ul>
+<p><strong>Italics</strong></p>
+<p>Can be produced by either <code>_text1_</code> or <code>*text1*</code> which will look this <em>text1</em> or <em>text2</em>.</p>
+<p><strong>Bold</strong></p>
+<p>Produced using a pair of double asterisks <code>**text3**</code> or <code>__text4__</code> which will look like this <strong>text3</strong> or <strong>text4</strong>.</p>
+<p><strong>Headers</strong></p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Header 1</span></span>
+<span><span class="co">## Header 2</span></span>
+<span><span class="co">### Header 3</span></span>
+<span><span class="va">etc...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Numbered list</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span>  Item <span class="dv">1</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span>  Item <span class="dv">2</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span>  Item <span class="dv">3</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>   part a</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>   part b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Unnumbered list</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Item <span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Item <span class="dv">2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Item <span class="dv">3</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">+</span> part a</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="sc">+</span> part b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Script</strong></p>
+<p>A pair of tildes (<code>~</code>) turn text to a subscript (e.g., <code>H~3~PO~4~</code> renders H<sub>3</sub>PO<sub>4</sub>). A pair of carets (<code>^</code>) produce a superscript (e.g., <code>Cu^2+^</code> renders Cu<sup>2+</sup>). To get strike through <code>~~strike~~</code> renders to this <del>strike</del></p>
+<p><strong>Images</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](http<span class="sc">:</span><span class="er">//</span>example.com<span class="sc">/</span>logo.png)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[optional caption text](figures<span class="sc">/</span>img.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Hyperlinks</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[linked phrase](http<span class="sc">:</span><span class="er">//</span>example.com)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Horizontal rule</strong></p>
+<p>Three or more asterisks or dashes <code>***</code> or <code>---</code></p>
+<p><strong>Tables</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>First Header  <span class="sc">|</span> Second Header</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-------------</span> <span class="er">|</span> <span class="sc">-------------</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Content Cell  <span class="sc">|</span> Content Cell</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Content Cell  <span class="sc">|</span> Content Cell</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="math-and-symbols" class="level3"><h3 class="anchored" data-anchor-id="math-and-symbols">Math and symbols</h3>
+<p><a href="https://www.calvin.edu/~rpruim/courses/s341/S17/from-class/MathinRmd.html">Math in RMarkdown</a></p>
+<p><code>$x = y $</code> $x = y $ <code>$x &lt; y $</code> $x &lt; y $ <code>$x \le y $</code> $x y $ <code>$x^{n}$</code> <span class="math inline">\(x^{n}\)</span> <code>$\hat{x}$</code> <span class="math inline">\(\hat{x}\)</span> <code>$\tilde{x}$</code> <span class="math inline">\(\tilde{x}\)</span> <code>$\frac{a}{b}$</code> <span class="math inline">\(\frac{a}{b}\)</span> <code>$\mu M$</code> <span class="math inline">\(\mu M\)</span> <code>$\alpha A$</code> <span class="math inline">\(\alpha A\)</span> <code>$\beta B$</code> <span class="math inline">\(\beta B\)</span> <code>$\pi \Pi$</code> <span class="math inline">\(\pi \Pi\)</span> <code>$^\circ C$</code> <span class="math inline">\(^\circ C\)</span></p>
+</section><section id="code-chunks-output" class="level2"><h2 class="anchored" data-anchor-id="code-chunks-output">Code chunks &amp; output</h2>
+<p>Resource link <a href="https://bookdown.org/yihui/rmarkdown-cookbook/hide-one.html">here</a></p>
+</section><section id="text-colour" class="level2"><h2 class="anchored" data-anchor-id="text-colour">Text colour</h2>
+<p>Below are some useful bits of code that you can use to change font. For basic Rmd syntax see official <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.203245073.1802232962.1587452707-209816525.1575608236">Reference Guide</a>.</p>
+<p>It is also handy to have colour guides/convertors at the ready, checkout the my section on colour in <a href="https://siobhon-egan.github.io/bioinfo-phylo/rstudio-aesthetics.html#colour">Plot Aesthetics &amp; Colour</a>.</p>
+<section id="for-rmd---pdf-docs" class="level3"><h3 class="anchored" data-anchor-id="for-rmd---pdf-docs">For <code>Rmd</code> -&gt; <code>PDF</code> docs</h3>
+<p><strong>Font colour</strong></p>
+<p>The quickest option is this <code>\textcolor{olive}{This text is olive}</code>. It will look like this “<span style="color: olive;">This text is olive</span>” in your PDF document.</p>
+<p>If you want a more customisable option you can use the following to first choose your font colour, and then apply it. Define text colour (this won’t appear in your Knitted PDF)</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>\definecolor{fancyTextColor}{HTML}{FF0000}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then use the following syntax to change font colour <code>\colorbox{hightlightColor}{This text is red}</code> It will look like this “<span style="color: red;">This text is red</span>” in your PDF document.</p>
+</section><section id="for-rmd---html-docs" class="level3"><h3 class="anchored" data-anchor-id="for-rmd---html-docs">For <code>Rmd</code> -&gt; <code>html</code> docs</h3>
+<p><strong>Font colour and text</strong></p>
+<p>the following html code</p>
+<p><code>Roses are &lt;span style="color:red; font-family:Georgia; font-size:2em;"&gt;red.&lt;/span&gt;</code></p>
+<p>Will give you this output</p>
+<blockquote class="blockquote">
+<p>Roses are <span style="color:red; font-family:Georgia; font-size:2em;">red.</span></p>
+</blockquote>
+<p><strong>For coloured text blocks.</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span>style<span class="sc">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>div.blue { background<span class="sc">-</span>color<span class="sc">:</span><span class="co">#e6f0ff; border-radius: 5px; padding: 20px;}</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/</span>style<span class="sc">&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span>div class <span class="ot">=</span> <span class="st">"blue"</span><span class="sc">&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> This is my first conclusion</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> This is my second conclusion</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span><span class="er">/</span>div<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span>style<span class="sc">&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>div.blue { background<span class="sc">-</span>color<span class="sc">:</span><span class="co">#e6f0ff; border-radius: 5px; padding: 20px;}</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/</span>style<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="blue">
+<ul>
+<li>This is my first conclusion</li>
+<li>This is my second conclusion</li>
+</ul>
+</div>
+<p><a href="https://community.rstudio.com/t/custom-fonts-in-rmarkdown-pdf/2098">Custom Fonts in R Markdown PDF</a> <a href="https://edpflager.com/?p=4002">Font Formatting - coloring and emphasis</a></p>
+</section></section><section id="hyperlinks" class="level2"><h2 class="anchored" data-anchor-id="hyperlinks">Hyperlinks</h2>
+<p><strong>Underlink links in <code>PDF</code> documents</strong> When you knit a document to PDF the hyperlinks are not underlined or colour, although they still work just fine. If you prefer to have your hyperlinks underlined as the following to the header section</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">header-includes</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> \hypersetup{colorlinks=false,</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">     allbordercolors={0 0 0},</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">     pdfborderstyle={/S/U/W 1}}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Another way is to use the following latex command, however this does not knit well to html. <code>[\underline{R Markdown: The Definitive Guide}](https://bookdown.org/yihui/rmarkdown/)</code> will give the following: <a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></p>
+</section><section id="images-figures-and-videos" class="level2"><h2 class="anchored" data-anchor-id="images-figures-and-videos">Images, Figures and videos</h2>
+<p><a href="http://zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents/">Tips and tricks for working with images and figures in R Markdown documents</a>.</p>
+<p>Simple add for image</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[image caption](path<span class="sc">/</span>to<span class="sc">/</span>image.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="videos" class="level3"><h3 class="anchored" data-anchor-id="videos">Videos</h3>
+<p><strong>Embed video</strong></p>
+<p><code>vebmedr</code> is a package that makes embedding video into Rmarkdown simple.</p>
+<p>Install the package from CRAN: <code>install.packages("vembedr")</code>.</p>
+<p><em>Example</em></p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/vembedr">"vembedr"</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/vembedr/man/embed_url.html">embed_url</a></span><span class="op">(</span><span class="st">"https://www.youtube.com/watch?v=uV4UpCq2azs"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/uV4UpCq2azs" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section></section><section id="fun-stuff" class="level2"><h2 class="anchored" data-anchor-id="fun-stuff">Fun stuff</h2>
+<section id="emojis" class="level3"><h3 class="anchored" data-anchor-id="emojis">emojis</h3>
+<p>You can add emojis into Rmarkdown html docs with the following code: <code>:bowling:</code> which will give you this 🎳 A full list of emoji short cuts available <a href="https://www.webfx.com/tools/emoji-cheat-sheet/">here</a>.</p>
+<p>You could also use unicode formatting - see <a href="https://apps.timwhitlock.info/emoji/tables/unicode">here</a> for more info.</p>
+<p>You can also use emojis in plotting, see <a href="https://cran.r-project.org/web/packages/emojifont/vignettes/emojifont.html">here</a>.</p>
+</section><section id="icons" class="level3"><h3 class="anchored" data-anchor-id="icons">Icons</h3>
+<p>Depending on the type of RMarkdown document you are working with (i.e.&nbsp;what are you “knitting” to), will depend on which code works for you. As always there is more than one way to this.</p>
+<p>To start with the most commonly used icons are from <code>font awesome</code> suite - so <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">head here</a> to pick your (<em>free</em>) icons.</p>
+<p><strong>HTML docs</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span>script src<span class="ot">=</span><span class="st">"https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"</span><span class="sc">&gt;</span><span class="er">&lt;/</span>script<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For HTML docs (including webpages), I have found the following works best <code>&lt;i class="fab fa-r-project"&gt;&lt;/i&gt;</code> this will give you a beautiful RStudio icon <i class="fab fa-r-project"></i>.</p>
+<p>If you want to use <a href="https://ionicons.com/"><code>Ionicons</code></a> then include you will first need to make sure the following line appears within your Rmarkdown doc (don’t worry it wont appear in the knitted product) <code>&lt;script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"&gt;&lt;/script&gt;</code>. Then use the following code to insert your icons, for example this <code>&lt;ion-icon name="bug-outline"&gt;&lt;/ion-icon&gt;</code> produces a lovely bug for you <ion-icon name="bug"></ion-icon>. You can customise the icons, <a href="https://ionicons.com/usage">see here</a>.</p>
+<p>This code <code>&lt;span class="badge badge-info"&gt;Info&lt;/span&gt;</code> will produce this badge <span class="badge badge-info">Info</span> in html document, more details found <a href="https://getbootstrap.com/docs/4.0/components/badge/">here</a></p>
+<p><strong>Webpages (HTML) - nav bar</strong></p>
+<p>You can add icons to the navigation bar on your webpage, just like on this one. In the YAML doc add the following bit of code under the relevant section <code>icon: fa-icon</code> e.g.&nbsp;for the rstudio icon use <code>fa-r-project</code> for this icon <i class="fab fa-r-project"></i></p>
+<p><em>Example</em> - partial YAML doc, for more info on RMarkdown webpages/YAML head to <a href="https://siobhon-egan.github.io/bioinfo-phylo/rmd-webpages.html">RMarkdown Webpages</a> section</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Code"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Home"</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"RStudio"</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> fa-file-alt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>PDF docs</strong></p>
+<p>When knitting to PDF I have found the easiest way using the <a href="https://github.com/ropenscilabs/icon"><code>icon</code> package</a>.</p>
+<p>Install developer version from github: <code>devtools::install_github("ropenscilabs/icon")</code></p>
+<p>Then add the following bit of code in your RMarkdown document.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">icon</span><span class="op">)</span></span>
+<span><span class="fu">icon</span><span class="fu">::</span><span class="fu">fa</span><span class="op">(</span><span class="st">"rocket"</span><span class="op">)</span> <span class="co"># equivalent to icon::fa_rocket()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and you’ll get this 🚀 <i class="fas fa-rocket"></i>. Got some extra tips and trick <a href="https://slides.mitchelloharawild.com/icon/#1">see here</a>.</p>
+<p>Some more info on <code>icon</code> available <a href="https://ropensci.org/technotes/2018/05/15/icon/">here</a> and <a href="https://slides.mitchelloharawild.com/icon/#1">here</a>.</p>
+</section><section id="buttons" class="level3"><h3 class="anchored" data-anchor-id="buttons">Buttons</h3>
+<p>The <a href="https://github.com/fmmattioni/downloadthis"><code>downloadthis</code></a> package is to implement download buttons in HTML outputs from RMarkdown without need for <code>runtime::shiny</code></p>
+<p>Install: <code>install.packages("downloadthis")</code></p>
+<p>Then add the following to your Rmarkdown document - this example will give you a red download button with a link to the <code>downloadthis</code> pdf manual (remember to hide the code so only the output appears using <code>{r echo=FALSE}</code> at the start of your code chunk).</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/downloadthis/man/download_link.html">download_link</a></span><span class="op">(</span></span>
+<span>  link <span class="op">=</span> <span class="st">"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf"</span>,</span>
+<span>  button_label <span class="op">=</span> <span class="st">"Download pdf file"</span>,</span>
+<span>  button_type <span class="op">=</span> <span class="st">"danger"</span>,</span>
+<span>  has_icon <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  icon <span class="op">=</span> <span class="st">"fa fa-save"</span>,</span>
+<span>  self_contained <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<a href="https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf">
+<button class="btn btn-danger"><i class="fa fa-save"></i> Download pdf file</button>
+</a>
+</div>
+</div>
+<p>This code words when knitting to HTML, that opens a link when you click on it</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="sc">&lt;</span>article<span class="sc">&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>h3<span class="sc">&gt;</span><span class="er">&lt;</span>a href<span class="ot">=</span><span class="st">"https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks"</span><span class="sc">&gt;</span>What’s <span class="cf">in</span> a tick? Meta<span class="sc">-</span>analysis of microbial diversity <span class="cf">in</span> Australian ticks<span class="sc">&lt;</span><span class="er">/</span>a<span class="sc">&gt;</span><span class="er">&lt;/</span>h3<span class="sc">&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>div class<span class="ot">=</span><span class="st">"summary"</span><span class="sc">&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>span<span class="sc">&gt;</span><span class="er">&lt;</span>i class<span class="ot">=</span><span class="st">"fa fa-calendar"</span><span class="sc">&gt;</span><span class="er">&lt;/</span>i<span class="sc">&gt;</span> _2018<span class="sc">-</span>08_<span class="sc">&lt;</span><span class="er">/</span>span<span class="sc">&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>p<span class="sc">&gt;</span>Global Microbiome II <span class="dv">2018</span> (West Coast Microbiome Network) <span class="sc">|</span> Perth, Western Australia<span class="sc">&lt;</span><span class="er">/</span>p<span class="sc">&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>a class<span class="ot">=</span><span class="st">"btn btn-outline-primary btn-sm"</span> href<span class="ot">=</span><span class="st">"https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks"</span> role<span class="ot">=</span><span class="st">"button"</span><span class="sc">&gt;</span>Poster<span class="sc">&lt;</span><span class="er">/</span>a<span class="sc">&gt;</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;/</span>div<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="diagram" class="level3"><h3 class="anchored" data-anchor-id="diagram">Diagram</h3>
+<p><a href="https://mikeyharper.uk/flowcharts-in-r-using-diagrammer/">diagrams</a></p>
+</section></section><section id="table" class="level2"><h2 class="anchored" data-anchor-id="table">Table</h2>
+<p>In additional to using basic RMarkdown syntax for tables</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>First Header  <span class="sc">|</span> Second Header</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-------------</span> <span class="er">|</span> <span class="sc">-------------</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>Content Cell  <span class="sc">|</span> Content Cell</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>Content Cell  <span class="sc">|</span> Content Cell</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Which look like this</p>
+<table class="table">
+<thead><tr class="header">
+<th>First Header</th>
+<th>Second Header</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr class="even">
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p>You can use <a href="http://haozhu233.github.io/kableExtra/awesome_table_in_html.html">KableExtra</a></p>
+</section><section id="themes" class="level2"><h2 class="anchored" data-anchor-id="themes">Themes</h2>
+<p><a href="https://www.datadreaming.org/post/r-markdown-theme-gallery/">RMarkdown theme gallery</a></p>
+</section><section id="headings-and-navigation" class="level2"><h2 class="anchored" data-anchor-id="headings-and-navigation">Headings and navigation</h2>
+<p><a href="https://bookdown.org/yihui/rmarkdown/html-document.html">bookdown</a> includes tabbed sections</p>
+<p>This code here will create headings with tabbed sections:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Quarterly Results {.tabset}</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="do">#### By Product</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>Content on tabbed section <span class="dv">1</span> here</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="do">#### By Region</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>Maybe insert a short list here<span class="sc">:</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="er">*</span> item <span class="dv">1</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> item <span class="dv">2</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> item <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It will look like this:</p>
+<section id="quarterly-results" class="level3 tabset"><h3 class="tabset anchored" data-anchor-id="quarterly-results">Quarterly Results</h3>
+<section id="by-product" class="level4"><h4 class="anchored" data-anchor-id="by-product">By Product</h4>
+<p>Content on tabbed section 1 here</p>
+</section><section id="by-region" class="level4"><h4 class="anchored" data-anchor-id="by-region">By Region</h4>
+<p>Maybe insert a short list here:</p>
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+</ul></section></section></section><section id="headings" class="level2"><h2 class="anchored" data-anchor-id="headings">Headings</h2>
+<p>In addition to info in the Rmarkdown page some extra bits.</p>
+<p>Add sections to the book using the following at the start of a RMarkdown page</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># (PART) Section A {-}</span></span>
+<span></span>
+<span><span class="co"># Page 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will section will appear until it recognises another section.</p>
+<section id="call-out-note" class="level3"><h3 class="anchored" data-anchor-id="call-out-note">Call out note</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span>{.callout<span class="sc">-</span>note}</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Note that there are five types of callouts, including<span class="sc">:</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">note</span><span class="st">`</span>, <span class="st">`</span><span class="at">tip</span><span class="st">`</span>, <span class="st">`</span><span class="at">warning</span><span class="st">`</span>, <span class="st">`</span><span class="at">caution</span><span class="st">`</span>, and <span class="st">`</span><span class="at">important</span><span class="st">`</span>.</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Gives this:</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
+</div>
+</div>
+
+
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script><script src="https://utteranc.es/client.js" repo="siobhon-egan/siobhon-egan.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Siobhon Egan</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+<li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+</div>
+  </div>
+</footer>
+
+
+</body></html>

@@ -1,0 +1,14 @@
+{
+  "hash": "22c9be7098e05d88f8b809167c0dec30",
+  "result": {
+    "markdown": "---\ntitle: \"General code\"\ndescription: |\n  Scientific journal articles.\ndate: \"2021-02-13\"\ncategories: [code]\n---\n\n\n\n\n# Code\n\n[Coding starters]{.badge .badge-info}\n\n## Text editors\n\nThe first step in your coding journey is to download yourself a good text editor. While you most systems come with a basic built-in editor (e.g. `TextEdit` for MacOS or `notepad` for windows) its best to find one you like early one.\n\nMy favourite is [atom](https://atom.io/) - which is **FREE**.\n\nOthers include:\n\n-   [Sublime Text](https://www.sublimetext.com/) - **PAID**\n-   [Notepad++](https://notepad-plus-plus.org/)\n-   [TextMate](https://macromates.com/)\n\n## Etherpad\n\nAn etherpad is an excellent tool to use for teaching and workshops. It provides a communal notepad that everyone can access - provide a single link and you can drop in any information, bits of code, webpage links, resources etc in this central place rather than having people rely on copying code correctly from a screen.\n\n-   [etherpad wikimedia](https://etherpad.wikimedia.org/)\n-   [pad carpentries](https://pad.carpentries.org/)\n-   [pad riseup](https://pad.riseup.net/)\n-   [pad carpentries](https://pad.carpentries.org/)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

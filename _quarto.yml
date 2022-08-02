@@ -1,0 +1,48 @@
+project:
+  type: website
+website:
+  title: "Siobhon Egan"
+  site-url: https://www.siobhon-egan.github.io/
+  description: "My academic website"
+  navbar:
+    left:
+      - about.qmd
+      - cv.qmd
+      - publications.qmd
+      - contact.qmd
+    right:
+      - text: Blog
+        href: index.qmd
+      - icon: github
+        href: https://github.com/siobhon-egan/siobhon-egan.github.io
+      - icon: twitter
+        href: https://twitter.com/siobhon_egan
+  page-footer:
+    left: "Copyright 2022, Siobhon Egan"
+    right:
+      - icon: github
+        href: https://github.com/siobhon-egan/siobhon-egan.github.io
+      - icon: twitter
+        href: https://twitter.com/siobhon_egan
+format:
+  html:
+    twitter-card:
+      creator: "@siobhon_egan"
+      image: "images/profile.png"
+      card-style: summary_large_image
+    comments:
+      utterances:
+        repo: siobhon-egan/siobhon-egan.github.io
+    toc: true
+    toc-location: "left"
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    mainfont: "Lato"
+    monofont: "Fira Mono"
+    footnotes-hover: true
+    fontsize: 1em
+    theme: my-litera.scss
+    css: styles.css
+

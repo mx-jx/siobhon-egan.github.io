@@ -1,0 +1,30 @@
+---
+title: "Metabolomics"
+description: |
+  A quick overview on metabolomic resources
+author: "Siobhon Egan"
+date: "2022-07-13"
+categories:
+  - metabolomics
+  - rstudio
+---
+
+::: {.callout-note icon=false, collapse=true}
+Until I expand on this section I will keep list of links and resources relating to NMR and MS on the one page.
+:::
+
+:link: **General resources**
+
+-   [xcms](https://github.com/sneumann/xcms) R package. Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data. Imports from AIA/ANDI NetCDF, mzXML, mzData and mzML files. Preprocesses data for high-throughput, untargeted analyte profiling. [Vignette](https://bioconductor.org/packages/release/bioc/vignettes/xcms/inst/doc/xcms-lcms-ms.html)
+-   [MSnbase](http://lgatto.github.io/MSnbase/) - an R/Bioconductor package that provides infrastructure for plotting, manipulation and processing mass spectrometry and proteomics data.
+-   [Mummichog](https://shuzhao-li.github.io/mummichog.org/index.html) Mummichog is a free Python program for analyzing data from high throughput, untargeted metabolomics. It leverages the organization of metabolic networks to predict functional activity directly from feature tables, bypassing metabolite identification. Thus, high-quality hypotheses can be quickly generated from a LC-MS data table.
+-   [Workflow4metabolomics](workflow4metabolomics.org) - Collaborative portal dedicated to metabolomics data processing, analysis and annotation for Metabolomics community.
+-   [List of metabolomics resources by biswapriyamisra/metabolomics](https://github.com/biswapriyamisra/metabolomics)
+-   [Introduction to AlpsNMR](https://bioconductor.org/packages/release/bioc/vignettes/AlpsNMR/inst/doc/introduction-to-alpsnmr.html)
+-   [ChemmineR](https://bioconductor.org/packages/release/bioc/vignettes/ChemmineR/inst/doc/ChemmineR.html)
+-   [MWAS Tools](https://bioconductor.org/packages/release/bioc/vignettes/MWASTools/inst/doc/MWASTools.html)
+-   [ASICS](https://bioconductor.org/packages/release/bioc/vignettes/ASICS/inst/doc/ASICSUsersGuide.html)
+-   [customCMPdb: Integrating Community and Custom Compound Collections](https://bioconductor.org/packages/release/bioc/vignettes/customCMPdb/inst/doc/customCMPdb.html) [PepsNMR](https://bioconductor.org/packages/release/bioc/html/PepsNMR.html)
+-   [HMBD Query](https://bioconductor.org/packages/release/bioc/html/hmdbQuery.html)
+-   [CompoundDB](https://bioconductor.org/packages/release/bioc/vignettes/CompoundDb/inst/doc/create-compounddb.html) - new version of package [here](https://rformassspectrometry.github.io/CompoundDb/index.html)
+-   [ChemoSpec](https://bryanhanson.github.io/ChemoSpec/articles/ChemoSpec.html)

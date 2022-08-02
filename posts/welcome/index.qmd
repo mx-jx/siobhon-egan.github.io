@@ -1,0 +1,23 @@
+---
+title: "New Quarto blog"
+author: "Siobhon Egan"
+date: "2022-07-23"
+categories: [news, quarto]
+---
+
+After a year of crickets, I have re-invigorated my academic website.
+
+Making use of the newly announced [quarto](https://quarto.org/docs/websites/website-blog.html) language, I am building this website to merge my separate [research site](https://siobhonlegan.com/research_site/) and consolidate my research related content on the web!
+
+I have now structured the separate webpages on my [research site](https://siobhonlegan.com/research_site/) as blog posts.
+
+You can use the *Categories* option on the right-hand to see related posts.
+
+:link: Some helpful links on quarto here:
+
+- [quarto gallery](https://quarto.org/docs/gallery/)
+- [yihui - blog post on quarto to RMarkdown](https://yihui.org/en/2022/04/quarto-r-markdown/)
+- [Beatriz Milz Creating a blog in quarto and host with Netlify](https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/index.html)
+- [Drew Dimmery - Quarto for an Academic Website](https://ddimmery.com/posts/quarto-website/)
+- [Alison Hill - We don't talk about Quarto](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
+- [RStudio announcement](https://www.rstudio.com/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system/)

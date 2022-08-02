@@ -1,848 +1,1603 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <style type="text/css">body {font-family: 'Roboto Slab', serif;}</style>
-
-    <title>Siobhon Egan</title>
-
-    
-          <!--radix_placeholder_navigation_in_header-->
-          <meta name="distill:offset" content=""/>
-
-          <script type="application/javascript">
-
-            window.headroom_prevent_pin = false;
-
-            window.document.addEventListener("DOMContentLoaded", function (event) {
-
-              // initialize headroom for banner
-              var header = $('header').get(0);
-              var headerHeight = header.offsetHeight;
-              var headroom = new Headroom(header, {
-                tolerance: 5,
-                onPin : function() {
-                  if (window.headroom_prevent_pin) {
-                    window.headroom_prevent_pin = false;
-                    headroom.unpin();
-                  }
-                }
-              });
-              headroom.init();
-              if(window.location.hash)
-                headroom.unpin();
-              $(header).addClass('headroom--transition');
-
-              // offset scroll location for banner on hash change
-              // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-              window.addEventListener("hashchange", function(event) {
-                window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-              });
-
-              // responsive menu
-              $('.distill-site-header').each(function(i, val) {
-                var topnav = $(this);
-                var toggle = topnav.find('.nav-toggle');
-                toggle.on('click', function() {
-                  topnav.toggleClass('responsive');
-                });
-              });
-
-              // nav dropdowns
-              $('.nav-dropbtn').click(function(e) {
-                $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-                $(this).parent().siblings('.nav-dropdown')
-                   .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-              });
-              $("body").click(function(e){
-                $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-              });
-              $(".nav-dropdown").click(function(e){
-                e.stopPropagation();
-              });
-            });
-          </script>
-
-          <style type="text/css">
-
-          /* Theme (user-documented overrideables for nav appearance) */
-
-          .distill-site-nav {
-            color: rgba(255, 255, 255, 0.8);
-            background-color: #0F2E3D;
-            font-size: 15px;
-            font-weight: 300;
-          }
-
-          .distill-site-nav a {
-            color: inherit;
-            text-decoration: none;
-          }
-
-          .distill-site-nav a:hover {
-            color: white;
-          }
-
-          @media print {
-            .distill-site-nav {
-              display: none;
-            }
-          }
-
-          .distill-site-header {
-
-          }
-
-          .distill-site-footer {
-
-          }
-
-
-          /* Site Header */
-
-          .distill-site-header {
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 3;
-          }
-
-          .distill-site-header .nav-left {
-            display: inline-block;
-            margin-left: 8px;
-          }
-
-          @media screen and (max-width: 768px) {
-            .distill-site-header .nav-left {
-              margin-left: 0;
-            }
-          }
-
-
-          .distill-site-header .nav-right {
-            float: right;
-            margin-right: 8px;
-          }
-
-          .distill-site-header a,
-          .distill-site-header .title {
-            display: inline-block;
-            text-align: center;
-            padding: 14px 10px 14px 10px;
-          }
-
-          .distill-site-header .title {
-            font-size: 18px;
-            min-width: 150px;
-          }
-
-          .distill-site-header .logo {
-            padding: 0;
-          }
-
-          .distill-site-header .logo img {
-            display: none;
-            max-height: 20px;
-            width: auto;
-            margin-bottom: -4px;
-          }
-
-          .distill-site-header .nav-image img {
-            max-height: 18px;
-            width: auto;
-            display: inline-block;
-            margin-bottom: -3px;
-          }
-
-
-
-          @media screen and (min-width: 1000px) {
-            .distill-site-header .logo img {
-              display: inline-block;
-            }
-            .distill-site-header .nav-left {
-              margin-left: 20px;
-            }
-            .distill-site-header .nav-right {
-              margin-right: 20px;
-            }
-            .distill-site-header .title {
-              padding-left: 12px;
-            }
-          }
-
-
-          .distill-site-header .nav-toggle {
-            display: none;
-          }
-
-          .nav-dropdown {
-            display: inline-block;
-            position: relative;
-          }
-
-          .nav-dropdown .nav-dropbtn {
-            border: none;
-            outline: none;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 16px 10px;
-            background-color: transparent;
-            font-family: inherit;
-            font-size: inherit;
-            font-weight: inherit;
-            margin: 0;
-            margin-top: 1px;
-            z-index: 2;
-          }
-
-          .nav-dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            border: 1px solid rgba(0,0,0,0.15);
-            border-radius: 4px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-            z-index: 1;
-            margin-top: 2px;
-            white-space: nowrap;
-            padding-top: 4px;
-            padding-bottom: 4px;
-          }
-
-          .nav-dropdown-content hr {
-            margin-top: 4px;
-            margin-bottom: 4px;
-            border: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-          }
-
-          .nav-dropdown-active {
-            display: block;
-          }
-
-          .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-            color: black;
-            padding: 6px 24px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-          }
-
-          .nav-dropdown-content .nav-dropdown-header {
-            display: block;
-            padding: 5px 24px;
-            padding-bottom: 0;
-            text-transform: uppercase;
-            font-size: 14px;
-            color: #999999;
-            white-space: nowrap;
-          }
-
-          .nav-dropdown:hover .nav-dropbtn {
-            color: white;
-          }
-
-          .nav-dropdown-content a:hover {
-            background-color: #ddd;
-            color: black;
-          }
-
-          .nav-right .nav-dropdown-content {
-            margin-left: -45%;
-            right: 0;
-          }
-
-          @media screen and (max-width: 768px) {
-            .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-            .distill-site-header a.nav-toggle {
-              float: right;
-              display: block;
-            }
-            .distill-site-header .title {
-              margin-left: 0;
-            }
-            .distill-site-header .nav-right {
-              margin-right: 0;
-            }
-            .distill-site-header {
-              overflow: hidden;
-            }
-            .nav-right .nav-dropdown-content {
-              margin-left: 0;
-            }
-          }
-
-
-          @media screen and (max-width: 768px) {
-            .distill-site-header.responsive {position: relative; min-height: 500px; }
-            .distill-site-header.responsive a.nav-toggle {
-              position: absolute;
-              right: 0;
-              top: 0;
-            }
-            .distill-site-header.responsive a,
-            .distill-site-header.responsive .nav-dropdown {
-              display: block;
-              text-align: left;
-            }
-            .distill-site-header.responsive .nav-left,
-            .distill-site-header.responsive .nav-right {
-              width: 100%;
-            }
-            .distill-site-header.responsive .nav-dropdown {float: none;}
-            .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-            .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-              display: block;
-              width: 100%;
-              text-align: left;
-            }
-          }
-
-          /* Site Footer */
-
-          .distill-site-footer {
-            width: 100%;
-            overflow: hidden;
-            box-sizing: border-box;
-            z-index: 3;
-            margin-top: 30px;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            text-align: center;
-          }
-
-          /* Headroom */
-
-          d-title {
-            padding-top: 6rem;
-          }
-
-          @media print {
-            d-title {
-              padding-top: 4rem;
-            }
-          }
-
-          .headroom {
-            z-index: 1000;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-          }
-
-          .headroom--transition {
-            transition: all .4s ease-in-out;
-          }
-
-          .headroom--unpinned {
-            top: -100px;
-          }
-
-          .headroom--pinned {
-            top: 0;
-          }
-
-          /* adjust viewport for navbar height */
-          /* helps vertically center bootstrap (non-distill) content */
-          .min-vh-100 {
-            min-height: calc(100vh - 100px) !important;
-          }
-
-          </style>
-
-          <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-          <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-          <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-          <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-          <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-          <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-          <script type="application/javascript">
-
-          function getMeta(metaName) {
-            var metas = document.getElementsByTagName('meta');
-            for (let i = 0; i < metas.length; i++) {
-              if (metas[i].getAttribute('name') === metaName) {
-                return metas[i].getAttribute('content');
-              }
-            }
-            return '';
-          }
-
-          function offsetURL(url) {
-            var offset = getMeta('distill:offset');
-            return offset ? offset + '/' + url : url;
-          }
-
-          function createFuseIndex() {
-
-            // create fuse index
-            var options = {
-              keys: [
-                { name: 'title', weight: 20 },
-                { name: 'categories', weight: 15 },
-                { name: 'description', weight: 10 },
-                { name: 'contents', weight: 5 },
-              ],
-              ignoreLocation: true,
-              threshold: 0
-            };
-            var fuse = new window.Fuse([], options);
-
-            // fetch the main search.json
-            return fetch(offsetURL('search.json'))
-              .then(function(response) {
-                if (response.status == 200) {
-                  return response.json().then(function(json) {
-                    // index main articles
-                    json.articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                    // download collections and index their articles
-                    return Promise.all(json.collections.map(function(collection) {
-                      return fetch(offsetURL(collection)).then(function(response) {
-                        if (response.status === 200) {
-                          return response.json().then(function(articles) {
-                            articles.forEach(function(article) {
-                              fuse.add(article);
-                            });
-                          })
-                        } else {
-                          return Promise.reject(
-                            new Error('Unexpected status from search index request: ' +
-                                      response.status)
-                          );
-                        }
-                      });
-                    })).then(function() {
-                      return fuse;
-                    });
-                  });
-
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                                response.status)
-                  );
-                }
-              });
-          }
-
-          window.document.addEventListener("DOMContentLoaded", function (event) {
-
-            // get search element (bail if we don't have one)
-            var searchEl = window.document.getElementById('distill-search');
-            if (!searchEl)
-              return;
-
-            createFuseIndex()
-              .then(function(fuse) {
-
-                // make search box visible
-                searchEl.classList.remove('hidden');
-
-                // initialize autocomplete
-                var options = {
-                  autoselect: true,
-                  hint: false,
-                  minLength: 2,
-                };
-                window.autocomplete(searchEl, options, [{
-                  source: function(query, callback) {
-                    const searchOptions = {
-                      isCaseSensitive: false,
-                      shouldSort: true,
-                      minMatchCharLength: 2,
-                      limit: 10,
-                    };
-                    var results = fuse.search(query, searchOptions);
-                    callback(results
-                      .map(function(result) { return result.item; })
-                    );
-                  },
-                  templates: {
-                    suggestion: function(suggestion) {
-                      var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                        ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                        : '';
-                      var html = `
-                        <div class="search-item">
-                          <h3>${suggestion.title}</h3>
-                          <div class="search-item-description">
-                            ${suggestion.description || ''}
-                          </div>
-                          <div class="search-item-preview">
-                            ${img}
-                          </div>
-                        </div>
-                      `;
-                      return html;
-                    }
-                  }
-                }]).on('autocomplete:selected', function(event, suggestion) {
-                  window.location.href = offsetURL(suggestion.path);
-                });
-                // remove inline display style on autocompleter (we want to
-                // manage responsive display via css)
-                $('.algolia-autocomplete').css("display", "");
-              })
-              .catch(function(error) {
-                console.log(error);
-              });
-
-          });
-
-          </script>
-
-          <style type="text/css">
-
-          .nav-search {
-            font-size: x-small;
-          }
-
-          /* Algolioa Autocomplete */
-
-          .algolia-autocomplete {
-            display: inline-block;
-            margin-left: 10px;
-            vertical-align: sub;
-            background-color: white;
-            color: black;
-            padding: 6px;
-            padding-top: 8px;
-            padding-bottom: 0;
-            border-radius: 6px;
-            border: 1px #0F2E3D solid;
-            width: 180px;
-          }
-
-
-          @media screen and (max-width: 768px) {
-            .distill-site-nav .algolia-autocomplete {
-              display: none;
-              visibility: hidden;
-            }
-            .distill-site-nav.responsive .algolia-autocomplete {
-              display: inline-block;
-              visibility: visible;
-            }
-            .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-              margin-left: 0;
-              width: 400px;
-              max-height: 400px;
-            }
-          }
-
-          .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-            width: 90%;
-            outline: none;
-            border: none;
-          }
-
-          .algolia-autocomplete .aa-hint {
-            color: #999;
-          }
-          .algolia-autocomplete .aa-dropdown-menu {
-            width: 550px;
-            max-height: 70vh;
-            overflow-x: visible;
-            overflow-y: scroll;
-            padding: 5px;
-            margin-top: 3px;
-            margin-left: -150px;
-            background-color: #fff;
-            border-radius: 5px;
-            border: 1px solid #999;
-            border-top: none;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-            cursor: pointer;
-            padding: 5px 4px;
-            border-bottom: 1px solid #eee;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-            border-bottom: none;
-            margin-bottom: 2px;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-            overflow: hidden;
-            font-size: 0.8em;
-            line-height: 1.4em;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-            font-size: 1rem;
-            margin-block-start: 0;
-            margin-block-end: 5px;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-            display: inline-block;
-            overflow: hidden;
-            height: 2.8em;
-            width: 80%;
-            margin-right: 4%;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-            display: inline-block;
-            width: 15%;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-            height: 3em;
-            width: auto;
-            display: none;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-            display: initial;
-          }
-
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-            background-color: #eee;
-          }
-          .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-            font-weight: bold;
-            font-style: normal;
-          }
-
-          </style>
-
-
-          <!--/radix_placeholder_navigation_in_header-->
-          <!--radix_placeholder_site_in_header-->
-          <!--/radix_placeholder_site_in_header-->
-          
-          <style type="text/css">
-          body {
-            padding-top: 60px;
-          }
-          </style>
-          <script src="/Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmd/h/pandoc/header-attrs.js"></script>
-    
-    
-  </head>
-  <body>
-
-          <!--radix_placeholder_navigation_before_body-->
-          <header class="header header--fixed" role="banner">
-          <nav class="distill-site-nav distill-site-header">
-          <div class="nav-left">
-          <a href="index.html" class="title">Siobhon Egan</a>
-          </div>
-          <div class="nav-right">
-          <a href="index.html">Home</a>
-          <a href="cv.html">CV</a>
-          <a href="publications.html">Publications</a>
-          <a href="tickID.html">Tick ID</a>
-          <a href="contact.html">Contact</a>
-          <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-          </div>
-          </nav>
-          </header>
-          <!--/radix_placeholder_navigation_before_body-->
-          <!--radix_placeholder_site_before_body-->
-          <!--/radix_placeholder_site_before_body-->
-    
-    <div class="container-fluid d-none d-lg-block d-xl-block">
-      <div class="d-flex row flex-row vh-100">
-        <div class="d-flex flex-column col-5 align-items-center text-center align-self-center">
-          <div class="mx-auto text-center">
-            <div class="p-3">
-              <img src=images/profile2.png style="height:15rem" class="rounded">
-            </div>
-            <div class="p-2">
-              <h1>Siobhon Egan</h1>
-            </div>
-            <hr style="width:60%;"/>
-            <div class="p-2">
-              <div id="icon-list">
-                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                    <a href=https://github.com/siobhon-egan>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        GitHub
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
-                    <a href=https://orcid.org/0000-0003-4395-4069>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        ORCID
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
-                    <a href=mailto:siobhon.egan@murdoch.edu.au>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        Email
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
-                    <a href=https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        Google scholar
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
-                    <a href=https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        Scopus
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
-                    <a href=https://www.researchgate.net/profile/Siobhon_Egan>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        Research Gate
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
-                    <a href=https://linkedin.com/>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        LinkedIn
-                      </button>
-                    </a>
-                  </li>
-                                    <li class="list-inline-item">
-                    <a href=https://twitter.com/siobhon_egan>
-                      <button type="button" class="btn btn-outline-dark mb-2">
-                        Twitter
-                      </button>
-                    </a>
-                  </li>
-                                  </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex flex-column vh-100 border-left"></div>
-        <div class="d-flex flex-column col px-5 align-items-center align-self-center mh-100" style="overflow-y: scroll;">
-          <div class="my-5" id="content">
-            <div id="welcome" class="section level2">
-            <h2>Welcome!</h2>
-            <p>I am a research fellow at Murdoch University based at the <a href="https://www.murdoch.edu.au/research/hfi/our-centres/centre-for-computational-and-systems-medicine">Centre for Computational and Systems Medicine</a> and the <a href="https://www.murdoch.edu.au/research/anpc">Australian National Phenome Centre</a>. I begun working under the direction of <a href="https://www.researchgate.net/profile/Elaine-Holmes">Prof. Elaine Holmes</a>, Centre Director Computational and Systems Medicine, in March 2021. Prof. Holmes was awarded an Australian Laureate Fellowship (FL200100220) titled <a href="https://www.arc.gov.au/news-publications/media/funding-announcement-kits/australian-laureate-fellowships-2020/2020-laureate-profile-professor-elaine-holmes"><em>Understanding host-microbiome signalling axes in ageing</em></a>. The project aims to deepen the understanding of host-microbiome signalling in ageing by: (i) bringing together next generation sequencing technologies to characterise age-associated change in gut bacterial composition, (ii) metabolic profiling to identify changes in functionality of the ageing microbiome, and (iii) a combination of in vitro and in vivo screening approaches to establish molecular mechanisms. The new knowledge will facilitate development of improved models of health care.</p>
-            <p>I was fortunate to secure a post-doctoral research position during my PhD candidature, and as such I am currently in the final stages of my PhD thesis.<br />
-            My project was part of an ARC linkage grant (LP160100200) titled <em>Tiresome ticks: Ecology and transmission of tick-borne disease in Australia</em>. This project was led by the <a href="http://www.murdoch.edu.au/Research-capabilities/Vector-and-Waterborne-Pathogens-Group/Meet-the-Team/">Vector and Waterborne Pathogens Research Group</a> at Murdoch University and aimed to identify and characterise the microbial biodiversity in ticks and wildlife reservoir hosts, providing important insights into potential causative agent(s) of zoonotic tick-borne pathogens.<br />
-            I completed a Bachelor of Science in Animal Health and Wildlife &amp; Conservation Biology with first class honours in Molecular Biology.</p>
-            <p>During my undergraduate studies (2014–2016), I developed a strong passion for wildlife health which evolved into my fascination with the interconnection of the health of the environment, animals and people. I spent time volunteering on a number of projects, and was heavily involved as a volunteer field and lab assistant into the woylie decline as part of <a href="https://www.researchgate.net/profile/Amy_Northover">Dr. Amy Northover’s</a> PhD. My interests expand to other areas of wildlife conservation, including the completion of an independent project on camera trapping of small mammals in Dryandra woodlands under the supervision of <a href="http://profiles.murdoch.edu.au/myprofile/peter-spencer/">A/Prof Peter Spencer</a> (Murdoch University) and <a href="https://www.researchgate.net/profile/Mark_Cowan5">Mark Cowan</a> (Parks and Wildlife, Western Australia).</p>
-            <p>My honours in Molecular Biology (2017) was titled ‘Profiling the bacterial microbiome of ticks that parasitise bandicoots in Australia’, under the supervision of <a href="http://profiles.murdoch.edu.au/myprofile/charlotte-oskam/">Dr. Charlotte Oksam</a> and <a href="http://profiles.murdoch.edu.au/myprofile/peter-irwin/">Prof. Peter Irwin,</a> and is available for download <a href="http://researchrepository.murdoch.edu.au/id/eprint/40003/">here</a>. During my project I identified a number of recently described and novel candidate tick-borne pathogens in ticks parasitsing bandicoots (Order: Peramelemorphia).</p>
-            <p>With no time to rest, I undertook a paid summer internship with <a href="https://www.pawsey.org.au/">Pawsey Supercomputing Centre</a> in November 2017, diving into all things coding and bioinformatics.</p>
-            <div style="float:left;">
-            <p><img src="images/am_triguttatum_SEa.png" /></p>
-            </div>
-            <p>I started my PhD in 2018, as a continuation of the number of questions that arose from my honours project. Under the supervision of Dr. Charlotte Oksam, Prof. Peter Irwin, <a href="http://profiles.murdoch.edu.au/myprofile/una-ryan/">Prof. Una Ryan</a> and <a href="http://sydney.edu.au/science/people/peter.banks.php">Prof. Peter Banks</a> (University of Sydney). My project is titled <em>Ecology of ticks and microbes in Australia</em>. I hope to uncover patterns in the life cycle of ticks and their related microbes in Australian wildlife and investigate the overlap with cases of human tick-borne illnesses.</p>
-            <p><img src="images/IMG_9093.JPG" width="500" /></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-flex min-vh-100 d-block d-lg-none d-xl-none">
-      <div class="d-flex flex-row justify-content-center">
-        <div class="d-flex flex-col">
-          <div class="mx-auto">
-            <div class="p-3 mt-3 text-center">
-              <img src=images/profile2.png style="height:15rem" class="rounded">
-            </div>
-            <div class="p-2 text-center">
-              <h1>Siobhon Egan</h1>
-            </div>
-            <hr style="width:60%;"/>
-
-            <div class="row justify-content-center align-items-center">
-              <div class="col-8 p-1 text-center">
-                <div class="list-group">
-                                    <a href=https://github.com/siobhon-egan>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      GitHub
-                    </button>
-                  </a>
-                                    <a href=https://orcid.org/0000-0003-4395-4069>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      ORCID
-                    </button>
-                  </a>
-                                    <a href=mailto:siobhon.egan@murdoch.edu.au>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      Email
-                    </button>
-                  </a>
-                                    <a href=https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      Google scholar
-                    </button>
-                  </a>
-                                    <a href=https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      Scopus
-                    </button>
-                  </a>
-                                    <a href=https://www.researchgate.net/profile/Siobhon_Egan>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      Research Gate
-                    </button>
-                  </a>
-                                    <a href=https://linkedin.com/>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      LinkedIn
-                    </button>
-                  </a>
-                                    <a href=https://twitter.com/siobhon_egan>
-                    <button type="button" class="list-group-item list-group-item-action my-1 rounded">
-                      Twitter
-                    </button>
-                  </a>
-                                  </div>
-              </div>
-            </div>
-            <div class="p pt-4 px-5">
-              <div id="welcome" class="section level2">
-              <h2>Welcome!</h2>
-              <p>I am a research fellow at Murdoch University based at the <a href="https://www.murdoch.edu.au/research/hfi/our-centres/centre-for-computational-and-systems-medicine">Centre for Computational and Systems Medicine</a> and the <a href="https://www.murdoch.edu.au/research/anpc">Australian National Phenome Centre</a>. I begun working under the direction of <a href="https://www.researchgate.net/profile/Elaine-Holmes">Prof. Elaine Holmes</a>, Centre Director Computational and Systems Medicine, in March 2021. Prof. Holmes was awarded an Australian Laureate Fellowship (FL200100220) titled <a href="https://www.arc.gov.au/news-publications/media/funding-announcement-kits/australian-laureate-fellowships-2020/2020-laureate-profile-professor-elaine-holmes"><em>Understanding host-microbiome signalling axes in ageing</em></a>. The project aims to deepen the understanding of host-microbiome signalling in ageing by: (i) bringing together next generation sequencing technologies to characterise age-associated change in gut bacterial composition, (ii) metabolic profiling to identify changes in functionality of the ageing microbiome, and (iii) a combination of in vitro and in vivo screening approaches to establish molecular mechanisms. The new knowledge will facilitate development of improved models of health care.</p>
-              <p>I was fortunate to secure a post-doctoral research position during my PhD candidature, and as such I am currently in the final stages of my PhD thesis.<br />
-              My project was part of an ARC linkage grant (LP160100200) titled <em>Tiresome ticks: Ecology and transmission of tick-borne disease in Australia</em>. This project was led by the <a href="http://www.murdoch.edu.au/Research-capabilities/Vector-and-Waterborne-Pathogens-Group/Meet-the-Team/">Vector and Waterborne Pathogens Research Group</a> at Murdoch University and aimed to identify and characterise the microbial biodiversity in ticks and wildlife reservoir hosts, providing important insights into potential causative agent(s) of zoonotic tick-borne pathogens.<br />
-              I completed a Bachelor of Science in Animal Health and Wildlife &amp; Conservation Biology with first class honours in Molecular Biology.</p>
-              <p>During my undergraduate studies (2014–2016), I developed a strong passion for wildlife health which evolved into my fascination with the interconnection of the health of the environment, animals and people. I spent time volunteering on a number of projects, and was heavily involved as a volunteer field and lab assistant into the woylie decline as part of <a href="https://www.researchgate.net/profile/Amy_Northover">Dr. Amy Northover’s</a> PhD. My interests expand to other areas of wildlife conservation, including the completion of an independent project on camera trapping of small mammals in Dryandra woodlands under the supervision of <a href="http://profiles.murdoch.edu.au/myprofile/peter-spencer/">A/Prof Peter Spencer</a> (Murdoch University) and <a href="https://www.researchgate.net/profile/Mark_Cowan5">Mark Cowan</a> (Parks and Wildlife, Western Australia).</p>
-              <p>My honours in Molecular Biology (2017) was titled ‘Profiling the bacterial microbiome of ticks that parasitise bandicoots in Australia’, under the supervision of <a href="http://profiles.murdoch.edu.au/myprofile/charlotte-oskam/">Dr. Charlotte Oksam</a> and <a href="http://profiles.murdoch.edu.au/myprofile/peter-irwin/">Prof. Peter Irwin,</a> and is available for download <a href="http://researchrepository.murdoch.edu.au/id/eprint/40003/">here</a>. During my project I identified a number of recently described and novel candidate tick-borne pathogens in ticks parasitsing bandicoots (Order: Peramelemorphia).</p>
-              <p>With no time to rest, I undertook a paid summer internship with <a href="https://www.pawsey.org.au/">Pawsey Supercomputing Centre</a> in November 2017, diving into all things coding and bioinformatics.</p>
-              <div style="float:left;">
-              <p><img src="images/am_triguttatum_SEa.png" /></p>
-              </div>
-              <p>I started my PhD in 2018, as a continuation of the number of questions that arose from my honours project. Under the supervision of Dr. Charlotte Oksam, Prof. Peter Irwin, <a href="http://profiles.murdoch.edu.au/myprofile/una-ryan/">Prof. Una Ryan</a> and <a href="http://sydney.edu.au/science/people/peter.banks.php">Prof. Peter Banks</a> (University of Sydney). My project is titled <em>Ecology of ticks and microbes in Australia</em>. I hope to uncover patterns in the life cycle of ticks and their related microbes in Australian wildlife and investigate the overlap with cases of human tick-borne illnesses.</p>
-              <p><img src="images/IMG_9093.JPG" width="500" /></p>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-      <!--radix_placeholder_site_after_body-->
-      <!--/radix_placeholder_site_after_body-->
-      <!--radix_placeholder_navigation_after_body-->
-      <!--/radix_placeholder_navigation_after_body-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Siobhon Egan</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="Siobhon Egan">
+<meta name="twitter:description" content="Welcome to my personal academic website.">
+<meta name="twitter:image" content="https://www.siobhon-egan.github.io/images/profile.png">
+<meta name="twitter:creator" content="@siobhon_egan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="313">
+<meta name="twitter:image-width" content="320">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Siobhon Egan</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html">CV</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html">Contact</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">Blog</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
   
-  </body>
-</html>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(31)</span></div><div class="category" data-category="articles">articles <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bash">bash <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dataviz">dataviz <span class="quarto-category-count">(1)</span></div><div class="category" data-category="genomics">genomics <span class="quarto-category-count">(10)</span></div><div class="category" data-category="git">git <span class="quarto-category-count">(1)</span></div><div class="category" data-category="journals">journals <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mapping">mapping <span class="quarto-category-count">(1)</span></div><div class="category" data-category="metabarcoding">metabarcoding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="metabolomics">metabolomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="metagenomics">metagenomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="microbiome">microbiome <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="packages">packages <span class="quarto-category-count">(1)</span></div><div class="category" data-category="parasitology">parasitology <span class="quarto-category-count">(1)</span></div><div class="category" data-category="phylogenetics">phylogenetics <span class="quarto-category-count">(5)</span></div><div class="category" data-category="project management">project management <span class="quarto-category-count">(1)</span></div><div class="category" data-category="publishing">publishing <span class="quarto-category-count">(3)</span></div><div class="category" data-category="quarto">quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="referencing">referencing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="repositories">repositories <span class="quarto-category-count">(1)</span></div><div class="category" data-category="research">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="rmarkdown">rmarkdown <span class="quarto-category-count">(4)</span></div><div class="category" data-category="rstudio">rstudio <span class="quarto-category-count">(9)</span></div><div class="category" data-category="rstudio rmarkdown">rstudio rmarkdown <span class="quarto-category-count">(1)</span></div><div class="category" data-category="sequences">sequences <span class="quarto-category-count">(3)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="tick identification">tick identification <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ticks">ticks <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tidy data">tidy data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="unix">unix <span class="quarto-category-count">(1)</span></div><div class="category" data-category="writing">writing <span class="quarto-category-count">(4)</span></div></div></div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Siobhon Egan</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Welcome to my personal academic website.</p>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="news,quarto" data-listing-date-sort="1658505600000" data-listing-file-modified-sort="1659443258876" data-listing-reading-time-sort="0.54">
+<div class="thumbnail">
+<a href="./posts/welcome/index.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/welcome/index.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/welcome/index.html">
+<h3 class="no-anchor listing-title">
+New Quarto blog
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+news
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
+quarto
+</div>
+</div>
+<a href="./posts/welcome/index.html">
+<div class="listing-description">
+After a year of crickets, I have re-invigorated my academic website.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/index.html">
+<div class="listing-date">
+Jul 23, 2022
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="metabolomics,rstudio" data-listing-date-sort="1657641600000" data-listing-file-modified-sort="1658579488213" data-listing-reading-time-sort="0.98">
+<div class="thumbnail">
+<a href="./posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html">
+<h3 class="no-anchor listing-title">
+Metabolomics
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('metabolomics'); return false;">
+metabolomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+</div>
+<a href="./posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html">
+<div class="listing-description">
+<p>A quick overview on metabolomic resources</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html">
+<div class="listing-date">
+Jul 13, 2022
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="rstudio,tidy data" data-listing-date-sort="1655913600000" data-listing-file-modified-sort="1658578585634" data-listing-reading-time-sort="3.275">
+<div class="thumbnail">
+<a href="./posts/2022-06-23-rstudio/2022-06-23-rstudio.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2022-06-23-rstudio/2022-06-23-rstudio.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2022-06-23-rstudio/2022-06-23-rstudio.html">
+<h3 class="no-anchor listing-title">
+Tidy data and research links
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tidy data'); return false;">
+tidy data
+</div>
+</div>
+<a href="./posts/2022-06-23-rstudio/2022-06-23-rstudio.html">
+<div class="listing-description">
+<p>Notes for general data analysis and data in RStudio</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2022-06-23-rstudio/2022-06-23-rstudio.html">
+<div class="listing-date">
+Jun 23, 2022
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="rstudio,microbiome,dataviz" data-listing-date-sort="1655913600000" data-listing-file-modified-sort="1658579531876" data-listing-reading-time-sort="2.43">
+<div class="thumbnail">
+<a href="./posts/2022-06-23-rmicrobiomeFigs/2022-06-23-rmicrobiomeFigs.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2022-06-23-rmicrobiomeFigs/2022-06-23-rmicrobiomeFigs.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2022-06-23-rmicrobiomeFigs/2022-06-23-rmicrobiomeFigs.html">
+<h3 class="no-anchor listing-title">
+Microbiome figure in R
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('microbiome'); return false;">
+microbiome
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('dataviz'); return false;">
+dataviz
+</div>
+</div>
+<a href="./posts/2022-06-23-rmicrobiomeFigs/2022-06-23-rmicrobiomeFigs.html">
+<div class="listing-description">
+<p>Making figures for microbiome data in RStudio</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2022-06-23-rmicrobiomeFigs/2022-06-23-rmicrobiomeFigs.html">
+<div class="listing-date">
+Jun 23, 2022
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="publishing,articles,writing" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658579614245" data-listing-reading-time-sort="1.87">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-writing/2021-07-30-writing.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-writing/2021-07-30-writing.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-writing/2021-07-30-writing.html">
+<h3 class="no-anchor listing-title">
+Writing
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('publishing'); return false;">
+publishing
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('articles'); return false;">
+articles
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('writing'); return false;">
+writing
+</div>
+</div>
+<a href="./posts/2021-07-30-writing/2021-07-30-writing.html">
+<div class="listing-description">
+<p>Notes for scientific writing</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-writing/2021-07-30-writing.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="statistics" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658579674883" data-listing-reading-time-sort="0.755">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-statistics/2021-07-30-statistics.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-statistics/2021-07-30-statistics.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-statistics/2021-07-30-statistics.html">
+<h3 class="no-anchor listing-title">
+Statistics
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+</div>
+<a href="./posts/2021-07-30-statistics/2021-07-30-statistics.html">
+<div class="listing-description">
+<p>Resources for statistical analysis</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-statistics/2021-07-30-statistics.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="research,project management" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658579852291" data-listing-reading-time-sort="5.6">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-research/2021-07-30-research.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-research/2021-07-30-research.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-research/2021-07-30-research.html">
+<h3 class="no-anchor listing-title">
+Research tips
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('research'); return false;">
+research
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('project management'); return false;">
+project management
+</div>
+</div>
+<a href="./posts/2021-07-30-research/2021-07-30-research.html">
+<div class="listing-description">
+<p>Notes for scientific writing</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-research/2021-07-30-research.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="genomics,repositories,sequences" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658579889905" data-listing-reading-time-sort="6.78">
+<div class="thumbnail">
+<p><a href="./posts/2021-07-30-repositories/2021-07-30-repositories.html"> <img src="./posts/2021-07-30-repositories/ENA_project_submission.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-repositories/2021-07-30-repositories.html">
+<h3 class="no-anchor listing-title">
+Repositories
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('repositories'); return false;">
+repositories
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('sequences'); return false;">
+sequences
+</div>
+</div>
+<a href="./posts/2021-07-30-repositories/2021-07-30-repositories.html">
+<div class="listing-description">
+<p>Sequence data in repositories</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-repositories/2021-07-30-repositories.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="referencing,publishing,writing" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658563139723" data-listing-reading-time-sort="2.13">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-referencing/2021-02-13-referencing.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-referencing/2021-02-13-referencing.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-referencing/2021-02-13-referencing.html">
+<h3 class="no-anchor listing-title">
+Referencing
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('referencing'); return false;">
+referencing
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('publishing'); return false;">
+publishing
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('writing'); return false;">
+writing
+</div>
+</div>
+<a href="./posts/2021-02-13-referencing/2021-02-13-referencing.html">
+<div class="listing-description">
+<p>Notes for referencing.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-referencing/2021-02-13-referencing.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="genomics,phylogenetics" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658566057926" data-listing-reading-time-sort="1.725">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-phylogenetics/2021-07-30-phylogenetics.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-phylogenetics/2021-07-30-phylogenetics.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-phylogenetics/2021-07-30-phylogenetics.html">
+<h3 class="no-anchor listing-title">
+Phylogenetics
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('phylogenetics'); return false;">
+phylogenetics
+</div>
+</div>
+<a href="./posts/2021-07-30-phylogenetics/2021-07-30-phylogenetics.html">
+<div class="listing-description">
+<p>Notes on phylogenetics</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-phylogenetics/2021-07-30-phylogenetics.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="genomics,metagenomics,sequences" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658566024119" data-listing-reading-time-sort="1.83">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-metagenomics/2021-07-30-metagenomics.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-metagenomics/2021-07-30-metagenomics.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-metagenomics/2021-07-30-metagenomics.html">
+<h3 class="no-anchor listing-title">
+Metagenomics
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('metagenomics'); return false;">
+metagenomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('sequences'); return false;">
+sequences
+</div>
+</div>
+<a href="./posts/2021-07-30-metagenomics/2021-07-30-metagenomics.html">
+<div class="listing-description">
+<p>Notes for metagenomic sequence data</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-metagenomics/2021-07-30-metagenomics.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="genomics,metabarcoding" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658565814370" data-listing-reading-time-sort="4.285">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-metabarcoding/2021-07-30-metabarcoding.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-metabarcoding/2021-07-30-metabarcoding.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-metabarcoding/2021-07-30-metabarcoding.html">
+<h3 class="no-anchor listing-title">
+Metabarcoding
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('metabarcoding'); return false;">
+metabarcoding
+</div>
+</div>
+<a href="./posts/2021-07-30-metabarcoding/2021-07-30-metabarcoding.html">
+<div class="listing-description">
+<p>Notes for dealing with metabarcoding sequence data.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-metabarcoding/2021-07-30-metabarcoding.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="git,code" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658576731685" data-listing-reading-time-sort="1.915">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-github-notes/github-notes.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-github-notes/github-notes.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-github-notes/github-notes.html">
+<h3 class="no-anchor listing-title">
+GitHub notes
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('git'); return false;">
+git
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+</div>
+<a href="./posts/2021-07-30-github-notes/github-notes.html">
+<div class="listing-description">
+<p>Notes for simple use of GitHub.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-github-notes/github-notes.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="genomics" data-listing-date-sort="1627574400000" data-listing-file-modified-sort="1658566140529" data-listing-reading-time-sort="1.575">
+<div class="thumbnail">
+<a href="./posts/2021-07-30-sequence-info/2021-07-30-sequence-info.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-30-sequence-info/2021-07-30-sequence-info.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-30-sequence-info/2021-07-30-sequence-info.html">
+<h3 class="no-anchor listing-title">
+Genomics and bioinformatic notes
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+</div>
+<a href="./posts/2021-07-30-sequence-info/2021-07-30-sequence-info.html">
+<div class="listing-description">
+<p>Some general resources and note for genomics</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-30-sequence-info/2021-07-30-sequence-info.html">
+<div class="listing-date">
+Jul 30, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="rstudio,packages" data-listing-date-sort="1625155200000" data-listing-file-modified-sort="1658565744396" data-listing-reading-time-sort="0.38">
+<div class="thumbnail">
+<a href="./posts/2021-07-02-rpackages/2021-07-02-rpackages.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-07-02-rpackages/2021-07-02-rpackages.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-07-02-rpackages/2021-07-02-rpackages.html">
+<h3 class="no-anchor listing-title">
+R packages
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('packages'); return false;">
+packages
+</div>
+</div>
+<a href="./posts/2021-07-02-rpackages/2021-07-02-rpackages.html">
+<div class="listing-description">
+<p>Writing packages in RStudio</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-07-02-rpackages/2021-07-02-rpackages.html">
+<div class="listing-date">
+Jul 2, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="genomics,sequences" data-listing-date-sort="1624377600000" data-listing-file-modified-sort="1658578325669" data-listing-reading-time-sort="10.45">
+<div class="thumbnail">
+<a href="./posts/2021-06-23-sequences/2021-06-23-sequences.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-06-23-sequences/2021-06-23-sequences.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-06-23-sequences/2021-06-23-sequences.html">
+<h3 class="no-anchor listing-title">
+Sequences
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('sequences'); return false;">
+sequences
+</div>
+</div>
+<a href="./posts/2021-06-23-sequences/2021-06-23-sequences.html">
+<div class="listing-description">
+<p>Dealing with sequences.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-06-23-sequences/2021-06-23-sequences.html">
+<div class="listing-date">
+Jun 23, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="ticks,tick identification,parasitology" data-listing-date-sort="1618761600000" data-listing-file-modified-sort="1658563365171" data-listing-reading-time-sort="0.535">
+<div class="thumbnail">
+<a href="./posts/2021-04-19-tick-identification/tick-identification.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-04-19-tick-identification/tick-identification.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-04-19-tick-identification/tick-identification.html">
+<h3 class="no-anchor listing-title">
+Tick Identification
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ticks'); return false;">
+ticks
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('tick identification'); return false;">
+tick identification
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('parasitology'); return false;">
+parasitology
+</div>
+</div>
+<a href="./posts/2021-04-19-tick-identification/tick-identification.html">
+<div class="listing-description">
+<p>Morphological guide to Australian ticks</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-04-19-tick-identification/tick-identification.html">
+<div class="listing-date">
+Apr 19, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="rstudio" data-listing-date-sort="1618329600000" data-listing-file-modified-sort="1658573206145" data-listing-reading-time-sort="5.19">
+<div class="thumbnail">
+<p><a href="./posts/2021-04-14-rstudio/2021-04-14-rstudio.html"> <img src="./posts/2021-04-14-rstudio/rstudio.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-04-14-rstudio/2021-04-14-rstudio.html">
+<h3 class="no-anchor listing-title">
+RStudio
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+</div>
+<a href="./posts/2021-04-14-rstudio/2021-04-14-rstudio.html">
+<div class="listing-description">
+<p>Getting started in RStudio</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-04-14-rstudio/2021-04-14-rstudio.html">
+<div class="listing-date">
+Apr 14, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="rstudio,rmarkdown" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658578528399" data-listing-reading-time-sort="5.075">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-rmarkdownwebsites/2021-02-13-rmarkdownwebsites.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-rmarkdownwebsites/2021-02-13-rmarkdownwebsites.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-rmarkdownwebsites/2021-02-13-rmarkdownwebsites.html">
+<h3 class="no-anchor listing-title">
+Websites using RMarkdown
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rmarkdown'); return false;">
+rmarkdown
+</div>
+</div>
+<a href="./posts/2021-02-13-rmarkdownwebsites/2021-02-13-rmarkdownwebsites.html">
+<div class="listing-description">
+<p>Making a website using RStudio</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-rmarkdownwebsites/2021-02-13-rmarkdownwebsites.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="code,unix,bash" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658563307112" data-listing-reading-time-sort="2.3">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-unix/unix.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-unix/unix.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-unix/unix.html">
+<h3 class="no-anchor listing-title">
+Unix
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('unix'); return false;">
+unix
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('bash'); return false;">
+bash
+</div>
+</div>
+<a href="./posts/2021-02-13-unix/unix.html">
+<div class="listing-description">
+<p>Unix bash/zsh coding.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-unix/unix.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="rstudio,rmarkdown,statistics" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658565375753" data-listing-reading-time-sort="3.925">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-rstats/2021-02-13-rstats.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-rstats/2021-02-13-rstats.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-rstats/2021-02-13-rstats.html">
+<h3 class="no-anchor listing-title">
+RStats
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rmarkdown'); return false;">
+rmarkdown
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+</div>
+<a href="./posts/2021-02-13-rstats/2021-02-13-rstats.html">
+<div class="listing-description">
+<p>Statistics in RStudio</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-rstats/2021-02-13-rstats.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="rstudio,rmarkdown" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658568090346" data-listing-reading-time-sort="3.08">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-rmarkdowndocs/2021-02-13-rmarkdowndocs.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-rmarkdowndocs/2021-02-13-rmarkdowndocs.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-rmarkdowndocs/2021-02-13-rmarkdowndocs.html">
+<h3 class="no-anchor listing-title">
+RMarkdown documents
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rmarkdown'); return false;">
+rmarkdown
+</div>
+</div>
+<a href="./posts/2021-02-13-rmarkdowndocs/2021-02-13-rmarkdowndocs.html">
+<div class="listing-description">
+<p>Writing documents in RMarkdown</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-rmarkdowndocs/2021-02-13-rmarkdowndocs.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-categories="rstudio,rmarkdown" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658579021263" data-listing-reading-time-sort="6.415">
+<div class="thumbnail">
+<p><a href="./posts/2021-02-13-rmarkdownbasics/2021-02-13-rmarkdownbasics.html"> <img src="http://example.com/logo.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-rmarkdownbasics/2021-02-13-rmarkdownbasics.html">
+<h3 class="no-anchor listing-title">
+RMarkdown basics
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio'); return false;">
+rstudio
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('rmarkdown'); return false;">
+rmarkdown
+</div>
+</div>
+<a href="./posts/2021-02-13-rmarkdownbasics/2021-02-13-rmarkdownbasics.html">
+<div class="listing-description">
+<p>The basics of RMarkdown</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-rmarkdownbasics/2021-02-13-rmarkdownbasics.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-categories="publishing,articles,writing" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658565064167" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-publishing/2021-02-13-publishing.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-publishing/2021-02-13-publishing.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-publishing/2021-02-13-publishing.html">
+<h3 class="no-anchor listing-title">
+Publishing
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('publishing'); return false;">
+publishing
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('articles'); return false;">
+articles
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('writing'); return false;">
+writing
+</div>
+</div>
+<a href="./posts/2021-02-13-publishing/2021-02-13-publishing.html">
+<div class="listing-description">
+<p>Notes on publishing and scientific articles</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-publishing/2021-02-13-publishing.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-categories="genomics,phylogenetics" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658563082616" data-listing-reading-time-sort="3.955">
+<div class="thumbnail">
+<p><a href="./posts/2021-02-13-phylo-models/2021-02-13-phylo-models.html"> <img src="./posts/2021-02-13-phylo-models/mega7-ml.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-phylo-models/2021-02-13-phylo-models.html">
+<h3 class="no-anchor listing-title">
+Phylogenetic models
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('phylogenetics'); return false;">
+phylogenetics
+</div>
+</div>
+<a href="./posts/2021-02-13-phylo-models/2021-02-13-phylo-models.html">
+<div class="listing-description">
+<p>Notes on models for phylogenetics</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-phylo-models/2021-02-13-phylo-models.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="25" data-categories="genomics,phylogenetics" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658565035809" data-listing-reading-time-sort="4.705">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-phylo-methods/2021-02-13-phylo-methods.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-phylo-methods/2021-02-13-phylo-methods.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-phylo-methods/2021-02-13-phylo-methods.html">
+<h3 class="no-anchor listing-title">
+Phylogenetic methods
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('phylogenetics'); return false;">
+phylogenetics
+</div>
+</div>
+<a href="./posts/2021-02-13-phylo-methods/2021-02-13-phylo-methods.html">
+<div class="listing-description">
+<p>Notes on molecular phylogenetic methods</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-phylo-methods/2021-02-13-phylo-methods.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="26" data-categories="genomics,phylogenetics" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658575678875" data-listing-reading-time-sort="21.2">
+<div class="thumbnail">
+<p><a href="./posts/2021-02-13-mrbayes/2021-02-13-mrbayes.html"> <img data-src="./posts/2021-02-13-mrbayes/mrbayes1.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-mrbayes/2021-02-13-mrbayes.html">
+<h3 class="no-anchor listing-title">
+MrBayes
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('phylogenetics'); return false;">
+phylogenetics
+</div>
+</div>
+<a href="./posts/2021-02-13-mrbayes/2021-02-13-mrbayes.html">
+<div class="listing-description">
+<p>Building trees with MrBayes</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-mrbayes/2021-02-13-mrbayes.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="27" data-categories="rstudio rmarkdown,mapping" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658575624839" data-listing-reading-time-sort="5.105">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-rmarkdownmapping/2021-02-13-rmarkdownmapping.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-rmarkdownmapping/2021-02-13-rmarkdownmapping.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-rmarkdownmapping/2021-02-13-rmarkdownmapping.html">
+<h3 class="no-anchor listing-title">
+Maps in R
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('rstudio rmarkdown'); return false;">
+rstudio rmarkdown
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('mapping'); return false;">
+mapping
+</div>
+</div>
+<a href="./posts/2021-02-13-rmarkdownmapping/2021-02-13-rmarkdownmapping.html">
+<div class="listing-description">
+<p>Making maps in RStudio</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-rmarkdownmapping/2021-02-13-rmarkdownmapping.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="28" data-categories="genomics,phylogenetics" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658561832526" data-listing-reading-time-sort="3.33">
+<div class="thumbnail">
+<p><a href="./posts/2021-02-13-iqtree/2021-02-13-iqtree.html"> <img data-src="./posts/2021-02-13-iqtree/iqtree-webserver.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-iqtree/2021-02-13-iqtree.html">
+<h3 class="no-anchor listing-title">
+IQTREE
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('genomics'); return false;">
+genomics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('phylogenetics'); return false;">
+phylogenetics
+</div>
+</div>
+<a href="./posts/2021-02-13-iqtree/2021-02-13-iqtree.html">
+<div class="listing-description">
+<p>Building trees with IQTREE</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-iqtree/2021-02-13-iqtree.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="29" data-categories="code" data-listing-date-sort="1613145600000" data-listing-file-modified-sort="1658572991805" data-listing-reading-time-sort="0.71">
+<div class="thumbnail">
+<a href="./posts/2021-02-13-general-code/2021-02-13-general-code.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-13-general-code/2021-02-13-general-code.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-13-general-code/2021-02-13-general-code.html">
+<h3 class="no-anchor listing-title">
+General code
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
+code
+</div>
+</div>
+<a href="./posts/2021-02-13-general-code/2021-02-13-general-code.html">
+<div class="listing-description">
+<p>Scientific journal articles.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-13-general-code/2021-02-13-general-code.html">
+<div class="listing-date">
+Feb 13, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="30" data-categories="journals,writing" data-listing-date-sort="1613059200000" data-listing-file-modified-sort="1658562168733" data-listing-reading-time-sort="8.07">
+<div class="thumbnail">
+<a href="./posts/2021-02-12-journals/2021-02-12-journals.html">
+<div class="thumbnail-image">
+
+</div>
+</a><p><a href="./posts/2021-02-12-journals/2021-02-12-journals.html"></a></p>
+</div>
+<div class="body">
+<a href="./posts/2021-02-12-journals/2021-02-12-journals.html">
+<h3 class="no-anchor listing-title">
+Journals
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('journals'); return false;">
+journals
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('writing'); return false;">
+writing
+</div>
+</div>
+<a href="./posts/2021-02-12-journals/2021-02-12-journals.html">
+<div class="listing-description">
+<p>Scientific journal articles.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/2021-02-12-journals/2021-02-12-journals.html">
+<div class="listing-date">
+Feb 12, 2021
+</div>
+<div class="listing-author">
+Siobhon Egan
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="siobhon-egan/siobhon-egan.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Siobhon Egan</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

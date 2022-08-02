@@ -1,0 +1,38 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/welcome/index.html",
+      "/posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html",
+      "/posts/2022-06-23-rstudio/2022-06-23-rstudio.html",
+      "/posts/2022-06-23-rmicrobiomeFigs/2022-06-23-rmicrobiomeFigs.html",
+      "/posts/2021-07-30-writing/2021-07-30-writing.html",
+      "/posts/2021-07-30-statistics/2021-07-30-statistics.html",
+      "/posts/2021-07-30-research/2021-07-30-research.html",
+      "/posts/2021-07-30-repositories/2021-07-30-repositories.html",
+      "/posts/2021-02-13-referencing/2021-02-13-referencing.html",
+      "/posts/2021-07-30-phylogenetics/2021-07-30-phylogenetics.html",
+      "/posts/2021-07-30-metagenomics/2021-07-30-metagenomics.html",
+      "/posts/2021-07-30-metabarcoding/2021-07-30-metabarcoding.html",
+      "/posts/2021-07-30-github-notes/github-notes.html",
+      "/posts/2021-07-30-sequence-info/2021-07-30-sequence-info.html",
+      "/posts/2021-07-02-rpackages/2021-07-02-rpackages.html",
+      "/posts/2021-06-23-sequences/2021-06-23-sequences.html",
+      "/posts/2021-04-19-tick-identification/tick-identification.html",
+      "/posts/2021-04-14-rstudio/2021-04-14-rstudio.html",
+      "/posts/2021-02-13-rmarkdownwebsites/2021-02-13-rmarkdownwebsites.html",
+      "/posts/2021-02-13-unix/unix.html",
+      "/posts/2021-02-13-rstats/2021-02-13-rstats.html",
+      "/posts/2021-02-13-rmarkdowndocs/2021-02-13-rmarkdowndocs.html",
+      "/posts/2021-02-13-rmarkdownbasics/2021-02-13-rmarkdownbasics.html",
+      "/posts/2021-02-13-publishing/2021-02-13-publishing.html",
+      "/posts/2021-02-13-phylo-models/2021-02-13-phylo-models.html",
+      "/posts/2021-02-13-phylo-methods/2021-02-13-phylo-methods.html",
+      "/posts/2021-02-13-mrbayes/2021-02-13-mrbayes.html",
+      "/posts/2021-02-13-rmarkdownmapping/2021-02-13-rmarkdownmapping.html",
+      "/posts/2021-02-13-iqtree/2021-02-13-iqtree.html",
+      "/posts/2021-02-13-general-code/2021-02-13-general-code.html",
+      "/posts/2021-02-12-journals/2021-02-12-journals.html"
+    ]
+  }
+]

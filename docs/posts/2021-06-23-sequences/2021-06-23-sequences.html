@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Siobhon Egan">
+<meta name="dcterms.date" content="2021-06-23">
+<meta name="description" content="Dealing with sequences.">
+
+<title>Siobhon Egan - Sequences</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Siobhon Egan - Sequences">
+<meta name="twitter:description" content="Dealing with sequences.">
+<meta name="twitter:image" content="https://www.siobhon-egan.github.io/images/profile.png">
+<meta name="twitter:creator" content="@siobhon_egan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="313">
+<meta name="twitter:image-width" content="320">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Siobhon Egan</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html">CV</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../contact.html">Contact</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">Blog</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#viewing" id="toc-viewing" class="nav-link active" data-scroll-target="#viewing">Viewing</a></li>
+  <li><a href="#alignments" id="toc-alignments" class="nav-link" data-scroll-target="#alignments">Alignments</a></li>
+  <li><a href="#sequence-quick-bits" id="toc-sequence-quick-bits" class="nav-link" data-scroll-target="#sequence-quick-bits">Sequence quick bits</a>
+  <ul class="collapse">
+  <li><a href="#info-links" id="toc-info-links" class="nav-link" data-scroll-target="#info-links">Basic information and links</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Some simple commands</a></li>
+  </ul></li>
+  <li><a href="#usefull-command-line-bash-programs" id="toc-usefull-command-line-bash-programs" class="nav-link" data-scroll-target="#usefull-command-line-bash-programs">Usefull command line (bash) programs</a>
+  <ul class="collapse">
+  <li><a href="#seqmagick" id="toc-seqmagick" class="nav-link" data-scroll-target="#seqmagick">Seqmagick</a></li>
+  <li><a href="#seqkit" id="toc-seqkit" class="nav-link" data-scroll-target="#seqkit">SeqKit</a></li>
+  <li><a href="#bioawk" id="toc-bioawk" class="nav-link" data-scroll-target="#bioawk">Bioawk</a></li>
+  <li><a href="#blastn-command-line" id="toc-blastn-command-line" class="nav-link" data-scroll-target="#blastn-command-line">Blastn command line</a></li>
+  </ul></li>
+  <li><a href="#getting-taxonomic-info" id="toc-getting-taxonomic-info" class="nav-link" data-scroll-target="#getting-taxonomic-info">Getting taxonomic info</a>
+  <ul class="collapse">
+  <li><a href="#accession-numbers-to-taxid" id="toc-accession-numbers-to-taxid" class="nav-link" data-scroll-target="#accession-numbers-to-taxid">1. <code>Accession numbers</code> to <code>taxid</code></a></li>
+  <li><a href="#taxid-to-lineage-information" id="toc-taxid-to-lineage-information" class="nav-link" data-scroll-target="#taxid-to-lineage-information">2. <code>taxid</code> to lineage information</a></li>
+  <li><a href="#taxize-to-go-from-accession-to-lineage" id="toc-taxize-to-go-from-accession-to-lineage" class="nav-link" data-scroll-target="#taxize-to-go-from-accession-to-lineage">3. <code>taxize</code> to go from accession to lineage</a></li>
+  </ul></li>
+  <li><a href="#getting-sequences" id="toc-getting-sequences" class="nav-link" data-scroll-target="#getting-sequences">Getting sequences</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sequences</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">genomics</div>
+    <div class="quarto-category">sequences</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>Dealing with sequences.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Siobhon Egan </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 23, 2021</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<p><span class="badge badge-info">Quick tips in working with sequence files</span></p>
+<section id="viewing" class="level2">
+<h2 class="anchored" data-anchor-id="viewing">Viewing</h2>
+<p><span class="badge badge-info">Viewing your nucleotide sequences</span></p>
+<p>When you receive your raw sanger sequences you will usually receive files with the following extensions <code>.ab1</code> and <code>.fasta</code>. The <code>.ab1</code> file is the most useful as it contains the cromatogram which contains information on quality of each base call.</p>
+<p>🔗 There are lots of programs that you can use to visualise and edit these files.</p>
+<ul>
+<li><a href="https://finchtv.software.informer.com/1.4/">FinchTV</a> - a free program, that allows you to quickly and easily visualise your <code>ab1</code> files. It also allows you to do some basic edits on your sequences.</li>
+<li><a href="https://nucleobytes.com/4peaks/index.html">4 peaks</a> - another free program, that works well on macOS. It works in a similar fashion to FinchTV and also has a good short cut to BLAST sequences.</li>
+<li><a href="http://ugene.net/">UGENE</a> - is a free program that allows has a lot more features than the first two programs. It is a popular, widely used program. In additional to basic visualisation and sequence editing it has some useful features to design primers (integrated with primer3), sequence alignment (including short reads), contig assembly, phylogenetic trees and more.</li>
+<li><a href="http://genestudio.com/">GeneStudio</a> - is a collection of free programs that allow you to do everything from viewing &amp; editing sequences to building phylogenies and editing trees.</li>
+<li><a href="https://www.geneious.com/">Geneious</a> - a paid program, that is one of the most widely used by molecular biologists. It has a range of features and plugins that allow you to do a wide range of phylogenetic and bioinformatic analysis.</li>
+</ul>
+</section>
+<section id="alignments" class="level2">
+<h2 class="anchored" data-anchor-id="alignments">Alignments</h2>
+<p><span class="badge badge-info">Sequence alignment with MUSCLE</span></p>
+<p>MUSCLE is one of the most common tools to align sequences. In most cases, only a few command line options are needed.</p>
+<p>Free download available <a href="https://www.drive5.com/muscle/manual/install.html">here</a></p>
+<p>🔗 <a href="https://www.drive5.com/muscle/manual/">Muscle documentation</a></p>
+<p>Make an alignment and save to a file in FASTA format:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-in</span> seqs.fa <span class="at">-out</span> seqs_muscle.afa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Write alignment to the console in CLUSTALW format (more readable than FASTA):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-in</span> seqs.fa <span class="at">-clw</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you have an existing alignment, you can add a new sequence using the following:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-profile</span> <span class="at">-in1</span> existing_msa.afa <span class="at">-in2</span> new_seq.fa <span class="at">-out</span> combined.afa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you have more than one new sequence you need to align them first, and then can merge the two alignments:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-in</span> new_seqs.fa <span class="at">-out</span> new_seqs.afa</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-profile</span> <span class="at">-in1</span> existing_aln.afa <span class="at">-in2</span> new_seqs.afa <span class="at">-out</span> combined.afas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Trees</strong></p>
+<p>Commandline muscle is very helpful for making quick trees. Depending on the depth of phylogenetics needed, a simple NJ tree maybe all you need.</p>
+<p>Make a UPGMA tree from a multiple alignment:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-maketree</span> <span class="at">-in</span> seqs_muscle.afa <span class="at">-out</span> seqs_muscle_tree.phy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make a Neighbor-Joining tree from a multiple alignment:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">muscle</span> <span class="at">-maketree</span> <span class="at">-in</span> seqs_muscle.afa <span class="at">-out</span> seqs_muscle_tree.phy <span class="at">-cluster</span> neighborjoining</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sequence-quick-bits" class="level2">
+<h2 class="anchored" data-anchor-id="sequence-quick-bits">Sequence quick bits</h2>
+<p><span class="badge badge-info">Quick commands for manipulating sequence files</span></p>
+<p>This is to cover off on some basic quick command line tools to work with sequence data (mainly written for fasta and fastq format but generally useful for most types of sequence files. There are a lot of programs out that. Some use the command line interface, there is also plenty of GUI and web-based programs too. Below are just two on the most useful ones that I like (I tend to like the command line interface ones, as they can easily be upscaled and used on your VM/supercomputer if needed).</p>
+<p><strong>Contents</strong></p>
+<ul>
+<li><a href="#basics">Some simple commands</a></li>
+<li><a href="#seqmagick">Seqmagick</a></li>
+<li><a href="#seqkit">SeqKit</a></li>
+<li><a href="#bioawk">Bioawk</a></li>
+</ul>
+<section id="info-links" class="level3">
+<h3 class="anchored" data-anchor-id="info-links">Basic information and links</h3>
+<p>This section first starts off with some quick useful commands that will be helpful to assess and manipulate your fasta and fastq file. They can be done locally in your command line and don’t require any clumsy dependancies.</p>
+<p>🔗 Credit to some helpful inspiration</p>
+<ul>
+<li><a href="http://bioinformatics.cvr.ac.uk/blog/short-command-lines-for-manipulation-fastq-and-fasta-sequence-files/">Bioinformatics I/O by Joseph Hughes</a></li>
+<li><a href="https://github.com/stephenturner/oneliners#basic-awk--sed">Bioinformatic one-liners by Stephen Turner</a></li>
+<li><a href="http://userweb.eng.gla.ac.uk/umer.ijaz/bioinformatics/linux.html">Linux command line exercises for NGS data processing by Umer Zeeshan Ijaz</a></li>
+<li><a href="https://www.biostars.org/p/17680/">Biostars thread</a></li>
+</ul>
+</section>
+<section id="basics" class="level3">
+<h3 class="anchored" data-anchor-id="basics">Some simple commands</h3>
+<p>These examples simply use <code>sample.fa</code> or <code>sample.fq</code> or similar format to represent the file you want to investigate. Remember you will need to navigate to the the path of the file or ensure you are in the correct working directory. The following use some basic sed, awk and pearl commands - often these are already installed if working on a macOS terminal environment</p>
+<p><strong>Convert a fastq file to a fasta file</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="st">'/^@/!d;s//&gt;/;N'</span> sample.fq <span class="op">&gt;</span> sample1.fa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Count number of sequences</strong></p>
+<p>Fastq file</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">'^@'</span> sample.fq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Fasta file</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">'&gt;'</span> sample.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Get some basic info on your file(s)</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-ne</span> <span class="st">'if(/^&gt;(\S+)/){print "$1\n"}'</span> sample.fa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You may want to print them to a text file</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-ne</span> <span class="st">'if(/^&gt;(\S+)/){print "$1\n"}'</span> sample.fa <span class="op">&gt;</span> sample_names.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Get the sequence name and length for every individual sequence within a fasta file</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> sample.fasta <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'$0 ~ "&gt;" {print c; c=0;printf substr($0,2,100) "\t"; } $0 !~ "&gt;" {c+=length($0);} END { print c; }'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Calculate the mean length of reads in a fastq file:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'NR%4==2{sum+=length($0)}END{print sum/(NR/4)}'</span> sample.fastq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Add something to the end of all header lines</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="st">'s/&gt;.*/&amp;WHATEVERYOUWANT/'</span> file.fa <span class="op">&gt;</span> outfile.fa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Clean up a fasta file so that only the first column of the header is outputted</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">awk</span> <span class="st">'{print $1}'</span> file.fa <span class="op">&gt;</span> output.fa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Remove dupilcate sequences from your fasta file</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-e</span> <span class="st">'/^&gt;/s/$/@/'</span> <span class="at">-e</span> <span class="st">'s/^&gt;/#/'</span> file.fasta <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-d</span> <span class="st">'\n'</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="st">"#"</span> <span class="st">"\n"</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="st">"@"</span> <span class="st">"\t"</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-u</span> <span class="at">-t</span> <span class="st">$'</span><span class="dt">\t</span><span class="st">'</span> <span class="at">-f</span> <span class="at">-k</span> 2,2  <span class="kw">|</span> <span class="fu">sed</span> <span class="at">-e</span> <span class="st">'s/^/&gt;/'</span> <span class="at">-e</span> <span class="st">'s/\t/\n/'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Get A T (or U) G C counts for all sequences in a fasta file</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="at">-e</span> <span class="st">"seq_id\tA\tU\tG\tC"</span><span class="kw">;</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">line</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$line</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">"&gt;"</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">'s/&gt;//g'</span><span class="kw">;</span> <span class="cf">for</span> i <span class="kw">in</span> A U G C<span class="kw">;</span><span class="cf">do</span> <span class="bu">echo</span> <span class="va">$line</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="st">"&gt;"</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-o</span> <span class="va">$i</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="st">"^0"</span><span class="kw">;</span> <span class="cf">done</span><span class="kw">;</span> <span class="cf">done</span> <span class="op">&lt;</span> your_fasta_file.fa <span class="kw">|</span> <span class="fu">paste</span> <span class="at">-</span> <span class="at">-</span> <span class="at">-</span> <span class="at">-</span> <span class="at">-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Split a multifasta in to separate files (with arbitrary names).</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">splitfa()</span><span class="kw">{</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="va">i</span><span class="op">=</span>1<span class="kw">;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">read</span> <span class="va">line</span> <span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="bu">[</span> <span class="va">${line</span><span class="op">:</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span><span class="va">}</span> <span class="ot">==</span> <span class="st">"&gt;"</span> <span class="bu">]</span> <span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">header</span><span class="op">=</span><span class="st">"</span><span class="va">$line</span><span class="st">"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"</span><span class="va">$header</span><span class="st">"</span> <span class="op">&gt;&gt;</span> seq<span class="st">"</span><span class="va">${i}</span><span class="st">"</span>.fasta</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">seq</span><span class="op">=</span><span class="st">"</span><span class="va">$line</span><span class="st">"</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"</span><span class="va">$seq</span><span class="st">"</span> <span class="op">&gt;&gt;</span> seq<span class="st">"</span><span class="va">${i}</span><span class="st">"</span>.fasta</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">((</span><span class="va">i</span><span class="op">++</span><span class="kw">))</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">fi</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="va">$1</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Extract sequences by their ID</strong></p>
+<p>Call just certain sequences of interest - in this case we are interested in sequences named <code>seq1</code>, <code>seq2</code> and <code>seq3</code> and put them in a file call <code>new.fasta</code></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-ne</span> <span class="st">'if(/^&gt;(\S+)/){$c=grep{/^$1$/}qw(seq1 seq2 seq3)}print if $c'</span> sample.fa <span class="op">&gt;</span> new.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Say you have a text file with a list of sequences you want to further investigate you can use this text file (called <code>seqs_of_interest.txt</code>) to call out the sequences in the <code>sample.fasta</code> file and put them in a few file <code>seqs_of_interest.fasta</code></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-ne</span> <span class="st">'if(/^&gt;(\S+)/){$c=$i{$1}}$c?print:chomp;$i{$_}=1 if @ARGV'</span> seqs_of_interest.txt sample.fasta <span class="op">&gt;</span> seqs_of_interest.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="usefull-command-line-bash-programs" class="level2">
+<h2 class="anchored" data-anchor-id="usefull-command-line-bash-programs">Usefull command line (bash) programs</h2>
+<section id="seqmagick" class="level3">
+<h3 class="anchored" data-anchor-id="seqmagick">Seqmagick</h3>
+<p><code>seqmagick</code> is a simple yet powerful utility that helps with basic manipulation and conversion/formatting of sequence files. Super easy to install and use with minimal requirements (likely already installed) - you just need Python &gt;=3.5 and biopython &gt;=1.70.</p>
+<p>Link to github <a href="https://github.com/fhcrc/seqmagick">here</a> and additional documentation <a href="https://seqmagick.readthedocs.io/en/latest/">here</a>.</p>
+<p><strong>Install</strong></p>
+<p>Open a new terminal window and type the following</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install seqmagick</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Convert a <code>.fasta</code> file to a <code>.nexus</code> format.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">seqmagick</span> convert <span class="at">--output-format</span> nexus <span class="at">--alphabet</span> dna input.fasta output.nex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Convert a <code>.fasta</code> file to a <code>.phylip</code> format.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">seqmagick</span> convert <span class="at">--output-format</span> phylip <span class="at">--alphabet</span> dna input.fasta output.phy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Reverse complement a sequence</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">seqmagick</span> mogrify <span class="at">--reverse-complement</span> sequence.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Remove duplicate sequences</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">seqmagick</span> mogrify <span class="at">--deduplicate-sequences</span> sequence.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="seqkit" class="level3">
+<h3 class="anchored" data-anchor-id="seqkit">SeqKit</h3>
+<p><em>A cross platform and ultrafast toolkit for fasta and fastq file manipulation</em></p>
+<p>The above commands are good for some basic editing and information but if you want to do more with your fasta and fastq files your going to need some dedicated programs.</p>
+<p><code>seqkit</code> is a super useful program for any bioinformatician follow <a href="https://github.com/shenwei356/seqkit">this link</a> for offical downloads and documenation.</p>
+<p>We’ll run through the basic below but always refer to the link above for any issues and more details.</p>
+<p><strong>Install (Linux-like systems)</strong></p>
+<p>Just <a href="https://github.com/shenwei356/seqkit/releases">download</a> compressed executable file of your operating system. Navigate to the file in your command line and decompress it with <code>tar -zxvf *.tar.gz</code> command. * If you have root privilege simply copy it to <code>/usr/local/bin:</code> <code>sudo cp seqkit /usr/local/bin/`` * Or copy to anywhere in the environment variable PATH:</code>mkdir -p $HOME/bin/; cp seqkit $HOME/bin/`</p>
+<p>Extract the first 100 sequences in a fasta file to new file</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">seqkit</span> head <span class="at">-n</span> 100 reads_all.fasta <span class="op">&gt;</span> reads_001-100.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Extract a range of sequences, e.g.&nbsp;sequences 5-15 (inclusive) in a fasta file to new file</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">seqkit</span> range <span class="at">-r</span> 5:15 reads_all.fasta <span class="op">&gt;</span> reads_005-015.fasta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="bioawk" class="level3">
+<h3 class="anchored" data-anchor-id="bioawk">Bioawk</h3>
+<p>This is a super useful addition to the awk range of commands specific to bioinformatics - see github page <a href="https://github.com/lh3/bioawk">here</a></p>
+<p><strong>conda install</strong> Easy install using terminal, as long as you have conda installed https://anaconda.org/bioconda/bioawk</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda bioawk</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda/label/cf201901 bioawk</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Useful tutorials</strong></p>
+<p>Detailed bioinformatics workbook from the <a href="https://gif.biotech.iastate.edu/">Genome Informatics Facility</a> - tutorial available <a href="https://isugenomics.github.io/bioinformatics-workbook/Appendix/bioawk-basics.html">here</a>, and github account <a href="https://github.com/ISUgenomics/bioinformatics-workbook">here</a>.</p>
+</section>
+<section id="blastn-command-line" class="level3">
+<h3 class="anchored" data-anchor-id="blastn-command-line">Blastn command line</h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-db</span> ~/db/16S_ribosomal_RNA_BLAST/16S_ribosomal_RNA <span class="at">-query</span> taxa_asvs.fasta <span class="at">-out</span> blastn_16SrRNA.txt <span class="at">-outfmt</span> 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="getting-taxonomic-info" class="level2">
+<h2 class="anchored" data-anchor-id="getting-taxonomic-info">Getting taxonomic info</h2>
+<section id="accession-numbers-to-taxid" class="level3">
+<h3 class="anchored" data-anchor-id="accession-numbers-to-taxid">1. <code>Accession numbers</code> to <code>taxid</code></h3>
+<p>These next bits of code are to get taxonomic and description information from nucleotide accession numbers.</p>
+<p>First if you have a list of nucleotide accession numbers get the <code>taxid</code> reference for each. Code copied from this thread <a href="https://www.biostars.org/p/10959/">here</a>. (Note: don’t need to download any databases or programs for this!)</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ACC <span class="kw">in</span> A00002 X53307 BB145968 CAA42669 V00181  AH002406  HQ844023</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">do</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-n</span> <span class="at">-e</span> <span class="st">"</span><span class="va">$ACC</span><span class="st">\t"</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">curl</span> <span class="at">-s</span> <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;id=</span><span class="va">${ACC}</span><span class="st">&amp;rettype=fasta&amp;retmode=xml"</span> <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> TSeq_taxid <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cut</span> <span class="at">-d</span> <span class="st">'&gt;'</span> <span class="at">-f</span> 2 <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cut</span> <span class="at">-d</span> <span class="st">'&lt;'</span> <span class="at">-f</span> 1 <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tr</span> <span class="at">-d</span> <span class="st">"\n"</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To get sequence description information use the following:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ACC <span class="kw">in</span> A00002 X53307 BB145968 CAA42669 V00181  AH002406  HQ844023</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">do</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="at">-n</span> <span class="at">-e</span> <span class="st">"</span><span class="va">$ACC</span><span class="st">\t"</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">curl</span> <span class="at">-s</span> <span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&amp;id=</span><span class="va">${ACC}</span><span class="st">&amp;rettype=fasta&amp;retmode=xml"</span> <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> TSeq_defline <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cut</span> <span class="at">-d</span> <span class="st">'&gt;'</span> <span class="at">-f</span> 2 <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cut</span> <span class="at">-d</span> <span class="st">'&lt;'</span> <span class="at">-f</span> 1 <span class="kw">|</span> <span class="dt">\</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tr</span> <span class="at">-d</span> <span class="st">"\n"</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="taxid-to-lineage-information" class="level3">
+<h3 class="anchored" data-anchor-id="taxid-to-lineage-information">2. <code>taxid</code> to lineage information</h3>
+<p>Use TaxonKit to get lineage information. Documentation <a href="https://bioinf.shenwei.me/taxonkit/">here</a>, GitHub repo <a href="https://github.com/shenwei356/taxonkit">here</a></p>
+<p><strong>Install</strong> - for linux, other platforms available <a href="https://bioinf.shenwei.me/taxonkit/download/">here</a></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/shenwei356/taxonkit/releases/download/v0.7.1/taxonkit_linux_amd64.tar.gz</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/shenwei356/csvtk/releases/download/v0.22.0/csvtk_linux_amd64.tar.gz</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">#unzip</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> <span class="pp">*</span>.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Download and decompress taxdump</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-c</span> ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> taxdump.tar.gz</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$HOME</span>/.taxonkit</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> names.dmp nodes.dmp delnodes.dmp merged.dmp <span class="va">$HOME</span>/.taxonkit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Example data</em> - <code>taxids.txt</code></p>
+<pre><code>    cat taxids.txt
+    863246
+    1826986
+    312471
+    268293
+    5696
+    75058
+    351716
+    5696
+    266814
+    10117</code></pre>
+<p>Show name and rank only</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">taxonkit</span> lineage <span class="at">-r</span> <span class="at">-n</span> <span class="at">-L</span> taxids.txt <span class="dt">\</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="ex">csvtk</span> pretty <span class="at">-t</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Show lineage consisting of taxids:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">taxonkit</span> lineage <span class="at">-t</span>  taxids2.txt <span class="dt">\</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="ex">csvtk</span> pretty <span class="at">-t</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Write lineage information to text file</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">taxonkit</span> lineage taxids2.txt <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'$2!=""'</span> <span class="op">&gt;</span> lineage2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Reformat lineage file to the following output: <code>{k};{p};{c};{o};{f};{g};{s}</code></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">taxonkit</span> reformat lineage2.txt <span class="kw">|</span> <span class="fu">tee</span> lineage.txt.reformat</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cut</span> <span class="at">-f</span> 1,3 lineage.txt.reformat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Align output to show taxonomic classification clearly</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">lineage2.txt</span> <span class="dt">\</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="ex">taxonkit</span> reformat <span class="dt">\</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="ex">csvtk</span> <span class="at">-H</span> <span class="at">-t</span> cut <span class="at">-f</span> 1,3 <span class="dt">\</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="ex">csvtk</span> <span class="at">-H</span> <span class="at">-t</span> sep <span class="at">-f</span> 2 <span class="at">-s</span> <span class="st">';'</span> <span class="at">-R</span> <span class="dt">\</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="ex">csvtk</span> add-header <span class="at">-t</span> <span class="at">-n</span> taxid,kindom,phylum,class,order,family,genus,species <span class="dt">\</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span> <span class="ex">csvtk</span> pretty <span class="at">-t</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="taxize-to-go-from-accession-to-lineage" class="level3">
+<h3 class="anchored" data-anchor-id="taxize-to-go-from-accession-to-lineage">3. <code>taxize</code> to go from accession to lineage</h3>
+<p>The R package <a href="https://docs.ropensci.org/taxize/reference/index.html">taxize</a> does the job of the two sections above.</p>
+<p>You can go from accession number, to taxid and to lineage all in R.</p>
+<p>First you need some blastn output (see command line blastn for example), <code>-fmtout 6</code> is good option.</p>
+<p>Then in RStudio we read in the file and find lineage.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>blastn_taxa <span class="ot">&lt;-</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.table</span>(<span class="st">"../data/blastn_16SrRNA.txt"</span>,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>blastn_fmt6 <span class="ot">&lt;-</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"qseqid"</span>,</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sseqid"</span>,</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pident"</span>,</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"length"</span>,</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mismatch"</span>,</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gapopen"</span>,</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"qstart"</span>,</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"qend"</span>,</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sstart"</span>,</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"send"</span>,</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"evalue"</span>,</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bitscore"</span></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(blastn_taxa) <span class="ot">&lt;-</span> blastn_fmt6</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>blastn_taxa_sort <span class="ot">&lt;-</span></span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  data.table<span class="sc">::</span><span class="fu">setorder</span>(blastn_taxa, qseqid,<span class="sc">-</span>pident)</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>blastn_taxa_top <span class="ot">&lt;-</span></span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>  blastn_taxa_sort[<span class="fu">match</span>(<span class="fu">unique</span>(blastn_taxa_sort<span class="sc">$</span>qseqid), blastn_taxa_sort<span class="sc">$</span>qseqid), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Formatting to get taxid and lineage for each unique genbank accession number</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>unique_sseqid <span class="ot">&lt;-</span> <span class="fu">unique</span>(blastn_taxa_top<span class="sc">$</span>sseqid)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>ncbi_lineage <span class="ot">&lt;-</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">classification</span>(<span class="fu">genbank2uid</span>(<span class="at">id =</span> unique_sseqid), <span class="at">db =</span> <span class="st">'ncbi'</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>ncbi_lineage_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(ncbi_lineage)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>ncbi_lineage_df<span class="sc">$</span>sseqid <span class="ot">&lt;-</span> unique_sseqid</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>ncbi_lineage_df <span class="ot">&lt;-</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    ncbi_lineage_df,</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    sseqid,</span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    query,</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    superkingdom,</span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    phylum,</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    class,</span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>    order,</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>    family,</span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    genus,</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>    species</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check matches and then join blast top hit table with lineage</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">which</span>(blastn_taxa_top<span class="sc">$</span>sseqid <span class="sc">%in%</span> ncbi_lineage_df2<span class="sc">$</span>sseqid)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>blastn_taxa_top_lineage <span class="ot">&lt;-</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>      blastn_taxa_top <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(ncbi_lineage_df2,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">by =</span> <span class="st">"sseqid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="getting-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="getting-sequences">Getting sequences</h2>
+<p>The <a href="https://docs.ropensci.org/rentrez/">rentrez R package</a> provides functions that work with the NCBI Eutils API to search, download data from, and otherwise interact with NCBI databases.</p>
+<p>https://vbaliga.github.io/download-genbank-dna-protein-sequences-in-R/</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="siobhon-egan/siobhon-egan.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Siobhon Egan</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

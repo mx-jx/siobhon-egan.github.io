@@ -1,0 +1,85 @@
+---
+title: "Contact"
+format:
+  html:
+    toc: true
+    toc-location: left
+from: markdown+emoji
+---
+
+**Contact details**
+
+
+:pushpin: Australian National Phenome Centre. 
+*Murdoch University*.       
+Level 3, Harry Perkins Institute.     
+5 Robin Warren Drive.     
+Murdoch, 6150, Western Australia.
+
+
+:envelope: [siobhon.egan\@murdoch.edu.au](mailto:siobhon.egan@murdoch.edu.au){.email}
+
+:envelope: [siobhonegan\@hotmail.com](mailto:siobhonegan@hotmail.com){.email}
+
+**Research links**
+
+<a href="https://siobhonlegan.com" class="list-group-item list-group-item-action">
+<i class="fas fa-home"></i> Home page </a>
+
+<a href="https://www.researchgate.net/profile/Siobhon_Egan" class="list-group-item list-group-item-action">
+<i class="fab fa-researchgate"></i> Research Gate </a>
+
+<a href="https://github.com/siobhon-egan" class="list-group-item list-group-item-action">
+<i class="fab fa-github"></i> Github </a>
+
+<a href="http://orcid.org/0000-0003-4395-4069" class="list-group-item list-group-item-action">
+<i class="fas fa-address-card"></i> ORCID </a>
+
+<a href="https://scholar.google.com/citations?user=BrX5o08AAAAJ&hl=en&oi=ao" class="list-group-item list-group-item-action">
+<i class="fab fa-google"></i> Google Scholar </a>
+
+<a href="https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715" class="list-group-item list-group-item-action">
+<i class="fas fa-glasses"></i> Scopus </a>
+
+
+```{r echo = FALSE, out.width = "75%", fig.align='center'}
+knitr::include_graphics("images/IMG_2877.jpg")
+```
+
+
+```{r echo = FALSE, out.width = "75%", fig.align='center'}
+knitr::include_graphics("images/SE_1a.png")
+```
+
+
+------------------------------------------------------------------------
+
+<!--
+**Webpages**
+
+I (attempt) to keep my data analysis skills sharp during my research and
+maintain the following websites:
+
+[Personal page - RStudio, intro to sequence analysis &
+phylogenetics](https://siobhonlegan.com/research_site/)
+
+[Cryptick lab group page - bioinformatics with NGS
+data](https://cryptick-lab.github.io/NGS-Analysis/_site/index.html)
+
+<br></br>
+
+**Media links**
+
+It was a privilege to share my experiences to-date with some keen high
+school students at the first Pawsey careers night in 2018 -- a write-up
+on the event is available
+[here](https://pawsey.org.au/stem-supercomputers-pawseys-first-careers-night/).
+
+On the back of my internship with Pawsey I wanted to put my newly
+discovered bioinformatic skills to good use and started my PhD at
+Murdoch University. Pawsey invited me back to show where the diverse
+world of super-computing can take you. For me, it involves everything
+from the field, to the lab, and then onto the big wide world of coding.
+The video by Pawsey can be found
+[here](https://www.youtube.com/watch?v=4kf2OR9lEww&t=1s).
+-->

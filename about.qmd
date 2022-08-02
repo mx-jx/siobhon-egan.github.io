@@ -1,0 +1,57 @@
+---
+title: "About"
+image: images/profile.png
+about:
+  template: solana
+  links:
+    - icon: envelope
+      text: Email
+      href: siobhon.egan@murdoch.edu.au
+    - icon: github
+      text: Github
+      href: https://github.com/siobhon-egan
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/siobhon_egan
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+    - icon: google
+      text: GoogleScholar
+      href: https://scholar.google.com/citations?user=BrX5o08AAAAJ&hl=en&oi=ao
+    - icon: eyeglasses
+      text: scopus
+      href: https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715
+    - icon: bookmark-fill
+      text: ORCID
+      href: https://orcid.org/0000-0003-4395-4069
+    - icon: journal
+      text: ResearchGate
+      href: https://www.researchgate.net/profile/Siobhon_Egan
+from: markdown+emoji
+---
+
+## Welcome!
+
+I am a research fellow at Murdoch University based at the [Centre for Computational and Systems Medicine](https://www.murdoch.edu.au/research/hfi/our-centres/centre-for-computational-and-systems-medicine) and the [Australian National Phenome Centre](https://www.murdoch.edu.au/research/anpc). I begun working under the direction of [Prof. Elaine Holmes](https://www.researchgate.net/profile/Elaine-Holmes), Centre Director Computational and Systems Medicine, in March 2021. Prof. Holmes was awarded an Australian Laureate Fellowship (FL200100220) titled [*Understanding host-microbiome signalling axes in ageing*](https://www.arc.gov.au/news-publications/media/funding-announcement-kits/australian-laureate-fellowships-2020/2020-laureate-profile-professor-elaine-holmes). The project aims to deepen the understanding of host-microbiome signalling in ageing by: (i) bringing together next generation sequencing technologies to characterise age-associated change in gut bacterial composition, (ii) metabolic profiling to identify changes in functionality of the ageing microbiome, and (iii) a combination of in vitro and in vivo screening approaches to establish molecular mechanisms. The new knowledge will facilitate development of improved models of health care.
+
+
+```{r echo = FALSE, out.width = "100%", fig.align='center'}
+knitr::include_graphics("images/IMG_6695.JPG")
+```
+
+I recently completed by PhD thesis titled *Tiresome ticks: Ecology and transmission of tick-borne disease in Australia* . This was part of an ARC linkage grant (LP160100200) by the [Vector and Waterborne Pathogens Research Group](http://www.murdoch.edu.au/Research-capabilities/Vector-and-Waterborne-Pathogens-Group/Meet-the-Team/) at Murdoch University. It aimed to identify and characterise the microbial biodiversity in ticks and wildlife reservoir hosts, providing important insights into potential causative agent(s) of zoonotic tick-borne pathogens.        
+
+I completed a Bachelor of Science in Animal Health and Wildlife & Conservation Biology (2014--2016). Durng my undergraduate studies I developed a strong passion for wildlife health which evolved into my fascination with the interconnection of the health of the environment, animals and people. I spent time volunteering on a number of projects, and was heavily involved as a volunteer field and lab assistant into the woylie decline as part of [Dr. Amy Northover's](https://www.researchgate.net/profile/Amy_Northover) PhD. My interests expand to other areas of wildlife conservation, including the completion of an independent project on camera trapping of small mammals in Dryandra woodlands under the supervision of [A/Prof Peter Spencer](http://profiles.murdoch.edu.au/myprofile/peter-spencer/) (Murdoch University) and [Mark Cowan](https://www.researchgate.net/profile/Mark_Cowan5) (Parks and Wildlife, Western Australia).
+
+My undertook my honours in Molecular Biology and completed with first class in 2017. My thesis was titled 'Profiling the bacterial microbiome of ticks that parasitise bandicoots in Australia', under the supervision of [Dr. Charlotte Oksam](http://profiles.murdoch.edu.au/myprofile/charlotte-oskam/) and [Prof. Peter Irwin,](http://profiles.murdoch.edu.au/myprofile/peter-irwin/) and is available for download [here](http://researchrepository.murdoch.edu.au/id/eprint/40003/). During my project I identified a number of recently described and novel candidate tick-borne pathogens in ticks parasitsing bandicoots (Order: Peramelemorphia).
+
+With no time to rest, I undertook a paid summer internship with [Pawsey Supercomputing Centre](https://www.pawsey.org.au/) in November 2017, diving into all things coding and bioinformatics.
+
+::: {style="float:left;"}
+![](images/am_triguttatum_SEa.png)
+:::
+
+I started my PhD in 2018, as a continuation of the number of questions that arose from my honours project. Under the supervision of Dr. Charlotte Oksam, Prof. Peter Irwin, [Prof. Una Ryan](http://profiles.murdoch.edu.au/myprofile/una-ryan/) and [Prof. Peter Banks](http://sydney.edu.au/science/people/peter.banks.php) (University of Sydney). My project is titled *Ecology of ticks and microbes in Australia*. I hope to uncover patterns in the life cycle of ticks and their related microbes in Australian wildlife and investigate the overlap with cases of human tick-borne illnesses.
+
+![](images/IMG_9093.JPG){width="500"}

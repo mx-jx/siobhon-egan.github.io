@@ -1,0 +1,14 @@
+{
+  "hash": "95c4dc560be1dd6ab6cde0479cbd954c",
+  "result": {
+    "markdown": "---\ntitle: \"Tick Identification\"\ndescription: |\n  Morphological guide to Australian ticks\nauthor:\n  - name: Siobhon Egan\n    url: https://siobhonlegan.com\ndate: 2021-04-19\noutput:\n  distill::distill_article:\n    self_contained: false\ncategories:\n  - ticks\n  - tick identification\n  - parasitology\n---\n\n::: {.cell}\n::: {.cell-output .cell-output-stderr}\n```\n\nAttaching package: 'ggplot2'\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\nThe following object is masked from 'package:crayon':\n\n    %+%\n```\n:::\n:::\n\n\nGuide to identification of Australian ticks (Ixodida) including pictorial guide to genera present in Australia. \n\nPlease cite as: \n```\nEgan S. (2019). Australian Tick (Ixodida) Identification Guide. https://doi.org/10.13140/RG.2.2.20101.99040\n```\n\nA main focus of my current research is identification of Australian ticks. As such I have developed the following resource that I have made freely available to help with tick identification.\n\nYou can also find a copy available on my research gate profile [Australian Tick (Ixodida) Identification Guide](https://doi.org/10.13140/RG.2.2.20101.99040).\n\n> Please don't hesitate to contact me directly for advice or assistance with morphological identification of Australian ticks ([contact page](contact.html)).\n\n***\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](Australian-Ixodida-ID-EGAN2019-pg1.jpg){width=70%}\n:::\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![](Australian-Ixodida-ID-EGAN2019-pg2.jpg){width=70%}\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

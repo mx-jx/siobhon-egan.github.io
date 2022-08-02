@@ -5,3 +5,7 @@
 *.Rmd
 *.Rproj
 tmp/
+.DS_Store
+
+/.quarto/
+_site/

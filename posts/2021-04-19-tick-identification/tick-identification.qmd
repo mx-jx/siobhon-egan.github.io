@@ -1,0 +1,37 @@
+---
+title: "Tick Identification"
+description: |
+  Morphological guide to Australian ticks
+author: "Siobhon Egan"
+date: "2021-04-19"
+categories: [ticks, tick identification, parasitology]
+---
+
+```{r echo=FALSE}
+library(knitr)
+library(ggplot2)
+library(png)
+library(jpeg)
+```
+
+Guide to identification of Australian ticks (Ixodida) including pictorial guide to genera present in Australia.
+
+Please cite as:
+
+    Egan S. (2019). Australian Tick (Ixodida) Identification Guide. https://doi.org/10.13140/RG.2.2.20101.99040
+
+A main focus of my current research is identification of Australian ticks. As such I have developed the following resource that I have made freely available to help with tick identification.
+
+You can also find a copy available on my research gate profile [Australian Tick (Ixodida) Identification Guide](https://doi.org/10.13140/RG.2.2.20101.99040).
+
+> Please don't hesitate to contact me directly for advice or assistance with morphological identification of Australian ticks ([contact page](contact.html)).
+
+------------------------------------------------------------------------
+
+```{r  echo=FALSE, out.width = "70%"}
+include_graphics('Australian-Ixodida-ID-EGAN2019-pg1.jpg') 
+```
+
+```{r  echo=FALSE, out.width = "70%"}
+include_graphics('Australian-Ixodida-ID-EGAN2019-pg2.jpg') 
+```

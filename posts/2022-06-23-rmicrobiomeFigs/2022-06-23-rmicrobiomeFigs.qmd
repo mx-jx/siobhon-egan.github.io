@@ -1,0 +1,122 @@
+---
+title: "Microbiome figure in R"
+description: |
+  Making figures for microbiome data in RStudio
+author: "Siobhon Egan"
+date: "2022-06-23"
+categories:
+  - rstudio
+  - microbiome
+  - dataviz
+---
+
+This is an attempt to collate some useful commonly used figures for microbiome visualization.
+
+Also applicable to data viz more generally.
+
+At the moment I have this information spread across many different places.
+
+:link: Some links to this include
+
+-   [Project website for publication on microbiome in wildlife & ticks](https://siobhonlegan.com/wildlife-bacteria/)
+-   [Project website for publication on haemoprotozoa in wildlife & ticks](https://siobhonlegan.com/wildlife-haemoprotozoa/)
+-   [2022 BIO514 workshop](http://siobhonlegan.com/2022-systMed-genomics/2.3dataViz.html)
+-   [2021 BIO514 workshop](https://siobhonlegan.com/BIO514-microbiome/)
+-   [2021 BIO510 workshop](https://siobhonlegan.com/BIO510-microbiome/)
+-   [Cryptick Lab NGS webpage](https://cryptick-lab.github.io/NGS-Analysis/_site/index.html)
+
+## Packing circles
+
+[R gallery](https://r-graph-gallery.com/314-custom-circle-packing-with-several-levels.html)
+
+### Using packcircles R package
+
+Static image of packed circle plot
+
+```r
+#install.packages("packcircles")
+library(packcircles)
+data("bacteria")
+
+packing <- circleProgressiveLayout(bacteria)
+dat.gg <- circleLayoutVertices(packing)
+ggplot(data = dat.gg) +
+  geom_polygon(aes(x, y, group = id, fill = factor(id)),
+               colour = "black",
+               show.legend = FALSE) +
+  scale_fill_manual(values = bacteria$colour) +
+  scale_y_reverse() +
+  coord_equal()
+```
+
+Interactive figure for packed circle taxonomy plot
+```r
+if (requireNamespace("ggiraph"))
+  gg <- ggplot(data = dat.gg) +
+    ggiraph::geom_polygon_interactive(
+      aes(
+        x,
+        y,
+        group = id,
+        fill = factor(id),
+        tooltip = bacteria$label[id],
+        data_id = id
+      ),
+      colour = "black",
+      show.legend = FALSE
+    ) +
+    scale_fill_manual(values = bacteria$colour) +
+    scale_y_reverse() +
+    labs(title = "Hover over circle to display taxon name") +
+    coord_equal()
+
+ggiraph::ggiraph(ggobj = gg,
+                 width_svg = 5,
+                 height_svg = 5)
+  
+```
+
+### Using circlepackeR R package
+
+See package here [jeromefroe/circlepackeR](https://github.com/jeromefroe/circlepackeR), to install `devtools::install_github("jeromefroe/circlepackeR")`
+
+```r
+library(microbiome)
+library(circlepackeR)
+library(tidyverse)
+library(hrbrthemes)
+library(data.tree)
+library(htmlwidgets)
+
+s <- aggregate_taxa(ps, 'Genus')
+melts <- psmelt(s)
+test <- melts
+# subset just the collowing column: Kingdom, Class, Order, Family, Genus
+test <- test[, c(12, 13, 15, 16, 17, 3)]
+test <- subset(test, Abundance > 0)
+
+test$pathString <-
+  paste(test$Kingdom,
+        test$Phylum,
+        test$Class,
+        test$Order,
+        test$Family,
+        test$Genus,
+        sep = "/")
+nodetest <- as.Node(test)
+all <- circlepackeR(nodetest, size = "Abundance")
+
+# save html
+saveWidget(all, file = "packedCircle_all.html")
+# save pdf
+# Make a webshot in pdf : high quality but can not choose printed zone
+webshot("packedCircle_all.html" , "packedCircle_all.pdf")
+# save png
+# Make a webshot in png : Low quality - but you can choose shape
+webshot(
+  "packedCircle_all.html" ,
+  "packedCircle_all.png",
+  delay = 0.2 ,
+  cliprect = c(440, 0, 1000, 10)
+)
+```

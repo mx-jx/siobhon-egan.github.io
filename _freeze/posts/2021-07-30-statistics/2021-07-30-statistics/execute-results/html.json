@@ -1,0 +1,14 @@
+{
+  "hash": "594b1ff9c13e948e66c0b7af739781fe",
+  "result": {
+    "markdown": "---\ntitle: \"Statistics\"\ndescription: |\n  Resources for statistical analysis\nauthor:\n  - name: Siobhon Egan\n    url: https://siobhonlegan.com\ndate: 2021-03-30\ncategories:\n  - statistics\n---\n\n\n# Statistics\n\n[Quick statistics links and notes]{.badge .badge-info}\n\n\n```{=html}\n<style>\ndiv.blue { background-color:#db9671; border-radius: 5px; padding: 20px;}\n</style>\n```\n\n::: blue\nWhere performing more complex statistical analysis I <i><b>highly</b></i> recommend you use R/RStudio. This page is just to provide some generic statistics information and links for performing quick analysis.\n:::\n\n<br> <br>\n\n[VassarStats: Website for Statistical Computation](http://vassarstats.net/) - Perform a range of statistical tests quickly through this website.\n\n[Wessa](http://www.wessa.net/) - Another resource for performing statistical analysis quick with web interface.\n\n[Stat pages](https://statpages.info/) - Excellent master reference for links to all things statistics.\n\n[Epitools by AusVet](https://epitools.ausvet.com.au/) - The site is intended for use by epidemiologists and researchers involved in estimating disease prevalence or demonstrating freedom from disease through structured surveys, or in other epidemiological applications.\n\n[Ordination Methods by Michael W. Palmer](http://ordination.okstate.edu/overview.htm) - provides comprehensive notes on ordination methods. You'll also see thinks to a range of other statistical analysis.\n\n[OpenEpi](https://www.openepi.com/Menu/OE_Menu.htm) - A free and open source software for epidemiologic statistics. It can be run from a web server or downloaded and run without a web connection.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
