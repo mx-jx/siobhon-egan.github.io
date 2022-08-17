@@ -1,0 +1,14 @@
+{
+  "hash": "e02ce37a8aa064353379204ed935d9d4",
+  "result": {
+    "markdown": "---\ntitle: \"Data frames in R\"\ndescription: |\n Quick bits for manipulating data frames in R.\nauthor: \"Siobhon Egan\"\ndate: \"2022-08-02\"\ncategories: [rstudio, rstats]\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nproducers <- data.frame(\n  surname =  c(\"Tarantino\", \"Scorsese\", \"Spielberg\", \"Hitchcock\", \"Polanski\"),\n  nationality = c(\"US\", \"US\", \"US\", \"UK\", \"Poland\"),\n  stringsAsFactors = FALSE\n)\n\nmovies <- data.frame(\n  surname = c(\"Spielberg\",\n              \"Scorsese\",\n              \"Hitchcock\",\n              \"Tarantino\",\n              \"Polanski\"),\n  title = c(\"Super 8\",\n            \"Taxi Driver\",\n            \"Psycho\",\n            \"Reservoir Dogs\",\n            \"Chinatown\"),\n  stringsAsFactors = FALSE\n)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nidx <- match(producers$surname, movies$surname)\nmovies_matched <- movies[idx, ]\n```\n:::\n\n\nUsing dplyr to rename a column with specific name we can call.\n```r\ndf <- df %>%\n  dplyr::rename(newName = oldName)\n```\n\nAlternative way without using dylyr we cal call the specific column number\n```r\ncolnames(df)[1] <- \"newName\"\n```\n\nSay you have a vector with the names we can use\n```r\ncolnames(df) <- vector\n```\n\nMaybe col names are contained within a row 2 of the data frame\n```r\ncolnames(df) <- df[2,]\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

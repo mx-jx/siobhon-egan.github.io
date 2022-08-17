@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 website:
   title: "Siobhon Egan"
   site-url: https://www.siobhon-egan.github.io/

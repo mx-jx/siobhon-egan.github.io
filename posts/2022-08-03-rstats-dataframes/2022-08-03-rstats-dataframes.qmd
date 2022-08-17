@@ -1,0 +1,57 @@
+---
+title: "Data frames in R"
+description: |
+ Quick bits for manipulating data frames in R.
+author: "Siobhon Egan"
+date: "2022-08-02"
+categories: [rstudio, rstats]
+---
+
+```{r}
+producers <- data.frame(
+  surname =  c("Tarantino", "Scorsese", "Spielberg", "Hitchcock", "Polanski"),
+  nationality = c("US", "US", "US", "UK", "Poland"),
+  stringsAsFactors = FALSE
+)
+
+movies <- data.frame(
+  surname = c("Spielberg",
+              "Scorsese",
+              "Hitchcock",
+              "Tarantino",
+              "Polanski"),
+  title = c("Super 8",
+            "Taxi Driver",
+            "Psycho",
+            "Reservoir Dogs",
+            "Chinatown"),
+  stringsAsFactors = FALSE
+)
+```
+
+
+```{r}
+idx <- match(producers$surname, movies$surname)
+movies_matched <- movies[idx, ]
+```
+
+Using dplyr to rename a column with specific name we can call.
+```r
+df <- df %>%
+  dplyr::rename(newName = oldName)
+```
+
+Alternative way without using dylyr we cal call the specific column number
+```r
+colnames(df)[1] <- "newName"
+```
+
+Say you have a vector with the names we can use
+```r
+colnames(df) <- vector
+```
+
+Maybe col names are contained within a row 2 of the data frame
+```r
+colnames(df) <- df[2,]
+```

@@ -1,0 +1,14 @@
+---
+title: "Genomics in R"
+description: |
+ Resources for using genomics in R
+author: "Siobhon Egan"
+date: "2022-08-02"
+categories: [rstudio, rstats]
+---
+
+## DRAFT - work in progress
+
+:link: **Links**
+
+- [A Little Book of R for Bioinformatics 2.0](https://brouwern.github.io/lbrb/)

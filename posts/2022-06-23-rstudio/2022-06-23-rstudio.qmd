@@ -82,38 +82,6 @@ Figures are an important part of any publication. They are often the first thing
 -   [STHDA](http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually)
 -   [Selva Prabhakaran](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
 
-## Colour
-
-<i class="fas fa-link"></i> Handy links for colour
-
--   [GeoDataViz Toolkit](https://github.com/OrdnanceSurvey/GeoDataViz-Toolkit/tree/master/Colours)
--   [Your Friendly Guide to Colors in Data Visualisation](https://blog.datawrapper.de/colorguide/) by Lisa Charlotte Rost
--   [Colorbrewer2](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
--   [Color-hex](https://www.color-hex.com/)
--   [Coloring for colorblindness](https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40)
--   [Viz palette](https://projects.susielu.com/viz-palette) - love this resource!
--   [CSS Colours](https://www.w3schools.com/cssref/css_colors.asp)
--   [HTML colour names](https://www.w3schools.com/colors/colors_names.asp)
--   [HTML colour codes](https://htmlcolorcodes.com/)
-
-One of my favourite colour palettes at the moment is [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
-
-```r
-install.packages("viridis")
-library(viridis)
-
-# get certain number of colours from viridis palette
-newcols = viridis(8, option = "B")
-
-RColour brewer quick guide to colour hex
-
-# display
-display.brewer.pal(n = 8, name = 'Set2')
-# get hex ID
-brewer.pal(n = 8, name = 'Set2')
-```
-
-Usage of this palette with various ggplots [here](https://ggplot2.tidyverse.org/reference/scale_viridis.html)
 
 ## Add ins
 

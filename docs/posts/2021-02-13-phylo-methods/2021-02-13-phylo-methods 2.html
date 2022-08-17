@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Siobhon Egan">
+<meta name="dcterms.date" content="2021-02-13">
+<meta name="description" content="Notes on molecular phylogenetic methods">
+
+<title>Siobhon Egan - Phylogenetic methods</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Siobhon Egan - Phylogenetic methods">
+<meta name="twitter:description" content="Notes on molecular phylogenetic methods">
+<meta name="twitter:image" content="https://www.siobhon-egan.github.io/images/profile.png">
+<meta name="twitter:creator" content="@siobhon_egan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="313">
+<meta name="twitter:image-width" content="320">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Siobhon Egan</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html">CV</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../contact.html">Contact</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">Blog</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#maximum-parsimony" id="toc-maximum-parsimony" class="nav-link active" data-scroll-target="#maximum-parsimony">1. Maximum parsimony</a></li>
+  <li><a href="#distance-based-methods" id="toc-distance-based-methods" class="nav-link" data-scroll-target="#distance-based-methods">2. Distance-based methods</a></li>
+  <li><a href="#maximum-likelihood-ml" id="toc-maximum-likelihood-ml" class="nav-link" data-scroll-target="#maximum-likelihood-ml">3. Maximum likelihood (ML)</a></li>
+  <li><a href="#bayesian-inference" id="toc-bayesian-inference" class="nav-link" data-scroll-target="#bayesian-inference">4. Bayesian inference</a></li>
+  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping">Bootstrapping</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Phylogenetic methods</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">genomics</div>
+    <div class="quarto-category">phylogenetics</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>Notes on molecular phylogenetic methods</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Siobhon Egan </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 13, 2021</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<p>There are four popular molecular phylogenetic methods.</p>
+<p>🔗 The following is a summary of information from a number of resources, workshops and other bits I have come across during my data analysis learning. As with the rest of this webpage it is certainly not extensive and written in a context relevant to the work I do (i.e.&nbsp;parasite identification and a dabble in taxonomy and systematics).</p>
+<ul>
+<li>Australian National Postgraduate Training Workshop in Systematics support by the <a href="https://www.sasb.org.au">Society of Australian Systematic Biologists</a>, <a href="http://www.environment.gov.au/science/abrs">The Australian Biological Resources Study</a> and <a href="https://www.adelaide.edu.au/environment/acebb/">Australian Centre for Evolutionary Biology and Biodiversity</a></li>
+<li><a href="https://github.com/simon-ho/SydneyPhyloWorkshop">Sydney Phylo Workshop</a> by Simon Ho.</li>
+</ul>
+<section id="maximum-parsimony" class="level2">
+<h2 class="anchored" data-anchor-id="maximum-parsimony">1. Maximum parsimony</h2>
+<p>Identifies the tree topology that can explain the sequence data, using the smallest number of inferred substitution events. It is commonly used for morphological data, and now days is rarely used for analysing genetic data. It cannot estimate evolutionary rates or timescales and does not correct for multiple substitutions at the same site which leads to what is known as “long-branch attraction”.</p>
+</section>
+<section id="distance-based-methods" class="level2">
+<h2 class="anchored" data-anchor-id="distance-based-methods">2. Distance-based methods</h2>
+<p>Clustering algorithms - Unweighted Pair Group Method with Arithmetic Mean (UPGMA) - Neighbour joining (NJ)</p>
+<p>Tree searching using optimal criteria - Minimum evolution - Least-squares inference</p>
+<p><em>Pros</em></p>
+<ul>
+<li>Able to take into account multiple substitutions and long-branch attraction</li>
+<li>Useful for analysing very large data sets with a lot of taxa (1000’s +)</li>
+</ul>
+<p><em>Cons</em></p>
+<ul>
+<li>Does not use all information in alignment</li>
+<li>Loss of information in pairwise comparisons</li>
+<li>Unable to implement sophisticated evolutionary models</li>
+</ul>
+</section>
+<section id="maximum-likelihood-ml" class="level2">
+<h2 class="anchored" data-anchor-id="maximum-likelihood-ml">3. Maximum likelihood (ML)</h2>
+<ul>
+<li>Search through the space of possible trees and parameter values</li>
+<li>Calculate the likelihood for these</li>
+<li>Find best tree and model parameter values</li>
+<li>Multivariate optimisation</li>
+</ul>
+<p><em>Pros</em></p>
+<ul>
+<li>Rigorous statistical method</li>
+<li>Deals with multiple substitutions and long-branch attraction</li>
+<li>Highly robust to violations of assumptions</li>
+</ul>
+<p><em>Cons</em></p>
+<ul>
+<li>Not feasible to implement very parameter-rich models</li>
+<li>Searching tree space can be difficult</li>
+</ul>
+<p><em>ML Analysis</em></p>
+<ul>
+<li>RAxML = Randomized Axelerated Maximum Likelihood. Rapid bootstrapping and can run sequentially or in parallel.</li>
+<li>PhyML</li>
+<li>MEGA</li>
+<li>PAML</li>
+<li>IQ-Tree</li>
+</ul>
+</section>
+<section id="bayesian-inference" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-inference">4. Bayesian inference</h2>
+<p>Bayesian phylogenetic analysis was developed in the mid 1990s, and it now one of the most widely used methods for molecular phylogenetics.</p>
+<p>Key features of Bayesian paradigm</p>
+<ul>
+<li>Contrast with frequentist statistics (likelihood)</li>
+<li>Parameters have distributions</li>
+<li>Before the data are observed, each parameter has a prior distribution</li>
+<li>The likelihood of the data is computed</li>
+<li>The prior distribution is combined (updated) with the likelihood to yield the posterior distribution</li>
+</ul>
+<p><em>Priors</em></p>
+<ul>
+<li>Priors are chosen in the form of probability distributions</li>
+<li>Reflect our prior expectations (and uncertainty) about values of parameters (without knowledge of the data)
+<ul>
+<li>Past observations</li>
+<li>Personal beliefs</li>
+<li>Use of a biological model</li>
+</ul></li>
+<li>Uninformative priors</li>
+</ul>
+<p><em>‘Prior options’</em></p>
+<ol type="1">
+<li>Use a flat prior for tree topology (MrBayes)
+<ul>
+<li>All trees have equal probability</li>
+<li>Also need a prior for branch lengths or node times</li>
+</ul></li>
+<li>Use a biological model to generate prior distribution (BEAST and MrBayes)
+<ul>
+<li>Among species: speciation model</li>
+<li>Within species: coalescent model</li>
+</ul></li>
+</ol>
+<p><em>Markov Chain Monte Carlo Sampling</em></p>
+<p>It is impossible to obtain the posterior directly. Instead, the posterior can be estimated using Markov chain Monte Carlo simulation. This is usually done using the Metropolis-Hastings algorithm. There is a wealth of literature available for more information on this topic. It can get super technical - we’ve just covered the basics.</p>
+<p><em>Pros</em></p>
+<ul>
+<li>Able to implement highly parameterised models</li>
+<li>Estimating tree uncertainty is straightforward</li>
+<li>Can only do this indirectly in likelihood (via bootstrapping)</li>
+<li>Posterior probabilities have an intuitive interpretation</li>
+<li>Can incorporate independent information (in the prior)</li>
+</ul>
+<p><em>Popular software and programs for Bayesian analysis</em></p>
+<ul>
+<li>MrBayes
+<ul>
+<li>Primarily designed for species-level data</li>
+<li>Simultaneous estimation of tree and node times</li>
+<li>Range of clock models</li>
+<li>Range of tree priors</li>
+<li>Multiple chains and MCMC diagnostics</li>
+</ul></li>
+<li>RevBayes
+<ul>
+<li>Uses its own R-like language, Rev</li>
+<li>Interactive construction of graphical model</li>
+<li>Flexible and can be used for simulation and inference</li>
+<li>Ongoing development</li>
+</ul></li>
+<li>BEAST1 = Bayesian Evolutionary Analysis by Sampling Trees
+<ul>
+<li>Analyse population- or species-level data</li>
+<li>Simultaneous estimation of tree and node times</li>
+<li>Range of clock models</li>
+<li>Range of tree priors and demographic models</li>
+</ul></li>
+<li>BEAST2
+<ul>
+<li>Re-write of BEAST to increase modularity</li>
+<li>Users can extend BEAST by adding packages</li>
+<li>Additional tree priors not available in BEAST 1</li>
+<li>Capacity to perform simulations</li>
+<li>For a comparison of BEAST 1 and 2: www.beast2.org/beast-features</li>
+</ul></li>
+</ul>
+</section>
+<section id="bootstrapping" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrapping">Bootstrapping</h2>
+<p>Felsenstein (1985) Evolution 39(4):783-791 (<a href="https://www.ncbi.nlm.nih.gov/pubmed/28561359">Pub med</a>) Bootstrapping provides a confidence interval that contains the phylogeny that would be estimated from repeated sampling of many characters from the underlying set of all characters. Bootstrap values are measures of repeatability. High when the data set is large. Not meaningful when analysing genome-scale data.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="siobhon-egan/siobhon-egan.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Siobhon Egan</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -280,7 +280,7 @@ knitr::include_graphics("images/ttbd_abstract.jpeg")
 # Thesis
 
 <article>
-<h3><a href="https://researchrepository.murdoch.edu.au/id/eprint/65255">Ecology of ticks and microbes in Australian wildlife </a></h3>
+<h3><a href="https://researchrepository.murdoch.edu.au/id/eprint/65255">Ecology of ticks and microbes in Australian wildlife</a></h3>
 <div class="summary">
 <span><i class="fa fa-calendar"></i> _2022_</span>
 <p>Doctor of Philosophy 

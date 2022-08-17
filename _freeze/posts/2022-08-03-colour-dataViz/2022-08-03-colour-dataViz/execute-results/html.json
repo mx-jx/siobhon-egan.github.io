@@ -1,0 +1,16 @@
+{
+  "hash": "4744f3a13931f4f76f2ec23eb9c5c920",
+  "result": {
+    "markdown": "---\ntitle: \"Colour related resources\"\ndescription: |\n  Synthesis of links and resources on colours & data visualization\nauthor: \"Siobhon Egan\"\ndate: \"2022-08-02\"\ncategories: [rstudio, rstats, colour]\n---\n\n\nAs I need to reach for this information often I have decided to dedicate a solo post on all things coloour related.\n\nFigures are an important part of any publication. They are often the first thing readers look at and will help usually are the deciders as to whether non-specialists are going to read on...a good figure goes a long way! If you can spend the time it is well worth it (within reason of course). A good read on some do and don’ts for figures by [Rougier et al. 2014 PLOS comp biol](https://doi.org/10.1371/journal.pcbi.1003833), while your at it check out this one by [Mensh and Kording 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619).\n\n:link: General colour resources\n\n-   [GeoDataViz Toolkit](https://github.com/OrdnanceSurvey/GeoDataViz-Toolkit/tree/master/Colours)\n-   [Your Friendly Guide to Colors in Data Visualisation](https://blog.datawrapper.de/colorguide/) by Lisa Charlotte Rost\n-   [Colorbrewer2](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)\n-   [Color-hex](https://www.color-hex.com/)\n-   [Coloring for colorblindness](https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40)\n-   [Viz palette](https://projects.susielu.com/viz-palette) - love this resource!\n-   [CSS Colours](https://www.w3schools.com/cssref/css_colors.asp)\n-   [HTML colour names](https://www.w3schools.com/colors/colors_names.asp)\n-   [HTML colour codes](https://htmlcolorcodes.com/)\n\n\n:link: R packages and resources\n\n- [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html): One of my favourite colour palettes at the moment.\n    - [Viridis Color Palette Generator](https://waldyrious.net/viridis-palette-generator/)\n    - [ggplot2 and viridis](https://ggplot2.tidyverse.org/reference/scale_viridis.html)\n\n\n**Examples**\n\nExample for viridis to get 8 colours \n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(viridis)\n```\n\n::: {.cell-output .cell-output-stderr}\n```\nLoading required package: viridisLite\n```\n:::\n\n```{.r .cell-code}\n# get certain number of colours from viridis palette\nnewcols = viridis(8, option = \"B\")\n```\n:::\n\n\n\nRColour brewer - display colours and get their hex numbers\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(RColorBrewer)\n\n# View a single RColorBrewer palette by specifying its name\ndisplay.brewer.pal(n = 8, name = 'Dark2')\n```\n\n::: {.cell-output-display}\n![](2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n\n```{.r .cell-code}\n# Hexadecimal color specification \nbrewer.pal(n = 8, name = \"Dark2\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"#1B9E77\" \"#D95F02\" \"#7570B3\" \"#E7298A\" \"#66A61E\" \"#E6AB02\" \"#A6761D\"\n[8] \"#666666\"\n```\n:::\n:::\n",
+    "supporting": [
+      "2022-08-03-colour-dataViz_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

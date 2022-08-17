@@ -15,16 +15,55 @@ Until I expand on this section I will keep list of links and resources relating 
 
 :link: **General resources**
 
--   [xcms](https://github.com/sneumann/xcms) R package. Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data. Imports from AIA/ANDI NetCDF, mzXML, mzData and mzML files. Preprocesses data for high-throughput, untargeted analyte profiling. [Vignette](https://bioconductor.org/packages/release/bioc/vignettes/xcms/inst/doc/xcms-lcms-ms.html)
--   [MSnbase](http://lgatto.github.io/MSnbase/) - an R/Bioconductor package that provides infrastructure for plotting, manipulation and processing mass spectrometry and proteomics data.
+- [FOSS For Spectroscopy by Bryan A. Hanson, DePauw University](https://bryanhanson.github.io/FOSS4Spectroscopy/): The following table collects information about free and open source software (FOSS) for spectroscopy. A great links to many links!
+- [List of metabolomics resources by biswapriyamisra/metabolomics](https://github.com/biswapriyamisra/metabolomics)
+
 -   [Mummichog](https://shuzhao-li.github.io/mummichog.org/index.html) Mummichog is a free Python program for analyzing data from high throughput, untargeted metabolomics. It leverages the organization of metabolic networks to predict functional activity directly from feature tables, bypassing metabolite identification. Thus, high-quality hypotheses can be quickly generated from a LC-MS data table.
 -   [Workflow4metabolomics](workflow4metabolomics.org) - Collaborative portal dedicated to metabolomics data processing, analysis and annotation for Metabolomics community.
--   [List of metabolomics resources by biswapriyamisra/metabolomics](https://github.com/biswapriyamisra/metabolomics)
--   [Introduction to AlpsNMR](https://bioconductor.org/packages/release/bioc/vignettes/AlpsNMR/inst/doc/introduction-to-alpsnmr.html)
 -   [ChemmineR](https://bioconductor.org/packages/release/bioc/vignettes/ChemmineR/inst/doc/ChemmineR.html)
 -   [MWAS Tools](https://bioconductor.org/packages/release/bioc/vignettes/MWASTools/inst/doc/MWASTools.html)
 -   [ASICS](https://bioconductor.org/packages/release/bioc/vignettes/ASICS/inst/doc/ASICSUsersGuide.html)
--   [customCMPdb: Integrating Community and Custom Compound Collections](https://bioconductor.org/packages/release/bioc/vignettes/customCMPdb/inst/doc/customCMPdb.html) [PepsNMR](https://bioconductor.org/packages/release/bioc/html/PepsNMR.html)
+
+**Databases and R tools**
+
+-   [customCMPdb: Integrating Community and Custom Compound Collections](https://bioconductor.org/packages/release/bioc/vignettes/customCMPdb/inst/doc/customCMPdb.html)
 -   [HMBD Query](https://bioconductor.org/packages/release/bioc/html/hmdbQuery.html)
--   [CompoundDB](https://bioconductor.org/packages/release/bioc/vignettes/CompoundDb/inst/doc/create-compounddb.html) - new version of package [here](https://rformassspectrometry.github.io/CompoundDb/index.html)
--   [ChemoSpec](https://bryanhanson.github.io/ChemoSpec/articles/ChemoSpec.html)
+-   [CompoundDB](https://bioconductor.org/packages/release/bioc/vignettes/CompoundDb/inst/doc/create-compounddb.html) 
+    - new version of package [here](https://rformassspectrometry.github.io/CompoundDb/index.html)
+- [rformassspectrometry/MsBackendHmdb](https://github.com/rformassspectrometry/MsBackendHmdb) - The MsBackendHmdb package provides functionality to import and handle MS/MS spectrum data from The Human Metabolome Database HMDB. The package defines the MsBackendHmdbXml backend which can be used to import and use MS2 spectrum data from HMDB xml files with the Spectra R package.
+- [biodbHmdb](https://bioconductor.org/packages/release/bioc/vignettes/biodbHmdb/inst/doc/biodbHmdb.html) - biodbHmdb is a biodb extension package that implements a connector to HMDB Metabolites. We present here the different ways to search for HMDB (Wishart et al. 2012) entries with this package. Note that the whole HMDB is downloaded locally by biodb and stored on disk, since this is the only way to access HMDB programmatically. Any search on HMDB is hence currently run on the local machine.
+- [webchem](https://docs.ropensci.org/webchem/index.html) is a R package to retrieve chemical information from the web. This package interacts with a suite of web APIs to retrieve chemical information.
+- [Human-Metabolome-Database_PATHWAY.R tutorial by liyix (2021)](https://rpubs.com/TX-YXL/732197)
+
+*Blog posts*
+
+- [Tutorial on hmdb datasets](https://yufree.cn/en/2018/04/11/play-with-hmdb-datasets/)
+
+
+**Multi-omic analysis in R**
+
+- [mixomics](https://mixomicsteam.github.io/Activities/index.html) - a great starting place
+- [ggforestplot](https://nightingalehealth.github.io/ggforestplot/index.html) is an R package for plotting measures of effect and their confidence intervals (e.g. linear associations or log and hazard ratios, in a forestplot layout, a.k.a. blobbogram).
+
+## NMR
+
+**R Packages and tools**
+
+- [PepsNMR](https://bioconductor.org/packages/release/bioc/html/PepsNMR.html)
+- [Introduction to AlpsNMR](https://bioconductor.org/packages/release/bioc/vignettes/AlpsNMR/inst/doc/introduction-to-alpsnmr.html)
+- [rDolphin](https://github.com/danielcanueto/rDolphin)
+- [tameNMR](https://github.com/PGB-LIV/tameNMR) is a suite of tools for processing and analysis of NMR data from metabolomics experiments. It is designed as a set of command line programs to be used as standalone tools or for design of automated workflows in Galaxy ([galaxyproject.org](https://galaxyproject.org)) framework.
+
+**Blog posts & Misc. links**
+
+-   [ChemoSpec](https://bryanhanson.github.io/ChemoSpec/articles/ChemoSpec.html) - Blog by Bryan Hanson with lots of good information
+    - [Aligning 2D NMR Spectra Part 1](https://chemospec.org/posts/2020-02-20-NMR-Align-Pt1/2020-02-20-NMR-Align-Pt1.html)
+
+
+## Mass sppec
+
+**R Packages and tools**
+
+-   [xcms](https://github.com/sneumann/xcms) R package. Framework for processing and visualization of chromatographically separated and single-spectra mass spectral data. Imports from AIA/ANDI NetCDF, mzXML, mzData and mzML files. Preprocesses data for high-throughput, untargeted analyte profiling. [Vignette](https://bioconductor.org/packages/release/bioc/vignettes/xcms/inst/doc/xcms-lcms-ms.html)
+-   [MSnbase](http://lgatto.github.io/MSnbase/) - an R/Bioconductor package that provides infrastructure for plotting, manipulation and processing mass spectrometry and proteomics data.
+- [rformassspectrometry](https://www.rformassspectrometry.org/) -The aim of the RforMassSpectrometry initiative is to provide efficient, thoroughly documented, tested and flexible R software for the analysis and interpretation of high throughput mass spectrometry assays, including proteomics and metabolomics experiments. The project formalises the longtime collaborative development efforts of its core members under the RforMassSpectrometry organisation to facilitate dissemination and accessibility of their work.

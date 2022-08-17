@@ -1,0 +1,57 @@
+---
+title: "Colour related resources"
+description: |
+  Synthesis of links and resources on colours & data visualization
+author: "Siobhon Egan"
+date: "2022-08-02"
+categories: [rstudio, rstats, colour]
+---
+
+As I need to reach for this information often I have decided to dedicate a solo post on all things coloour related.
+
+Figures are an important part of any publication. They are often the first thing readers look at and will help usually are the deciders as to whether non-specialists are going to read on...a good figure goes a long way! If you can spend the time it is well worth it (within reason of course). A good read on some do and don’ts for figures by [Rougier et al. 2014 PLOS comp biol](https://doi.org/10.1371/journal.pcbi.1003833), while your at it check out this one by [Mensh and Kording 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619).
+
+:link: General colour resources
+
+-   [GeoDataViz Toolkit](https://github.com/OrdnanceSurvey/GeoDataViz-Toolkit/tree/master/Colours)
+-   [Your Friendly Guide to Colors in Data Visualisation](https://blog.datawrapper.de/colorguide/) by Lisa Charlotte Rost
+-   [Colorbrewer2](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
+-   [Color-hex](https://www.color-hex.com/)
+-   [Coloring for colorblindness](https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40)
+-   [Viz palette](https://projects.susielu.com/viz-palette) - love this resource!
+-   [CSS Colours](https://www.w3schools.com/cssref/css_colors.asp)
+-   [HTML colour names](https://www.w3schools.com/colors/colors_names.asp)
+-   [HTML colour codes](https://htmlcolorcodes.com/)
+
+
+:link: R packages and resources
+
+- [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html): One of my favourite colour palettes at the moment.
+    - [Viridis Color Palette Generator](https://waldyrious.net/viridis-palette-generator/)
+    - [ggplot2 and viridis](https://ggplot2.tidyverse.org/reference/scale_viridis.html)
+
+
+**Examples**
+
+Example for viridis to get 8 colours 
+```{r}
+library(viridis)
+
+# get certain number of colours from viridis palette
+newcols = viridis(8, option = "B")
+```
+
+
+RColour brewer - display colours and get their hex numbers
+```{r}
+library(RColorBrewer)
+
+# View a single RColorBrewer palette by specifying its name
+display.brewer.pal(n = 8, name = 'Dark2')
+
+
+# Hexadecimal color specification 
+brewer.pal(n = 8, name = "Dark2")
+```
+
+

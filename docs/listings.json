@@ -2,6 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2022-08-03-rstats-genomics/2022-08-03-rstats-genomics.html",
+      "/posts/2022-08-03-rstats-dataframes/2022-08-03-rstats-dataframes.html",
+      "/posts/2022-08-03-colour-dataViz/2022-08-03-colour-dataViz.html",
       "/posts/welcome/index.html",
       "/posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html",
       "/posts/2022-06-23-rstudio/2022-06-23-rstudio.html",

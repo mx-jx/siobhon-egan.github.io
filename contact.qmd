@@ -7,14 +7,12 @@ format:
 from: markdown+emoji
 ---
 
-**Contact details**
+:pushpin: Australian National Phenome Centre     
+*Murdoch University*
 
-
-:pushpin: Australian National Phenome Centre. 
-*Murdoch University*.       
-Level 3, Harry Perkins Institute.     
-5 Robin Warren Drive.     
-Murdoch, 6150, Western Australia.
+Harry Perkins Institute of Medical Research     
+Level 3, 5 Robin Warren Drive    
+Murdoch, 6150, Western Australia
 
 
 :envelope: [siobhon.egan\@murdoch.edu.au](mailto:siobhon.egan@murdoch.edu.au){.email}

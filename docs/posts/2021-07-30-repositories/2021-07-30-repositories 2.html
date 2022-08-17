@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Siobhon Egan">
+<meta name="dcterms.date" content="2021-07-30">
+<meta name="description" content="Sequence data in repositories">
+
+<title>Siobhon Egan - Repositories</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Siobhon Egan - Repositories">
+<meta name="twitter:description" content="Sequence data in repositories">
+<meta name="twitter:image" content="https://www.siobhon-egan.github.io/images/profile.png">
+<meta name="twitter:creator" content="@siobhon_egan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="313">
+<meta name="twitter:image-width" content="320">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Siobhon Egan</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html">CV</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html">Publications</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../contact.html">Contact</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">Blog</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#uploading-high-throughput-sequencing-data-to-ena" id="toc-uploading-high-throughput-sequencing-data-to-ena" class="nav-link active" data-scroll-target="#uploading-high-throughput-sequencing-data-to-ena">Uploading high-throughput sequencing data to ENA</a>
+  <ul class="collapse">
+  <li><a href="#register-project" id="toc-register-project" class="nav-link" data-scroll-target="#register-project">1. Register project</a></li>
+  <li><a href="#register-samples" id="toc-register-samples" class="nav-link" data-scroll-target="#register-samples">2. Register samples</a></li>
+  <li><a href="#upload-sequence-files" id="toc-upload-sequence-files" class="nav-link" data-scroll-target="#upload-sequence-files">3. Upload sequence files</a></li>
+  <li><a href="#run-analysis" id="toc-run-analysis" class="nav-link" data-scroll-target="#run-analysis">4. Run analysis</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Repositories</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">genomics</div>
+    <div class="quarto-category">repositories</div>
+    <div class="quarto-category">sequences</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    <p>Sequence data in repositories</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Siobhon Egan </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 30, 2021</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<p><span class="badge badge-info">Resources related to uploading sequences to repositories</span></p>
+<p>For publication many journals now have a mandatory requirement that you upload your data to public repositories.</p>
+<p>For genomics the main repositories are the <a href="https://submit.ncbi.nlm.nih.gov">National Centre for Biotechnology Information</a> and <a href="https://www.ebi.ac.uk/ena/browser/home">European Nucleotide Archive</a>.</p>
+<p>🔗 <strong>Useful resources</strong></p>
+<ul>
+<li><a href="https://tritrypdb.org/tritrypdb/">TriTrypDB</a> - kinetoplastid genomics resource</li>
+<li><a href="https://www.vectorbase.org/downloads">VectorBase</a> - bioinformatics resource for invertebrate vectors of human pathogens</li>
+<li><a href="https://cryptodb.org/cryptodb/">CryptoDB</a> - <em>Cryptosporidium</em> genomics resource</li>
+<li><a href="https://www.arb-silva.de/">Silva</a> - high quality ribosomal RNA databases. SILVA provides comprehensive, quality checked and regularly updated datasets of aligned small (16S/18S, SSU) and large subunit (23S/28S, LSU) ribosomal RNA (rRNA) sequences for all three domains of life (Bacteria, Archaea and Eukarya).</li>
+<li><a href="https://greengenes.secondgenome.com/">Greengenes</a> - 16S rRNA gene database of Bacteria and Archaea.</li>
+<li><a href="https://eupathdb.org/eupathdb/">EuPathDB</a> - Eukaryotic pathogen database resource</li>
+<li><a href="https://unite.ut.ee/">unite</a> - communication and identification of DNA based fungal species (based on internal transcribed spacer gene - ITS)</li>
+<li><a href="http://v3.boldsystems.org/index.php/resources/handbook?chapter=2_databases.html">BoldSystems</a> - The Barcode of Life Data System is designed to support the generation and application of DNA barcode data. Includes the following: Animal identification using mitochondrial mitochondrial cytochrome oxidase subunit 1 (COI); Fungal using internal transcribed spacer (ITS); and Plant using chloroplast ribulose-bisphosphate carboxylase (RbcL) &amp; plastid/nuclear Maturase K (Matk)</li>
+<li><a href="https://veupathdb.org/">VEuPathDB</a> - This NIH Bioinformatics Resource Center (BRC) will support the integration of parasite resources currently provided by EuPathDB.org, fungal resources provided by FungiDB.org, and vector resources provided by VectorBase.org.</li>
+</ul>
+<section id="uploading-high-throughput-sequencing-data-to-ena" class="level2">
+<h2 class="anchored" data-anchor-id="uploading-high-throughput-sequencing-data-to-ena">Uploading high-throughput sequencing data to ENA</h2>
+<p>while I have uploaded high-throughput data to NCBI SRA in the past I have since found it not very user friendly. As such I have switched to the ENA for submission of sequence data.</p>
+<p>This documentation is works for me and is not extensive, it is meant to be a streamlined version of the information contained within the extensive information available at <a href="https://ena-docs.readthedocs.io/en/latest/#">ENA: Guidelines and Tutorials</a>.</p>
+<p>For submitting data there are a number of options and this is written from a mac user.</p>
+<p>See submission page <a href="https://www.ebi.ac.uk/ena/browser/submit">here</a></p>
+<p>I use a combination of the following options:</p>
+<ul>
+<li><a href="https://www.ebi.ac.uk/ena/submit/sra/#home">‘Submit to ENA Interactively’</a> - Submit to ENA with Webin Interactive</li>
+<li><a href="https://www.ebi.ac.uk/ena/submit/webin/">‘Webin Submission Portal’</a> - Monitor progress of your submissions to eNA</li>
+</ul>
+<section id="register-project" class="level3">
+<h3 class="anchored" data-anchor-id="register-project">1. Register project</h3>
+<p>Go to the Webin interface - i.e.&nbsp;select the ‘Submit to ENA Interactively’(https://www.ebi.ac.uk/ena/submit/sra/#home) option from the <a href="https://www.ebi.ac.uk/ena/browser/submit">submission home page</a>.</p>
+<p>Under the <strong>New submission</strong> tab select <strong>Register study (Project)</strong> [Register your Study to begin data submission to ENA], and press <code>next</code></p>
+<p>Enter your study details - not you do not need to include Tags or a PudMed Id at this stage.</p>
+<p><img src="ENA_project_submission.png" class="img-fluid"></p>
+<p>Select submit.</p>
+<p>Once it has completed you should get an email which will include a project/study accession number e.g.&nbsp;PRJXXXXXX. It will also now appears under the <strong>Studies</strong> tab in the Webin interface.</p>
+</section>
+<section id="register-samples" class="level3">
+<h3 class="anchored" data-anchor-id="register-samples">2. Register samples</h3>
+<p>Under the <strong>New submission</strong> tab select <strong>Register samples</strong> [Register Samples to give context to your data], and press <code>next</code></p>
+<p>To begin with use the <strong>Start building your submission</strong> option to generate a sample sheet. Select the <code>Select Checklist</code> option open more details.</p>
+<p><img src="ENA_sample_submission_1.png" class="img-fluid"></p>
+<p>If you are unsure on which option is right for your generally for a lot of metabarcoding studies (e.g.&nbsp;bacteria 16S microbiome, 18S eukaryote etc) related to some “host” (either vertebrate or invertebrate) then choose the following:</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>GSC MIxS host associated</strong></p>
+<p>Genomic Standards Consortium package extension for reporting of measurements and observations obtained from the environment where the sample was obtained. By choosing the environmental package, a selection of fields can be made from a relevant subsets of the GSC terms.</p>
+</div>
+</div>
+<p>Select the checklist and press next.</p>
+<p>You can then customise and add in additional fields</p>
+<p><img src="ENA_sample_submission_2.png" class="img-fluid"></p>
+<p>Select the download template option and then complete the spreadsheet. The downloaded file with have a name like: <code>data-2362730139549190230.tsv</code>. When you open the file it will have a header similar to the following:</p>
+<pre><code>#checklist_accession
+#unique_name_prefix
+#sample_alias
+#template
+#units</code></pre>
+<p>You start entering your sample information on line 6, and some notes on headers for the <strong>GSC MIxS host associated</strong> option:</p>
+<ul>
+<li><code>sample_alias</code> - your sequence ID</li>
+<li><code>tax_id</code> - You can find your taxonomy ID from the <a href="https://www-ncbi-nlm-nih-gov.libproxy.murdoch.edu.au/taxonomy">NCBI taxonomy database</a></li>
+<li><code>scientific_name</code> - Your scientific name <em>must</em> be at the species level. Tips for working with environmental samples are <a href="https://ena-docs.readthedocs.io/en/latest/faq/taxonomy.html#environmental-taxonomic-classifications">here</a></li>
+<li><code>common_name</code> - Free text</li>
+<li><code>sample_title</code> - Free text</li>
+<li><code>sample_description</code> - Free text</li>
+<li><code>project name</code> - Free text, I use the project name I entered in the corresponding project registration</li>
+<li><code>sequencing method</code> -</li>
+<li><code>investigation type</code> - e.g.&nbsp;mimarks-survey</li>
+<li><code>collection date</code> - acceptable formats include YYYY-MM-DD or YYYY</li>
+<li><code>geographic location (country and/or sea)</code> - Must match the country names as they appear in the ENA data base. e.g.&nbsp;“Australia”</li>
+<li><code>geographic location (latitude)</code> - DD format e.g.&nbsp;-33.69</li>
+<li><code>geographic location (longitude)</code> - DD format e.g.&nbsp;151.25</li>
+<li><code>host-associated environmental package</code> - e.g.&nbsp;host-associated</li>
+<li><code>environment (biome)</code> - <a href="https://www.environment.gov.au/land/nrs/science/ibra/australias-ecoregions">Australian biomes</a></li>
+<li><code>environment (feature)</code> - e.g.&nbsp;animal-associated habitat</li>
+<li><code>environment (material)</code> - free text e.g.&nbsp;Blood</li>
+</ul>
+<p>You will then have to use to <strong>Previous</strong> button to navigate back to the stage where you can upload the sample sheet.</p>
+<blockquote class="blockquote">
+<p>file extension must be <code>.tsv</code> ot <code>.txt</code></p>
+</blockquote>
+</section>
+<section id="upload-sequence-files" class="level3">
+<h3 class="anchored" data-anchor-id="upload-sequence-files">3. Upload sequence files</h3>
+<p>I have the easiest and quickest way to do this for large data is to to use the command line.</p>
+<p>Details on <a href="https://ena-docs.readthedocs.io/en/latest/submit/fileprep/upload.html?highlight=lftp#uploading-files-using-command-line-ftp-client">Uploading Files Using Command Line FTP Client</a></p>
+<p>But put simply:</p>
+<ol type="1">
+<li>Open the terminal and navigate to the directory where the raw sequence files are.</li>
+<li>Type <code>lftp webin2.ebi.ac.uk -u Webin-xxxxx</code>, filling in your Webin username and enter your Webin password when prompted. Type ls command to check the content of your directory (check your in the correct directory)</li>
+<li>Use <code>mput &lt;filename&gt;</code> command to upload files. For bulk upload of zipped fastq files (i.e.&nbsp;ending in <code>.fastq.gz</code>) simply type <code>mput *.fastq.gz</code></li>
+<li>Once it has complete use <code>bye</code> command to exit the ftp client.</li>
+</ol>
+</section>
+<section id="run-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="run-analysis">4. Run analysis</h3>
+<p>This will link your uploaded sequence files to their corresponding sample and project identifiers.</p>
+<p>You must already have completed the following:</p>
+<ol type="1">
+<li>Register Project</li>
+<li>Register Samples</li>
+<li>Upload the raw sequence files</li>
+</ol>
+<p>From the Webin submission page under the <strong>New Submission</strong> tab select <strong>Submit sequence reads and experiments</strong> [We recommend that Fastq, BAM, and CRAM read files are submitted using Webin-CLI]. Press next.</p>
+<p>Select the project which you want to associate the run/experiment to. Note you can only select one project at a time.</p>
+<p>It will then prompt you for sample information. However hopefully you have alreayd done this so select the <strong>Skip</strong> option in the bottom right hand corner.</p>
+<p>Select your sequence file format e.g.&nbsp;CRAM, BAM, One Fastq file, Two Fastq files etc.</p>
+<p>Then select the <strong>Download Spreadsheet</strong> option and complete the file with some tips below. The downloaded file with have a name like: <code>experiment_paired_fastq_spreadsheet.tsv</code></p>
+<p>Then <strong>Upload Completed Spreadsheet</strong> and once it has checked for errors, press the <strong>Submit</strong> button.</p>
+<section id="notes-for-the-experiment-spreadsheet" class="level4">
+<h4 class="anchored" data-anchor-id="notes-for-the-experiment-spreadsheet">Notes for the experiment spreadsheet</h4>
+<p><strong>md5 generation</strong></p>
+<p>To generate the md5 file you can use terminal and simple execute:</p>
+<p><code>md5 &lt;file-name&gt;</code></p>
+<p>For bulk execution you can use:</p>
+<p><code>md5 *.fastq.gz</code> which will generate something like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">md5</span> example.fastq.gz</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">90fb727a1889a9e2194d838514beef19</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Spreadsheet headers</strong></p>
+<p>Some tips here aimed at generation of paired-end sequence data:</p>
+<ul>
+<li><code>project_accession</code> - this comes from when you first registered the project e.g.&nbsp;<code>PRJXXXXX</code></li>
+<li><code>project_alias</code> - you can leave this blank</li>
+<li><code>experiment_alias</code> - a sequential ID for each sample e.g.&nbsp;for first sample ena-EXPERIMENT-INSTITUTION-DD-MM-YYYY-HH:MM:SS:XXX-1</li>
+<li><code>run_alias</code> - a sequential ID for each sample e.g.&nbsp;for first sample ena-RUN-INSTITUTION-DD-MM-YYYY-HH:MM:SS:XXX-1</li>
+<li><code>library_name</code> - your identifier for library name</li>
+<li><code>library_source</code> - e.g.&nbsp;GENOMIC</li>
+<li><code>library_selection</code> - e.g.&nbsp;PCR</li>
+<li><code>library_strategy</code> - e.g.&nbsp;AMPLICON</li>
+<li><code>design_description</code> - brief description of library</li>
+<li><code>library_construction_protocol</code> - brief description of library construction such as kit e.g.&nbsp;Nextera XT DNA</li>
+<li><code>instrument_model</code> - e.g.&nbsp;Illumina MiSeq</li>
+<li><code>file_type</code> e.g.&nbsp;fastq</li>
+<li><code>library_layout</code> SINGLE <em>OR</em> PAIRED</li>
+<li><code>insert_size</code> - numbers only in basepairs or nucleotide e.g.&nbsp;for 300 bp = 300</li>
+<li><code>forward_file_name</code> - sample-id-R1.fastq.gz</li>
+<li><code>forward_file_md5</code> - e.g.&nbsp;90fb727a1889a9e2194d838514beef19</li>
+<li><code>forward_file_unencrypted_md5</code> - can leave blank</li>
+<li><code>reverse_file_name</code> - sample-id-R2.fastq.gz</li>
+<li><code>reverse_file_md5</code> - e.g.&nbsp;90fb727a1889a9e2194d838514beef19</li>
+<li><code>reverse_file_unencrypted_md5</code> - can leave blank</li>
+</ul>
+<blockquote class="blockquote">
+<p>file extension must be <code>.tsv</code> or <code>.csv</code></p>
+</blockquote>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="siobhon-egan/siobhon-egan.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, Siobhon Egan</div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/siobhon_egan">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

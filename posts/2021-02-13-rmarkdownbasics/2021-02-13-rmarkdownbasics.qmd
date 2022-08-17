@@ -14,6 +14,10 @@ categories: [rstudio, rmarkdown]
 -   [RMarkdown overview/references](https://rmarkdown.rstudio.com/docs/)
 -   [Bookdown - rmarkdown syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html)
 
+🔗 **Links** to some handy workshops/lessons I find
+
+- [R Markdown Crash Course Zachary M. Smith](https://zsmith27.github.io/rmarkdown_crash-course/index.html)
+
 **Italics**
 
 Can be produced by either `_text1_` or `*text1*` which will look this *text1* or *text2*.

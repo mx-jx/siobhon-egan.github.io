@@ -2,146 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.siobhon-egan.github.io/contact.html</loc>
-    <lastmod>2022-08-02T13:01:01.466Z</lastmod>
+    <lastmod>2022-08-17T12:08:55.629Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-phylo-models/2021-02-13-phylo-models.html</loc>
-    <lastmod>2022-08-02T13:01:01.923Z</lastmod>
+    <lastmod>2022-08-17T12:08:56.206Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-phylo-methods/2021-02-13-phylo-methods.html</loc>
-    <lastmod>2022-08-02T13:01:02.267Z</lastmod>
+    <lastmod>2022-08-17T12:08:56.731Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-writing/2021-07-30-writing.html</loc>
-    <lastmod>2022-08-02T13:01:02.636Z</lastmod>
+    <lastmod>2022-08-17T12:08:57.126Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-04-14-rstudio/2021-04-14-rstudio.html</loc>
-    <lastmod>2022-08-02T13:01:03.009Z</lastmod>
+    <lastmod>2022-08-17T12:08:57.658Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-04-19-tick-identification/tick-identification.html</loc>
-    <lastmod>2022-08-02T13:01:04.086Z</lastmod>
+    <lastmod>2022-08-17T12:08:59.338Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-statistics/2021-07-30-statistics.html</loc>
-    <lastmod>2022-08-02T13:01:04.380Z</lastmod>
+    <lastmod>2022-08-17T12:09:00.218Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-phylogenetics/2021-07-30-phylogenetics.html</loc>
-    <lastmod>2022-08-02T13:01:04.694Z</lastmod>
+    <lastmod>2022-08-17T12:09:00.710Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-sequence-info/2021-07-30-sequence-info.html</loc>
-    <lastmod>2022-08-02T13:01:04.976Z</lastmod>
+    <lastmod>2022-08-17T12:09:01.103Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-rmarkdownbasics/2021-02-13-rmarkdownbasics.html</loc>
-    <lastmod>2022-08-02T13:01:13.404Z</lastmod>
+    <lastmod>2022-08-17T12:09:09.694Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-referencing/2021-02-13-referencing.html</loc>
-    <lastmod>2022-08-02T13:01:13.685Z</lastmod>
+    <lastmod>2022-08-17T12:09:10.090Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-metagenomics/2021-07-30-metagenomics.html</loc>
-    <lastmod>2022-08-02T13:01:14.011Z</lastmod>
+    <lastmod>2022-08-17T12:09:10.443Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-research/2021-07-30-research.html</loc>
-    <lastmod>2022-08-02T13:01:14.397Z</lastmod>
+    <lastmod>2022-08-17T12:09:10.907Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2022-06-23-rstudio/2022-06-23-rstudio.html</loc>
-    <lastmod>2022-08-02T13:01:14.892Z</lastmod>
+    <lastmod>2022-08-17T12:09:11.320Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/welcome/index.html</loc>
-    <lastmod>2022-08-02T13:01:15.183Z</lastmod>
+    <lastmod>2022-08-17T12:09:11.659Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-rmarkdownmapping/2021-02-13-rmarkdownmapping.html</loc>
-    <lastmod>2022-08-02T13:01:15.677Z</lastmod>
+    <lastmod>2022-08-17T12:09:12.389Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-iqtree/2021-02-13-iqtree.html</loc>
-    <lastmod>2022-08-02T13:01:15.978Z</lastmod>
+    <lastmod>2022-08-17T12:09:12.765Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.siobhon-egan.github.io/posts/2022-08-03-rstats-dataframes/2022-08-03-rstats-dataframes.html</loc>
+    <lastmod>2022-08-17T12:09:15.315Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-unix/unix.html</loc>
-    <lastmod>2022-08-02T13:01:16.790Z</lastmod>
+    <lastmod>2022-08-17T12:09:16.495Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-publishing/2021-02-13-publishing.html</loc>
-    <lastmod>2022-08-02T13:01:17.082Z</lastmod>
+    <lastmod>2022-08-17T12:09:16.894Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-02-rpackages/2021-07-02-rpackages.html</loc>
-    <lastmod>2022-08-02T13:01:17.342Z</lastmod>
+    <lastmod>2022-08-17T12:09:17.256Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-metabarcoding/2021-07-30-metabarcoding.html</loc>
-    <lastmod>2022-08-02T13:01:17.654Z</lastmod>
+    <lastmod>2022-08-17T12:09:17.702Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-general-code/2021-02-13-general-code.html</loc>
-    <lastmod>2022-08-02T13:01:18.439Z</lastmod>
+    <lastmod>2022-08-17T12:09:19.217Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-mrbayes/2021-02-13-mrbayes.html</loc>
-    <lastmod>2022-08-02T13:01:18.856Z</lastmod>
+    <lastmod>2022-08-17T12:09:19.899Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.siobhon-egan.github.io/posts/2022-08-03-colour-dataViz/2022-08-03-colour-dataViz.html</loc>
+    <lastmod>2022-08-17T12:09:26.250Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2022-07-13-metabolomics/2022-07-13-metabolomics.html</loc>
-    <lastmod>2022-08-02T13:01:19.142Z</lastmod>
+    <lastmod>2022-08-17T12:09:26.764Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-rmarkdowndocs/2021-02-13-rmarkdowndocs.html</loc>
-    <lastmod>2022-08-02T13:01:22.093Z</lastmod>
+    <lastmod>2022-08-17T12:09:30.950Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.siobhon-egan.github.io/posts/2022-08-03-rstats-genomics/2022-08-03-rstats-genomics.html</loc>
+    <lastmod>2022-08-17T12:09:31.357Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2022-06-23-rmicrobiomeFigs/2022-06-23-rmicrobiomeFigs.html</loc>
-    <lastmod>2022-08-02T13:01:22.560Z</lastmod>
+    <lastmod>2022-08-17T12:09:32.093Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-repositories/2021-07-30-repositories.html</loc>
-    <lastmod>2022-08-02T13:01:22.949Z</lastmod>
+    <lastmod>2022-08-17T12:09:32.667Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-12-journals/2021-02-12-journals.html</loc>
-    <lastmod>2022-08-02T13:01:23.388Z</lastmod>
+    <lastmod>2022-08-17T12:09:33.298Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-rmarkdownwebsites/2021-02-13-rmarkdownwebsites.html</loc>
-    <lastmod>2022-08-02T13:01:23.890Z</lastmod>
+    <lastmod>2022-08-17T12:09:34.247Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-02-13-rstats/2021-02-13-rstats.html</loc>
-    <lastmod>2022-08-02T13:01:24.188Z</lastmod>
+    <lastmod>2022-08-17T12:09:34.711Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-07-30-github-notes/github-notes.html</loc>
-    <lastmod>2022-08-02T13:01:25.001Z</lastmod>
+    <lastmod>2022-08-17T12:09:36.051Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/posts/2021-06-23-sequences/2021-06-23-sequences.html</loc>
-    <lastmod>2022-08-02T13:01:25.611Z</lastmod>
+    <lastmod>2022-08-17T12:09:36.919Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/index.html</loc>
-    <lastmod>2022-08-02T13:01:26.607Z</lastmod>
+    <lastmod>2022-08-17T12:09:38.949Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/publications.html</loc>
-    <lastmod>2022-08-02T13:01:28.448Z</lastmod>
+    <lastmod>2022-08-17T12:09:41.483Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/about.html</loc>
-    <lastmod>2022-08-02T13:01:29.919Z</lastmod>
+    <lastmod>2022-08-17T12:09:43.256Z</lastmod>
   </url>
   <url>
     <loc>https://www.siobhon-egan.github.io/cv.html</loc>
-    <lastmod>2022-08-02T13:01:30.343Z</lastmod>
+    <lastmod>2022-08-17T12:09:43.804Z</lastmod>
   </url>
 </urlset>
