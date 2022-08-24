@@ -1,0 +1,160 @@
+---
+title: "blastn output and R"
+description: |
+ Curating blastn output in R
+author: "Siobhon Egan"
+date: "2022-08-23"
+categories: [rstudio, rstats, genomics]
+---
+
+::: {.callout-note icon=false, collapse=flase}
+Taxonomy assignment by blasting the ASVs against the refseq 16S rRNA bacterial database. Example of simple sorting of top hit and retrieving taxonomy lineage information.
+:::
+
+>[`taxize`](https://docs.ropensci.org/taxize/) - allows users to search over many taxonomic data sources for species names (scientific and common) and download up and downstream taxonomic hierarchical information - among other things.
+
+## Example data
+
+*For this quick example I am using a small fasta file with just 10 ASV sequences*
+```
+>ASV01
+AGGGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAGCGGATGAGTGGAGCTTGCTCC
+ATGATTCAGCGGCGGACGGGTGAGTAATGCCTAGGAATCTGCCTGGTAGTGGGGGACAACGTTTCGAAAGGAACGCTAAT
+ACCGCATACGTCCTACGGGAGAAAGCAGGGGACCTTCGGGCCTTGCGCTATCAGATGAGCCTAGGTCGGATTAGCTAGTA
+GGTGGGGTAAAGGCCCACCTAGGCGACGATCCGTAACTGG
+>ASV02
+AGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAGCGGATGAGTGGAGCTTGCTCC
+ATGATTCAGCGGCGGACGGGTGAGTAATGCCTAGGAATCTGCCTGGTAGTGGGGGACAACGTTTCGAAAGGAACGCTAAT
+ACCGCATACGTCCTACGGGAGAAAGCAGGGGACCTTCGGGCCTTGCGCTATCAGATGAGCCTAGGTCGGATTAGCTAGTA
+GGTGGGGTAAAGGCCCACCTAGGCGACGATCCGTAACTGG
+>ASV03
+AGGGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAGCGGATGAGTGGAGCTTGCTCC
+ATGATTCAGCGGCGGACGGGTGAGTAATGCCTAGGAATCTGCCTGGTAGTGGGGGACAACGTTTCGAAAGGAACGCTAAT
+ACCGCATACGTCCTACGGGAGAAAGCAGGGGACCTTCGGGCCTTGCGCTATCAGATGAGCCTAGGTCGGATTAGCTAGTA
+GGTGGGGTAAAGGCCCACCTAGGCGACGATCCGTAACTGG
+>ASV04
+AGAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAGCGGATGAGTGGAGCTTGCTCC
+ATGATTCAGCGGCGGACGGGTGAGTAATGCCTAGGAATCTGCCTGGTAGTGGGGGACAACGTTTCGAAAGGAACGCTAAT
+ACCGCATACGTCCTACGGGAGAAAGCAGGGGACCTTCGGGCCTTGCGCTATCAGATGAGCCTAGGTCGGATTAGCTAGTA
+GGTGGGGTAAAGGCCCACCTAGGCGACGATCCGTAACTGG
+>ASV05
+AGGGTTTGATCATGGCTCAGGATGAACGCTGGCGGCGTGCCTAATACATGCAAGTCGAGCGAATGGATTGAGAGCTTGCT
+CTCAAGAAGTTAGCGGCGGACGGGTGAGTAACACGTGGGTAACCTGCCCATAAGACTGGGATAACTCCGGGAAACCGGGG
+CTAATACCGGATAATATTTTGAACTGCATGGTTCGAAATTGAAAGGCGGCTTCGGCTGTCACTTATGGATGGACCCGCGT
+CGCATTAGCTAGTTGGTGAGGTAACGGCTCACCAAGGCAA
+>ASV06
+AGAGTTTGATCATGGCTCAGGATGAACGCTGGCGGCGTGCCTAATACATGCAAGTCGAGCGAATGGATTGAGAGCTTGCT
+CTCAAGAAGTTAGCGGCGGACGGGTGAGTAACACGTGGGTAACCTGCCCATAAGACTGGGATAACTCCGGGAAACCGGGG
+CTAATACCGGATAATATTTTGAACTGCATGGTTCGAAATTGAAAGGCGGCTTCGGCTGTCACTTATGGATGGACCCGCGT
+CGCATTAGCTAGTTGGTGAGGTAACGGCTCACCAAGGCAA
+>ASV07
+AGGGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAGCGGATGAGAGGAGCTTGCTCC
+TTGATTTAGCGGCGGACGGGTGAGTAATGCCTAGGAATCTGCCTGGTAGTGGGGGATAACGTTCCGAAAGGAACGCTAAT
+ACCGCATACGTCCTACGGGAGAAAGCAGGGGACCTTCGGGCCTTGCGCTATCAGATGAGCCTAGGTCGGATTAGCTAGTT
+GGTGAGGTAATGGCTCACCAAGGCGACGATCCGTAACTGG
+>ASV08
+AGGGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAGCGGATGAGAGGAGCTTGCTCC
+TTGATTTAGCGGCGGACGGGTGAGTAATGCCTAGGAATCTGCCTGGTAGTGGGGGATAACGTTCCGAAAGGAACGCTAAT
+ACCGCATACGTCCTACGGGAGAAAGCAGGGGACCTTCGGGCCTTGCGCTATCAGATGAGCCTAGGTCGGATTAGCTAGTT
+GGTGAGGTAATGGCTCACCAAGGCGACGATCCGTAACTGG
+>ASV09
+AGGGTTTGATCATGGCTCAGGATGAACGCTGGCGGCGTGCCTAATACATGCAAGTCGAGCGAATGGATTGAGAGCTTGCT
+CTCAAGAAGTTAGCGGCGGACGGGTGAGTAACACGTGGGTAACCTGCCCATAAGACTGGGATAACTCCGGGAAACCGGGG
+CTAATACCGGATAACATTTTGAACTGCATGGTTCGAAATTGAAAGGCGGCTTCGGCTGTCACTTATGGATGGACCCGCGT
+CGCATTAGCTAGTTGGTGAGGTAACGGCTCACCAAGGCAA
+>ASV10
+AGGGTTTGATCCTGGCTCAGGATGAACGCTGGCGGCGTGCCTAATACATGCAAGTCGAGCGAATGGATTGAGAGCTTGCT
+CTCAAGAAGTTAGCGGCGGACGGGTGAGTAACACGTGGGTAACCTGCCCATAAGACTGGGATAACTCCGGGAAACCGGGG
+CTAATACCGGATAATATTTTGAACTGCATGGTTCGAAATTGAAAGGCGGCTTCGGCTGTCACTTATGGATGGACCCGCGT
+CGCATTAGCTAGTTGGTGAGGTAACGGCTCACCAAGGCAA
+```
+
+## Load library
+
+```{r}
+#devtools::install_github("ropensci/taxize")
+library('taxize')
+```
+
+## Perform blastn 
+
+This next line of code is using commmand line blast. A search is performed of the target fasta file against the refseq 16S ribosomal RNA data base. We select the output format `-6`.
+
+::: {.callout-warning icon=false, collapse=true}
+Note to self: make quick tutorial on setting up command line blast and using common common ncbi databases.
+:::
+
+```{bash}
+blastn -db ~/db/16S_ribosomal_RNA_BLAST/16S_ribosomal_RNA -query asvs_small.fasta -out blastn_16SrRNA_small.txt -outfmt 6
+```
+
+## Read the blastn output back into R
+
+Now read in text file and give headers
+```{r}
+blastn_taxa <- read.table("blastn_16SrRNA_small.txt", sep = "\t", header = FALSE)
+
+blastn_fmt6 <-
+  c(
+    "qseqid",
+    "sseqid",
+    "pident",
+    "length",
+    "mismatch",
+    "gapopen",
+    "qstart",
+    "qend",
+    "sstart",
+    "send",
+    "evalue",
+    "bitscore"
+  )
+colnames(blastn_taxa) <- blastn_fmt6
+```
+
+## Order table and select just the top hit.
+
+Then we get order using the table by query sequence and evalue (where we sort by lowest e-value).
+
+You can change this to pident to get the highest sequence similarity (but make sure you sort by having largest values at the top).
+
+```{r}
+blastn_taxa_sort <- data.table::setorder(blastn_taxa, qseqid, -evalue)
+
+blastn_taxa_top <- blastn_taxa_sort[match(unique(blastn_taxa_sort$qseqid), blastn_taxa_sort$qseqid),]
+```
+
+## Retrieve the genbank ID and lineage information
+
+Now we use the `genbank2uid` function to get the accession number. 
+
+```{r}
+# get vector of unique accession numbers
+unique_sseqid <- unique(blastn_taxa_top$sseqid)
+
+# search for these in the ncbi database
+ncbi_lineage <- classification(genbank2uid(id = unique_sseqid), db = 'ncbi')
+
+# merge output into a data frame
+ncbi_lineage_df <-cbind(ncbi_lineage)
+ncbi_lineage_df$sseqid <- unique_sseqid
+
+# select just which lineage level to keep
+ncbi_lineage_df <- dplyr::select(ncbi_lineage_df, sseqid, query, superkingdom, phylum, class, order, family, genus, species)
+```
+
+Check we have matches with all queries we put in and then join blast top hit table with lineage
+```{r}
+idx <- which(blastn_taxa_top$sseqid %in% ncbi_lineage_df$sseqid)
+
+blastn_taxa_top_lineage <-
+  blastn_taxa_top |> dplyr::left_join(ncbi_lineage_df,
+                                by = "sseqid")
+```
+
+**Now let's inspect our beautiful output**
+
+```{r}
+DT::datatable(blastn_taxa_top_lineage)
+```
+

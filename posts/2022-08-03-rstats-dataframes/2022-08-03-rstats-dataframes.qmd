@@ -7,12 +7,29 @@ date: "2022-08-02"
 categories: [rstudio, rstats]
 ---
 
+::: {.callout-warning icon=false, collapse=true}
+I will try and keep this page very simple - a place to house some quick examples of data manipulations I reach for often. *A work in progress*.
+:::
+
+>Some quick bits of code that I reach for often to manipulate `data.frames` in R.
+
+I :heart: [tidyverse](https://www.tidyverse.org/) so let's load it first up!
 ```{r}
+library(tidyverse)
+```
+
+## Matching
+
+Create two data frames match order of each based on a column in common
+```{r}
+# data frame 1
 producers <- data.frame(
   surname =  c("Tarantino", "Scorsese", "Spielberg", "Hitchcock", "Polanski"),
   nationality = c("US", "US", "US", "UK", "Poland"),
   stringsAsFactors = FALSE
 )
+
+# data frame 2
 
 movies <- data.frame(
   surname = c("Spielberg",
@@ -29,11 +46,35 @@ movies <- data.frame(
 )
 ```
 
-
+Then we match data frames using the `surname` column. 
 ```{r}
 idx <- match(producers$surname, movies$surname)
 movies_matched <- movies[idx, ]
 ```
+
+::: {.callout-note icon=false, collapse=false}
+**Formula**
+`idx <- match(df1$colInCommon, df2$colInCommon)`
+`matched_df <- df2[idx, ]`
+:::
+
+## Join data frames
+
+Use the `full_join` to merge two data frames based on a common column
+```{r}
+joindf <- movies %>% full_join(producers,
+          by = "surname")
+DT::datatable(joindf)
+```
+
+Join options include:
+
+- inner_join(): includes all rows in x and y.
+- left_join(): includes all rows in x.
+- right_join(): includes all rows in y.
+- full_join(): includes all rows in x or y.
+
+## Rename column 
 
 Using dplyr to rename a column with specific name we can call.
 ```r
@@ -41,7 +82,7 @@ df <- df %>%
   dplyr::rename(newName = oldName)
 ```
 
-Alternative way without using dylyr we cal call the specific column number
+Alternative way without using dplyr we call the specific column number
 ```r
 colnames(df)[1] <- "newName"
 ```
@@ -54,4 +95,57 @@ colnames(df) <- vector
 Maybe col names are contained within a row 2 of the data frame
 ```r
 colnames(df) <- df[2,]
+```
+
+## Find and replace
+
+```
+df["colname"][df["colname"] == "existing value"] <- "new value"
+```
+
+## Pivot wide and long
+
+Load the [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) package for some fun example data.
+
+```{r}
+library(palmerpenguins)
+data(package = 'palmerpenguins')
+
+df <- penguins_raw
+
+
+df <- dplyr::select(df, studyName, `Sample Number`, Species,  `Culmen Length (mm)`, `Flipper Length (mm)`, `Body Mass (g)`)
+```
+
+**Pivot long**
+```{r}
+df_long <- df %>%
+  pivot_longer(
+    cols = 4:length(df),
+    names_to = "measurements",
+    values_to = "value")
+DT::datatable(df_long)
+```
+
+**Pivot wide**
+```{r}
+df_wide<- df_long %>%
+  pivot_wider(
+    names_from = "measurements",
+    values_from = "value")
+DT::datatable(df_wide)
+```
+
+
+## Misc.
+
+Paste options
+```{r}
+# with spaces by default use `paste`
+df_wide$studyName_sampleNumber <- paste(df_wide$studyName, "-", df_wide$`Sample Number`)
+
+# without spaces by default use `paste0`
+df_wide$studyName_sampleNumber2 <- paste0(df_wide$studyName, "-", df_wide$`Sample Number`)
+
+DT::datatable(df_wide)
 ```

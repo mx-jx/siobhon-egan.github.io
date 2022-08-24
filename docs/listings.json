@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2022-08-23-rstats-blastn/2022-08-23-rstats-blastn.html",
       "/posts/2022-08-03-rstats-genomics/2022-08-03-rstats-genomics.html",
       "/posts/2022-08-03-rstats-dataframes/2022-08-03-rstats-dataframes.html",
       "/posts/2022-08-03-colour-dataViz/2022-08-03-colour-dataViz.html",
