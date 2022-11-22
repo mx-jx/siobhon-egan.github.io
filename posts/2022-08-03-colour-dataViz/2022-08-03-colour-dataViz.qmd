@@ -7,9 +7,9 @@ date: "2022-08-02"
 categories: [rstudio, rstats, colour]
 ---
 
-As I need to reach for this information often I have decided to dedicate a solo post on all things coloour related.
+As I need to reach for this information often I have decided to dedicate a solo post on all things colour related.
 
-Figures are an important part of any publication. They are often the first thing readers look at and will help usually are the deciders as to whether non-specialists are going to read on...a good figure goes a long way! If you can spend the time it is well worth it (within reason of course). A good read on some do and don’ts for figures by [Rougier et al. 2014 PLOS comp biol](https://doi.org/10.1371/journal.pcbi.1003833), while your at it check out this one by [Mensh and Kording 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619).
+Figures are an important part of any publication. They are often the first thing readers look at and will help usually are the deciders as to whether non-specialists are going to read on...a good figure goes a long way! If you can spend the time it is well worth it (within reason of course). A good read on some do and dont's for figures by [Rougier et al. 2014 PLOS comp biol](https://doi.org/10.1371/journal.pcbi.1003833), while your at it check out this one by [Mensh and Kording 2017](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619).
 
 :link: General colour resources
 
@@ -23,13 +23,17 @@ Figures are an important part of any publication. They are often the first thing
 -   [HTML colour names](https://www.w3schools.com/colors/colors_names.asp)
 -   [HTML colour codes](https://htmlcolorcodes.com/)
 
-
 :link: R packages and resources
 
 - [Viridis](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html): One of my favourite colour palettes at the moment.
     - [Viridis Color Palette Generator](https://waldyrious.net/viridis-palette-generator/)
     - [ggplot2 and viridis](https://ggplot2.tidyverse.org/reference/scale_viridis.html)
+- [dehex](https://matt-dray.github.io/dehex/): An R package containing simple functions and a Shiny app to help me train myself to ‘read’ a colour from its hex code.
+- [prismatic](https://emilhvitfeldt.github.io/prismatic/): The goal of prismatic is to provide color manipulation tools in R, in a intuitive, low-dependency and functional way.
+- [RColourBrewer](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html)
+- [r-graph-gallery](https://r-graph-gallery.com/colors.html)
 
+---
 
 **Examples**
 
@@ -49,9 +53,58 @@ library(RColorBrewer)
 # View a single RColorBrewer palette by specifying its name
 display.brewer.pal(n = 8, name = 'Dark2')
 
-
 # Hexadecimal color specification 
 brewer.pal(n = 8, name = "Dark2")
 ```
+More RColourbrewer palettes
+```{r}
+# BrBG
+display.brewer.pal(7,"BrBG")
+brewer.pal(n = 7, name = "BrBG")
+# Paired
+display.brewer.pal(12,"Paired")
+brewer.pal(n = 12, name = "Paired")
+# Set2
+display.brewer.pal(8,"Set2")
+brewer.pal(n = 8, name = "Set2")
+# Set3
+display.brewer.pal(12,"Set3")
+brewer.pal(n = 12, name = "Set3")
+```
+
+
+*Difference between discrete and continuous colours in a figure*
+
+```{r}
+library(viridis)
+library(ggplot2)
+p <- ggplot(mtcars, aes(wt, mpg))
+p + geom_point(size=4, aes(colour = factor(cyl))) +
+    scale_color_viridis(discrete=TRUE) +
+    theme_bw()
+p + geom_point(size=4, aes(colour = cyl)) +
+    scale_color_viridis(discrete=FALSE) +
+    theme_bw()
+```
+
+Show hex values of viridis palettes
+```{r}
+library(scales)
+show_col(viridis_pal()(20))
+show_col(viridis_pal(option = 'A')(20))
+show_col(viridis_pal(option = 'B')(20))
+show_col(viridis_pal(option = 'C')(20))
+show_col(viridis_pal(option = 'D')(20))
+```
+
+Make a vector with hex values of colours
+```{r}
+# number of colours you want
+q_colors =  15 # for no particular reason
+v_colors =  viridis(q_colors, option = 'D')
+v_colors
+```
+
+
 
 

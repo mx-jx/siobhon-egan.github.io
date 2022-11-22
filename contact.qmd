@@ -14,31 +14,21 @@ Harry Perkins Institute of Medical Research
 Level 3, 5 Robin Warren Drive    
 Murdoch, 6150, Western Australia
 
+{{< fa envelope >}} [siobhon.egan\@murdoch.edu.au](mailto:siobhon.egan@murdoch.edu.au){.email}
 
-:envelope: [siobhon.egan\@murdoch.edu.au](mailto:siobhon.egan@murdoch.edu.au){.email}
-
-:envelope: [siobhonegan\@hotmail.com](mailto:siobhonegan@hotmail.com){.email}
+{{< fa envelope >}} [siobhonegan\@hotmail.com](mailto:siobhonegan@hotmail.com){.email}
 
 **Research links**
 
-<a href="https://siobhonlegan.com" class="list-group-item list-group-item-action">
-<i class="fas fa-home"></i> Home page </a>
-
-<a href="https://www.researchgate.net/profile/Siobhon_Egan" class="list-group-item list-group-item-action">
-<i class="fab fa-researchgate"></i> Research Gate </a>
-
-<a href="https://github.com/siobhon-egan" class="list-group-item list-group-item-action">
-<i class="fab fa-github"></i> Github </a>
-
-<a href="http://orcid.org/0000-0003-4395-4069" class="list-group-item list-group-item-action">
-<i class="fas fa-address-card"></i> ORCID </a>
-
-<a href="https://scholar.google.com/citations?user=BrX5o08AAAAJ&hl=en&oi=ao" class="list-group-item list-group-item-action">
-<i class="fab fa-google"></i> Google Scholar </a>
-
-<a href="https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715" class="list-group-item list-group-item-action">
-<i class="fas fa-glasses"></i> Scopus </a>
-
+- {{< fa home >}} [Home page](https://siobhonlegan.com)
+- {{< fa brands twitter >}} [Twitter](https://twitter.com/siobhon_egan)
+- {{< fa brands linkedin >}} [Linkedin](https://www.linkedin.com/in/siobhon-egan/)
+- {{< fa brands researchgate >}} [Research Gate](https://www.researchgate.net/profile/Siobhon_Egan)
+- {{< fa brands github >}} [GitHub](https://github.com/siobhon-egan)
+- {{< fa brands orcid >}} [ORCID](http://orcid.org/0000-0003-4395-4069)
+- {{< fa brands google >}} [Google Scholar](https://scholar.google.com/citations?user=BrX5o08AAAAJ&hl=en&oi=ao)
+- {{< fa glasses >}} [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57202210372&amp;eid=2-s2.0-85047463715)
+- {{< fa globe >}} [ResearcherID (Web of Science)](http://www.webofscience.com/wos/author/record/AAM-5841-2021)      
 
 ```{r echo = FALSE, out.width = "75%", fig.align='center'}
 knitr::include_graphics("images/IMG_2877.jpg")

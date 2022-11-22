@@ -61,7 +61,7 @@ This will check will ensure your data is formatting and read correctly by the pr
 
 ### 3. Specify the evolutionary model
 
-This is where you start to set the parameters for your analysis. You will likely need to do some background work to figure out which is the correct model for your data - [see here](../2021-02-13/2021-02-13-phylo-models.qmd).
+This is where you start to set the parameters for your analysis. You will likely need to do some background work to figure out which is the correct model for your data - [see here](../2021-02-13-phylo-models/2021-02-13-phylo-models.qmd).
 
 If your data are not DNA or RNA, if you want to invoke a different model, or if you want to use non-default priors, refer to the MrBayes manual and Appendix for more help.
 

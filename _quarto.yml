@@ -44,6 +44,6 @@ format:
     monofont: "Fira Mono"
     footnotes-hover: true
     fontsize: 1em
-    theme: my-litera.scss
+    theme: minty
     css: styles.css
 

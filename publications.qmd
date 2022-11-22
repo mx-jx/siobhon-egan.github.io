@@ -19,6 +19,15 @@ library(downloadthis)
 # Articles
 
 <article>
+<h3><a href="https://doi.org/10.1021/acs.jafc.2c03597"> Overview of the Nomenclature and Network of Contributors to the Development of Bioreactors for Human Gut Simulation Using Bibliometric Tools: A Fragmented Landscape.</a></h3>
+<div class="summary">
+<p>Sanabria, J., **Egan, S.**, Masuda, R., Lee, A., Gibson, G. R., Nicholson, J. K., Wist, J., Holmes E.</p>
+<span><i class="fa fa-calendar"></i> _2022_ | *Journal of Agricultural and Food Chemistry*</span></p>
+<a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1021/acs.jafc.2c03597" role="button">Published article -- *Subscription**</a>
+</div>
+</article>
+
+<article>
 <h3><a href="https://doi.org/10.3390/microorganisms10071464">Exploiting the potential of bioreactors for creating spatial organisation in the soil microbiome: A strategy for increasing sustainable agricultural practices.</a></h3>
 <div class="summary">
 <p>Gutierrez, C. F., Romero A. N., **Egan, S.**, Holmes, E., Sanabria, J.</p>
@@ -87,7 +96,7 @@ knitr::include_graphics("images/haemoprotozoa.jpg")
 <article>
 <h3><a href="https://doi.org/10.1016/j.meegid.2021.104859">Molecular analysis of cryptosporidiosis cases in Western Australia in 2019 and 2020 supports the occurrence of two swimming pool associated outbreaks and reveals the emergence of a rare *C. hominis* IbA12G3 subtype.</a></h3>
 <div class="summary">
-<p>Braima, K., Zahedi, A., **Egan, S.**, Austen, J., Xiao, L., Witham, B., Pingault, N., Perera, S., Oskam, C., Reid, S., and Ryan, U.</p>
+<p>Braima, K., Zahedi, A., **Egan, S.**, Austen, J., Xiao, L., Witham, B., Pingault, N., Perera, S., Oskam, C., Reid, S., Ryan, U.</p>
 <span><i class="fa fa-calendar"></i> _2021_ | *Infection, Genetics and Evolution*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1016/j.meegid.2021.104859" role="button">Published article -- *Subscription*</a>
 </div>
@@ -98,7 +107,7 @@ knitr::include_graphics("images/haemoprotozoa.jpg")
 <article>
 <h3><a href="https://doi.org/10.1111/zph.12806">Zoonotic infection by *Cryptosporidium fayeri* IVgA10G1T1R1 in a Western Australian human.</a></h3>
 <div class="summary">
-<p>Braima, K., Zahedi, A., Oskam, C., Austen, J., **Egan, S.**, Reid, S., and Ryan, U.</p>
+<p>Braima, K., Zahedi, A., Oskam, C., Austen, J., **Egan, S.**, Reid, S., Ryan, U.</p>
 <span><i class="fa fa-calendar"></i> _2021_ | *Zoonoses and Public Health*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1111/zph.12806" role="button">Published article -- *Subscription*</a>
 </div>
@@ -115,7 +124,7 @@ knitr::include_graphics("images/pathogens_cover.png")
 <article>
 <h3><a href="https://doi.org/10.3390/pathogens9110873">Blood parasites in endangered wildlife: trypanosomes discovered during a survey of haemoprotozoa from the Tasmanian devil.</a></h3>
 <div class="summary">
-<p>**Egan, S.**,  Ruiz-Aravena, M., Austen, J., Barton, X., Comte, S., Hamilton, D., Hamede, R., Ryan, U., Irwin, P., Jones, M., and Oskam, C.</p>
+<p>**Egan, S.**,  Ruiz-Aravena, M., Austen, J., Barton, X., Comte, S., Hamilton, D., Hamede, R., Ryan, U., Irwin, P., Jones, M., Oskam, C.</p>
 <span><i class="fa fa-calendar"></i> _2020_ | *Pathogens*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.3390/pathogens9110873" role="button">Published article -- *Open access*</a>
 </div>
@@ -137,7 +146,7 @@ knitr::include_graphics("images/pathogens_cover.png")
 <article>
 <h3><a href="https://doi.org/10.1017/S0031182020001845">First report of *Trypanosoma dionisii* (Trypanosomatidae) identified in Australia</a></h3>
 <div class="summary">
-<p>Austen, J., Van Kampen, E., **Egan, S.**, O'Dea, M., Jackson, D., Ryan, U., Irwin, P., and Prada D.</p>
+<p>Austen, J., Van Kampen, E., **Egan, S.**, O'Dea, M., Jackson, D., Ryan, U., Irwin, P., Prada D.</p>
 <span><i class="fa fa-calendar"></i> _2020_ | *Parasitology*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1017/S0031182020001845" role="button">Published article -- *Subscription*</a>
 </div>
@@ -149,7 +158,7 @@ knitr::include_graphics("images/pathogens_cover.png")
 <article>
 <h3><a href="https://doi.org/10.1007/s00436-020-06653-z">Molecular identification of the *Trypanosoma* (*Herpetosoma*) *lewisi* clade in black rats (*Rattus rattus*) from Australia</a></h3>
 <div class="summary">
-<p>**Egan, S.**, Taylor, C., Austen, J., Banks, P., Alhstrom, L., Ryan, U., Irwin, P., and Oskam C.</p>
+<p>**Egan, S.**, Taylor, C., Austen, J., Banks, P., Alhstrom, L., Ryan, U., Irwin, P., Oskam C.</p>
 <span><i class="fa fa-calendar"></i> _2020_ | *Parasitology Research*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1101/819060" role="button">Preprint -- *bioRxiv*</a>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1007/s00436-020-06653-z" role="button">Published article -- *Subscription*</a>
@@ -167,7 +176,7 @@ knitr::include_graphics("images/ttbd_abstract.jpeg")
 <article>
 <h3><a href="https://doi.org/10.1016/j.ttbdis.2020.101407">Bacterial community profiling highlights complex diversity and novel organisms in wildlife ticks</a></h3>
 <div class="summary">
-<p>**Egan, S.**, Loh, S-M., Banks, P., Gillet, A., Alhstrom, L., Ryan, U., Irwin, P., and Oskam C.</p>
+<p>**Egan, S.**, Loh, S-M., Banks, P., Gillet, A., Alhstrom, L., Ryan, U., Irwin, P., Oskam C.</p>
 <span><i class="fa fa-calendar"></i> _2020_ | *Ticks and Tick-Borne Diseases*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1101/807131" role="button">Preprint -- *bioRxiv*</a>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1016/j.ttbdis.2020.101407" role="button">Published article -- *Subscription*</a>
@@ -181,7 +190,7 @@ knitr::include_graphics("images/ttbd_abstract.jpeg")
 <article>
 <h3><a href="https://doi.org/10.11646/zootaxa.4656.2.13">Automatic Barcode Gap Discovery reveals large COI intraspecific divergence in Australian Ixodidae</a></h3>
 <div class="summary">
-<p>Evans, M., **Egan, S.**, Irwin, P., and Oskam, C.</p>
+<p>Evans, M., **Egan, S.**, Irwin, P., Oskam, C.</p>
 <span><i class="fa fa-calendar"></i> _2019_ | *Zootaxa*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.11646/zootaxa.4656.2.13" role="button">Published article -- *Subscription*</a>
 </div>
@@ -192,7 +201,7 @@ knitr::include_graphics("images/ttbd_abstract.jpeg")
 <article>
 <h3><a href="https://doi.org/10.1071/MA18063">Bacterial tick-associated infections in Australia: Current studies and future directions</a></h3>
 <div class="summary">
-<p>Irwin, P., **Egan, S.**, Greay, T., and Oskam C.</p>
+<p>Irwin, P., **Egan, S.**, Greay, T., Oskam C.</p>
 <span><i class="fa fa-calendar"></i> _2018_ | *Microbiology Australia*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1071/MA18063" role="button">Published article -- *Subscription*</a>
 </div>
@@ -203,7 +212,7 @@ knitr::include_graphics("images/ttbd_abstract.jpeg")
 <article>
 <h3><a href="https://doi.org/10.1016/j.ijppaw.2018.05.005">Molecular surveillance of piroplasms in ticks from small and medium-sized urban and peri-urban mammals in Australia</a></h3>
 <div class="summary">
-<p>Siew-May, L., **Egan, S.**, Gillet, A., Banks, P., Ryan U., Irwin, P., and Oskam, C.</p>
+<p>Siew-May, L., **Egan, S.**, Gillet, A., Banks, P., Ryan U., Irwin, P., Oskam, C.</p>
 <span><i class="fa fa-calendar"></i> _2018_ | *International Journal of Parasitology: Parasites and Wildlife*</span></p>
 <a class="btn btn-outline-primary btn-sm" href="https://doi.org/10.1016/j.ijppaw.2018.05.005" role="button">Published article -- *Open access*</a>
 </div>
@@ -211,69 +220,69 @@ knitr::include_graphics("images/ttbd_abstract.jpeg")
 
 ***
 
-# Conference proceedings
+<!-- # Conference proceedings -->
 
-<article>
-<h3><a href="">What's in the wildlife? Surveillance of ticks and their associated microbes in Australian wildlife.</a></h3>
-<div class="summary">
-<span><i class="fa fa-calendar"></i> _2021-03_</span>
-<p>14th International Symposium on Ticks and Tick-borne Diseases (ISTTBD-XIV) | Online, hosted by German Society for Parasitology</p>
-</div>
-</article>
+<!-- <article> -->
+<!-- <h3><a href="">What's in the wildlife? Surveillance of ticks and their associated microbes in Australian wildlife.</a></h3> -->
+<!-- <div class="summary"> -->
+<!-- <span><i class="fa fa-calendar"></i> _2021-03_</span> -->
+<!-- <p>14th International Symposium on Ticks and Tick-borne Diseases (ISTTBD-XIV) | Online, hosted by German Society for Parasitology</p> -->
+<!-- </div> -->
+<!-- </article> -->
 
-<br>
+<!-- <br> -->
 
-<article>
-<h3><a href="https://www.researchgate.net/publication/335291253_The_ecology_of_Amblyomma_triguttatum_triguttatum_in_Western_Australia?_sg=06FApWS1HmdNKJ8t3Hrl3YYLNBx9I5wfnW5ONogeGH4MsGUT1j3xMJueCiYd0AiNuALdYnEbDk8qYqjsGVPJwOYRgg6jHAWpq2oWhvC_.cOgynunLwAnRfgpujkyEYNcLNNGhS8VyexKZ81EWEYs7pT9QAMuwMOpj9L61wr_5ZvvxsLlCZfEVGxMnEqBOsQ">The ecology of *Amblyomma triguttatum triguttatum* in Western Australia</a></h3>
-<div class="summary">
-<span><i class="fa fa-calendar"></i> _2019-07_</span>
-<p>Australian Society for Parasitology Annual Conference | Adelaide, South Australia</p>
-</div>
-</article>
+<!-- <article> -->
+<!-- <h3><a href="https://www.researchgate.net/publication/335291253_The_ecology_of_Amblyomma_triguttatum_triguttatum_in_Western_Australia?_sg=06FApWS1HmdNKJ8t3Hrl3YYLNBx9I5wfnW5ONogeGH4MsGUT1j3xMJueCiYd0AiNuALdYnEbDk8qYqjsGVPJwOYRgg6jHAWpq2oWhvC_.cOgynunLwAnRfgpujkyEYNcLNNGhS8VyexKZ81EWEYs7pT9QAMuwMOpj9L61wr_5ZvvxsLlCZfEVGxMnEqBOsQ">The ecology of *Amblyomma triguttatum triguttatum* in Western Australia</a></h3> -->
+<!-- <div class="summary"> -->
+<!-- <span><i class="fa fa-calendar"></i> _2019-07_</span> -->
+<!-- <p>Australian Society for Parasitology Annual Conference | Adelaide, South Australia</p> -->
+<!-- </div> -->
+<!-- </article> -->
 
-<br>
+<!-- <br> -->
 
-<article>
-<h3><a href="https://www.researchgate.net/publication/335290939_Molecular_barcoding_of_Australian_hard_ticks_Ixodidae">Molecular barcoding of Australian hard ticks (Ixodidae)</a></h3>
-<div class="summary">
-<span><i class="fa fa-calendar"></i> _2019-07_</span>
-<p>Australian Society for Parasitology Annual Conference | Adelaide, South Australia</p>
-<a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/335290939_Molecular_barcoding_of_Australian_hard_ticks_Ixodidae" role="button">Slides</a>
-</div>
-</article>
+<!-- <article> -->
+<!-- <h3><a href="https://www.researchgate.net/publication/335290939_Molecular_barcoding_of_Australian_hard_ticks_Ixodidae">Molecular barcoding of Australian hard ticks (Ixodidae)</a></h3> -->
+<!-- <div class="summary"> -->
+<!-- <span><i class="fa fa-calendar"></i> _2019-07_</span> -->
+<!-- <p>Australian Society for Parasitology Annual Conference | Adelaide, South Australia</p> -->
+<!-- <a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/335290939_Molecular_barcoding_of_Australian_hard_ticks_Ixodidae" role="button">Slides</a> -->
+<!-- </div> -->
+<!-- </article> -->
 
-<br>
-<article>
-<h3><a href="https://www.researchgate.net/publication/327880682_Ticks_parasitizing_Australian_wildlife_and_surveillance_of_potential_tick-borne_pathogens">Ticks parasitizing Australian wildlife and surveillance of potential tick-borne pathogens</a></h3>
-<div class="summary">
-<span><i class="fa fa-calendar"></i> _2018-09_</span>
-<p>Australian Society for Parasitology Annual Conference | Melbourne, Victoria.</p>
-<a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/327880682_Ticks_parasitizing_Australian_wildlife_and_surveillance_of_potential_tick-borne_pathogens" role="button">Slides</a>
-</div>
-</article>
+<!-- <br> -->
+<!-- <article> -->
+<!-- <h3><a href="https://www.researchgate.net/publication/327880682_Ticks_parasitizing_Australian_wildlife_and_surveillance_of_potential_tick-borne_pathogens">Ticks parasitizing Australian wildlife and surveillance of potential tick-borne pathogens</a></h3> -->
+<!-- <div class="summary"> -->
+<!-- <span><i class="fa fa-calendar"></i> _2018-09_</span> -->
+<!-- <p>Australian Society for Parasitology Annual Conference | Melbourne, Victoria.</p> -->
+<!-- <a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/327880682_Ticks_parasitizing_Australian_wildlife_and_surveillance_of_potential_tick-borne_pathogens" role="button">Slides</a> -->
+<!-- </div> -->
+<!-- </article> -->
 
-<br>
+<!-- <br> -->
 
-<article>
-<h3><a href="https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks">What’s in a tick? Meta-analysis of microbial diversity in Australian ticks</a></h3>
-<div class="summary">
-<span><i class="fa fa-calendar"></i> _2018-08_</span>
-<p>Global Microbiome II 2018 (West Coast Microbiome Network) | Perth, Western Australia</p>
-<a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks" role="button">Poster</a>
-</div>
+<!-- <article> -->
+<!-- <h3><a href="https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks">What’s in a tick? Meta-analysis of microbial diversity in Australian ticks</a></h3> -->
+<!-- <div class="summary"> -->
+<!-- <span><i class="fa fa-calendar"></i> _2018-08_</span> -->
+<!-- <p>Global Microbiome II 2018 (West Coast Microbiome Network) | Perth, Western Australia</p> -->
+<!-- <a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/327174678_What's_in_a_tick_Meta-analysis_of_microbial_diversity_in_Australian_ticks" role="button">Poster</a> -->
+<!-- </div> -->
 
-<br>
+<!-- <br> -->
 
-<article>
-<h3><a href="https://www.researchgate.net/publication/319276622_Are_bandicoot_ticks_a_reservoir_for_novel_bacteria">Are bandicoot ticks a reservoir for novel bacteria?</a></h3>
-<div class="summary">
-<span><i class="fa fa-calendar"></i> _2017-08_</span>
-<p>Combined Biological Sciences Meeting | Perth, Western Australia</p>
-<a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/319276622_Are_bandicoot_ticks_a_reservoir_for_novel_bacteria" role="button">Poster</a>
-</div>
-</article>
+<!-- <article> -->
+<!-- <h3><a href="https://www.researchgate.net/publication/319276622_Are_bandicoot_ticks_a_reservoir_for_novel_bacteria">Are bandicoot ticks a reservoir for novel bacteria?</a></h3> -->
+<!-- <div class="summary"> -->
+<!-- <span><i class="fa fa-calendar"></i> _2017-08_</span> -->
+<!-- <p>Combined Biological Sciences Meeting | Perth, Western Australia</p> -->
+<!-- <a class="btn btn-outline-primary btn-sm" href="https://www.researchgate.net/publication/319276622_Are_bandicoot_ticks_a_reservoir_for_novel_bacteria" role="button">Poster</a> -->
+<!-- </div> -->
+<!-- </article> -->
 
-<br>
+<!-- <br> -->
 
 ***
 

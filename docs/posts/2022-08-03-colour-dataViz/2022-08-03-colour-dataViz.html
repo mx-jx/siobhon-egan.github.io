@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.2.269">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Siobhon Egan">
 <meta name="dcterms.date" content="2022-08-02">
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -126,40 +131,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Siobhon Egan</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../about.html">About</a>
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html">CV</a>
+    <a class="nav-link" href="../../cv.html">
+ <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html">Publications</a>
+    <a class="nav-link" href="../../publications.html">
+ <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../contact.html">Contact</a>
+    <a class="nav-link" href="../../contact.html">
+ <span class="menu-text">Contact</span></a>
   </li>  
 </ul>
 <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../index.html">Blog</a>
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/siobhon-egan/siobhon-egan.github.io"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://twitter.com/siobhon_egan"><i class="bi bi-twitter" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
 <div id="quarto-search" class="" title="Search"></div>
@@ -202,12 +214,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <p class="date">August 2, 2022</p>
     </div>
   </div>
+  
     
   </div>
   
 
-</header><p>As I need to reach for this information often I have decided to dedicate a solo post on all things coloour related.</p>
-<p>Figures are an important part of any publication. They are often the first thing readers look at and will help usually are the deciders as to whether non-specialists are going to read on…a good figure goes a long way! If you can spend the time it is well worth it (within reason of course). A good read on some do and don’ts for figures by <a href="https://doi.org/10.1371/journal.pcbi.1003833">Rougier et al.&nbsp;2014 PLOS comp biol</a>, while your at it check out this one by <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619">Mensh and Kording 2017</a>.</p>
+</header><p>As I need to reach for this information often I have decided to dedicate a solo post on all things colour related.</p>
+<p>Figures are an important part of any publication. They are often the first thing readers look at and will help usually are the deciders as to whether non-specialists are going to read on…a good figure goes a long way! If you can spend the time it is well worth it (within reason of course). A good read on some do and dont’s for figures by <a href="https://doi.org/10.1371/journal.pcbi.1003833">Rougier et al.&nbsp;2014 PLOS comp biol</a>, while your at it check out this one by <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005619">Mensh and Kording 2017</a>.</p>
 <p><span class="emoji" data-emoji="link">🔗</span> General colour resources</p>
 <ul>
 <li><a href="https://github.com/OrdnanceSurvey/GeoDataViz-Toolkit/tree/master/Colours">GeoDataViz Toolkit</a></li>
@@ -231,7 +244,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">ggplot2 and viridis</a></li>
 </ul>
 </li>
+<li>
+<a href="https://matt-dray.github.io/dehex/">dehex</a>: An R package containing simple functions and a Shiny app to help me train myself to ‘read’ a colour from its hex code.</li>
+<li>
+<a href="https://emilhvitfeldt.github.io/prismatic/">prismatic</a>: The goal of prismatic is to provide color manipulation tools in R, in a intuitive, low-dependency and functional way.</li>
+<li><a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">RColourBrewer</a></li>
+<li><a href="https://r-graph-gallery.com/colors.html">r-graph-gallery</a></li>
 </ul>
+<hr>
 <p><strong>Examples</strong></p>
 <p>Example for viridis to get 8 colours</p>
 <div class="cell">
@@ -256,6 +276,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "#1B9E77" "#D95F02" "#7570B3" "#E7298A" "#66A61E" "#E6AB02" "#A6761D"
 [8] "#666666"</code></pre>
+</div>
+</div>
+<p>More RColourbrewer palettes</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># BrBG</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.pal</a></span><span class="op">(</span><span class="fl">7</span>,<span class="st">"BrBG"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">7</span>, name <span class="op">=</span> <span class="st">"BrBG"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "#8C510A" "#D8B365" "#F6E8C3" "#F5F5F5" "#C7EAE5" "#5AB4AC" "#01665E"</code></pre>
+</div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Paired</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.pal</a></span><span class="op">(</span><span class="fl">12</span>,<span class="st">"Paired"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">12</span>, name <span class="op">=</span> <span class="st">"Paired"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#A6CEE3" "#1F78B4" "#B2DF8A" "#33A02C" "#FB9A99" "#E31A1C" "#FDBF6F"
+ [8] "#FF7F00" "#CAB2D6" "#6A3D9A" "#FFFF99" "#B15928"</code></pre>
+</div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Set2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.pal</a></span><span class="op">(</span><span class="fl">8</span>,<span class="st">"Set2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">8</span>, name <span class="op">=</span> <span class="st">"Set2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "#66C2A5" "#FC8D62" "#8DA0CB" "#E78AC3" "#A6D854" "#FFD92F" "#E5C494"
+[8] "#B3B3B3"</code></pre>
+</div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Set3</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.pal</a></span><span class="op">(</span><span class="fl">12</span>,<span class="st">"Set3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-3-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">12</span>, name <span class="op">=</span> <span class="st">"Set3"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#8DD3C7" "#FFFFB3" "#BEBADA" "#FB8072" "#80B1D3" "#FDB462" "#B3DE69"
+ [8] "#FCCDE5" "#D9D9D9" "#BC80BD" "#CCEBC5" "#FFED6F"</code></pre>
+</div>
+</div>
+<p><em>Difference between discrete and continuous colours in a figure</em></p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">wt</span>, <span class="va">mpg</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">p</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">4</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html">scale_color_viridis</a></span><span class="op">(</span>discrete<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>size<span class="op">=</span><span class="fl">4</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">cyl</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html">scale_color_viridis</a></span><span class="op">(</span>discrete<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Show hex values of viridis palettes</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'scales'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:viridis':
+
+    viridis_pal</code></pre>
+</div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://scales.r-lib.org/reference/show_col.html">show_col</a></span><span class="op">(</span><span class="fu"><a href="https://scales.r-lib.org/reference/viridis_pal.html">viridis_pal</a></span><span class="op">(</span><span class="op">)</span><span class="op">(</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://scales.r-lib.org/reference/show_col.html">show_col</a></span><span class="op">(</span><span class="fu"><a href="https://scales.r-lib.org/reference/viridis_pal.html">viridis_pal</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">'A'</span><span class="op">)</span><span class="op">(</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://scales.r-lib.org/reference/show_col.html">show_col</a></span><span class="op">(</span><span class="fu"><a href="https://scales.r-lib.org/reference/viridis_pal.html">viridis_pal</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">'B'</span><span class="op">)</span><span class="op">(</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://scales.r-lib.org/reference/show_col.html">show_col</a></span><span class="op">(</span><span class="fu"><a href="https://scales.r-lib.org/reference/viridis_pal.html">viridis_pal</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">'C'</span><span class="op">)</span><span class="op">(</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-5-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://scales.r-lib.org/reference/show_col.html">show_col</a></span><span class="op">(</span><span class="fu"><a href="https://scales.r-lib.org/reference/viridis_pal.html">viridis_pal</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">'D'</span><span class="op">)</span><span class="op">(</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="2022-08-03-colour-dataViz_files/figure-html/unnamed-chunk-5-5.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Make a vector with hex values of colours</p>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># number of colours you want</span></span>
+<span><span class="va">q_colors</span> <span class="op">=</span>  <span class="fl">15</span> <span class="co"># for no particular reason</span></span>
+<span><span class="va">v_colors</span> <span class="op">=</span>  <span class="fu"><a href="https://sjmgarnier.github.io/viridisLite/reference/viridis.html">viridis</a></span><span class="op">(</span><span class="va">q_colors</span>, option <span class="op">=</span> <span class="st">'D'</span><span class="op">)</span></span>
+<span><span class="va">v_colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#440154FF" "#481B6DFF" "#46337EFF" "#3F4889FF" "#365C8DFF" "#2E6E8EFF"
+ [7] "#277F8EFF" "#21908CFF" "#1FA187FF" "#2DB27DFF" "#4AC16DFF" "#71CF57FF"
+[13] "#9FDA3AFF" "#CFE11CFF" "#FDE725FF"</code></pre>
 </div>
 </div>
 
@@ -302,7 +427,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -330,31 +472,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script><script src="https://utteranc.es/client.js" repo="siobhon-egan/siobhon-egan.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
