@@ -9,3 +9,6 @@ tmp/
 
 /.quarto/
 _site/
+.Rdata
+.httr-oauth
+.quarto
