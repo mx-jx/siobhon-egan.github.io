@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "Siobhon Egan"
+  title: "MJ Stowe"
   site-url: https://www.siobhon-egan.github.io/
   description: "My academic website"
   navbar:
@@ -19,7 +19,7 @@ website:
       - icon: twitter
         href: https://twitter.com/siobhon_egan
   page-footer:
-    left: "Copyright 2022, Siobhon Egan"
+    left: "Copyright 2023, MJ Stowe"
     right:
       - icon: github
         href: https://github.com/siobhon-egan/siobhon-egan.github.io
